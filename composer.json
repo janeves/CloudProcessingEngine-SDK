@@ -1,0 +1,20 @@
+{
+    "name": "sportarchive/cloud-processing-engine-SDK",
+    "description": "PHP SDK for the Cloud Processing Engine project.",
+    "keywords": ["Cloud Processing Engine","Cloud Transcode"],
+    "homepage": "https://github.com/sportarchive/CloudProcessingEngine-SDK",
+    "type": "library",
+    "authors": [
+	{
+	    "name": "Sport Archive Inc",
+	    "email": "support@sportarchive.tv"
+	}
+    ],
+    "require": {
+	"php": ">=5.4",
+        "aws/aws-sdk-php": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "SA": "src/" }
+    }
+}
