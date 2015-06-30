@@ -1,5 +1,7 @@
 <?php
 
+namespace SA\CpeSdk;
+
 // Custom exception class for the Cloud Processing Engine
 class CpeException extends \Exception
 {

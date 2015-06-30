@@ -16,16 +16,22 @@ class CpeLogger
     // Exception
     const LOG_TYPE_ERROR = "LOG_TYPE_ERROR";
     const OPENLOG_ERROR  = "OPENLOG_ERROR";
-    
+
+    // Specify the path where to create the log files
     public function __construct($logPath = null)
     {
         global $argv;
+        
+        $this->logPath = "/var/tmp/logs/cpe/";
                 
-        if (!$logPath)
-            $this->logPath =
-                "/var/log/cpe/".$argv[0].".log";
-        else
+        if ($logPath)
             $this->logPath = $logPath;
+
+        if (!file_exists($this->logPath))
+            mkdir($this->logPath, 0755, true);
+
+        // Append progname to the path
+        $this->logPath .= "/".$argv[0].".log";
     }
 
     // Log message to syslog and log file

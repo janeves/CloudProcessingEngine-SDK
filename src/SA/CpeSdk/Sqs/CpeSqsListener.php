@@ -30,7 +30,7 @@ class CpeSqsListener
         $this->sqs = $aws->get('Sqs');
 
         // Logger
-        $this->logger = new CpeLogger();
+        $this->logger = new CpeSdk\CpeLogger();
     }
     
     /**

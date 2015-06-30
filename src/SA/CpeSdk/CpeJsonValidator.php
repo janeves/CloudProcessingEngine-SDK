@@ -1,5 +1,7 @@
 <?php
 
+namespace SA\CpeSdk;
+
 class CpeJsonValidator
 {
     public function validate_json(
