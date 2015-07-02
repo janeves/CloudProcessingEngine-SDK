@@ -23,6 +23,18 @@ class CpeSqsWriter
 
     // Exceptions
     const INVALID_JSON       = "INVALID_JSON";
+
+    // Statuses
+    const JOB_STARTED        = "JOB_STARTED";
+    const JOB_COMPLETED      = "JOB_COMPLETED";
+    const JOB_FAILED         = "JOB_FAILED";
+    const ACTIVITY_STARTED   = "ACTIVITY_STARTED";
+    const ACTIVITY_FAILED    = "ACTIVITY_FAILED";
+    const ACTIVITY_TIMEOUT   = "ACTIVITY_TIMEOUT";
+    const ACTIVITY_COMPLETED = "ACTIVITY_COMPLETED";
+    const ACTIVITY_PROGRESS  = "ACTIVITY_PROGRESS";
+    const ACTIVITY_PREPARING = "ACTIVITY_PREPARING";
+    const ACTIVITY_FINISHING = "ACTIVITY_FINISHING";
     
     function __construct($debug)
     {
@@ -33,9 +45,6 @@ class CpeSqsWriter
                 'region' => getenv("AWS_DEFAULT_REGION")
             ));
         $this->sqs = $aws->get('Sqs');
-
-        // Logger
-        $this->logger = new CpeLogger();
     }
 
     

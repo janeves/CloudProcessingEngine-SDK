@@ -17,7 +17,7 @@ use SA\CpeSdk;
 class CpeSqsListener
 {
     private $sqs;
-    private $logger;
+    private $cpeLogger;
     
     function __construct($debug)
     {
@@ -30,7 +30,7 @@ class CpeSqsListener
         $this->sqs = $aws->get('Sqs');
 
         // Logger
-        $this->logger = new CpeSdk\CpeLogger();
+        $this->cpeLogger = new CpeSdk\CpeLogger();
     }
     
     /**
@@ -42,7 +42,7 @@ class CpeSqsListener
     public function receive_message($queue, $timeout)
     {
         if ($this->debug)
-            $this->logger->log_out(
+            $this->cpeLogger->log_out(
                 "DEBUG", 
                 basename(__FILE__),
                 "Polling from '$queue' ..."
@@ -59,7 +59,7 @@ class CpeSqsListener
             count($messages))
         {
             if ($this->debug)
-                $this->logger->log_out(
+                $this->cpeLogger->log_out(
                     "DEBUG", 
                     basename(__FILE__),
                     "New messages recieved in queue: '$queue'"
