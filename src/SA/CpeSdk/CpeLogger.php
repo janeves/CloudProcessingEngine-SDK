@@ -18,7 +18,7 @@ class CpeLogger
     const OPENLOG_ERROR  = "OPENLOG_ERROR";
 
     // Specify the path where to create the log files
-    public function __construct($logPath = null)
+    public function __construct($logPath = null, $suffix = null)
     {
         global $argv;
         
@@ -30,8 +30,11 @@ class CpeLogger
         if (!file_exists($this->logPath))
             mkdir($this->logPath, 0755, true);
 
+        $file = $argv[0];
+        if ($suffix)
+            $file .= "-".$suffix;
         // Append progname to the path
-        $this->logPath .= "/".$argv[0].".log";
+        $this->logPath .= "/".$file.".log";
     }
 
     // Log message to syslog and log file
