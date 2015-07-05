@@ -1,6 +1,6 @@
 {
-    "name": "sportarchive/cloud-processing-engine-SDK",
-    "description": "PHP SDK for the Cloud Processing Engine project.",
+    "name": "sportarchive/cloud-processing-engine-sdk",
+    "description": "PHP SDK for the Cloud Processing Engine project. Use this SDK to create your custom activities for the CPE project",
     "keywords": ["Cloud Processing Engine","Cloud Transcode"],
     "homepage": "https://github.com/sportarchive/CloudProcessingEngine-SDK",
     "type": "library",
