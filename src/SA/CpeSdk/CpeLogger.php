@@ -2,7 +2,6 @@
 
 namespace SA\CpeSdk;
 
-// SA Cpe SDK
 use SA\CpeSdk;
 
 /**

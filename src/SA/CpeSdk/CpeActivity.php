@@ -7,15 +7,29 @@
 
 namespace SA\CpeSdk;
 
+use SA\CpeSdk;
+
 class CpeActivity
 {
     public $params;          // Activity params coming from ActivityPoller
     public $debug;           // Debug flag
     
+    public $activityId;      // ID of the activity
+    public $activityType;    // Type of activity
+    
     public $cpeLogger;       // Logger
     public $cpeSqsWriter;    // Used to write messages in SQS
     public $cpeSwfHandler;   // USed to control SWF
-
+    
+    public $time;            // Time of the activity. Comes from $input
+    public $data;            // Data input for the activity. The job we got to do. Comes from $input
+    public $client;          // The client that request this activity. Comes from $input
+    public $jobId;           // The Activity ID. Comes from $input
+    
+    public $input_str;       // Complete activity input string
+    public $input;           // Complete activity input JSON object
+    public $activityLogKey;  // Create a key workflowId:activityId to put in logs
+    
     function __construct($params, $debug)
     {
         $this->debug         = $debug;
@@ -93,22 +107,10 @@ class CpeActivity
         } catch (\Aws\Swf\Exception\UnknownResourceException $e) {
             $this->cpeLogger->log_out("ERROR", basename(__FILE__), 
                 "Activity '" . $this->params["name"] . "' doesn't exists. Creating it ...\n");
-        } catch (\Exception $e) {
-            $this->cpeLogger->log_out("ERROR", basename(__FILE__), 
-                "Unable describe activity ! " . $e->getMessage() . "\n");
-            return false;
         }
         
-        try {
-            // Register activites if doesn't exists in SWF
-            $this->cpeSwfHandler->swf->registerActivityType($params);
-        } catch (Exception $e) {
-            $this->cpeLogger->log_out("ERROR", basename(__FILE__), 
-                "Unable to register new activity ! " . $e->getMessage() . "\n");
-            return false;
-        }
-        
-        return true;
+        // Register activites if doesn't exists in SWF
+        $this->cpeSwfHandler->swf->registerActivityType($params);
     }
 
     /**
@@ -126,6 +128,8 @@ class CpeActivity
         $this->jobId  = $this->input->{'job_id'};         
         $this->data   = $this->input->{'data'};  
         $this->client = $this->input->{'client'};
+
+        print "DATA: ".print_r($this->data, true);
     }
     
     /**
@@ -152,6 +156,7 @@ class CpeActivity
             $this->cpeLogger->log_out("ERROR", basename(__FILE__),
                 "[$reason] $details",
                 $this->activityLogKey);
+            
             $this->cpeSwfHandler->swf->respondActivityTaskFailed(array(
                     "taskToken" => $task["taskToken"],
                     "reason"    => $reason,
