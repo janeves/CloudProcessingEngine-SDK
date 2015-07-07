@@ -20,15 +20,12 @@ if [ "$TRAVIS_REPO_SLUG" == "sportarchive/CloudProcessingEngine-SDK" ] && [ "$TR
   cd gh-pages
   
   ## Suppression de l'ancienne version
-  git rm -rf ./docs/$TRAVIS_BRANCH
+  git rm -rf .
 
   ## Création des dossiers
-  mkdir docs
-  cd docs
-  mkdir $TRAVIS_BRANCH
 
   ## Copie de la nouvelle version
-  cp -Rf $HOME/docs-latest/* ./$TRAVIS_BRANCH/
+  cp -Rf $HOME/docs-latest/* .
 
   ## On ajoute tout
   git add -f .
