@@ -4,7 +4,7 @@
 
 Use this SDK if you want to develop custom Activities for the Cloud Processing Engine (CPE) project.
 
-**This SDK offers many classes for your custom activities: **
+**This SDK offers many classes for your custom activities:**
    - SQS Handler (send updates, progress, etc).
    - SWF Handler
    - Logger
