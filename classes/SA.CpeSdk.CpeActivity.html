@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Cloud Processing Engine SDK » \SA\CpeSdk\CpeActivity</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Cloud Processing Engine SDK</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/SA.html"><i class="icon-th"></i> SA</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">102</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_activity_completed" title="activity_completed() :: Send activity completed to SQS and SWF
+Called by ActivityPoller once your activity completed"><span class="description">Send activity completed to SQS and SWF
+Called by ActivityPoller once your activity completed</span><pre>activity_completed()</pre></a></li>
+<li class="method public "><a href="#method_activity_failed" title="activity_failed() :: Activity failed to SQS and SWF
+Called by ActivityPoller if your activity throws an exeception"><span class="description">Activity failed to SQS and SWF
+Called by ActivityPoller if your activity throws an exeception</span><pre>activity_failed()</pre></a></li>
+<li class="method public "><a href="#method_do_activity" title="do_activity() :: Send SQS notification saying your activity started
+Implement this method in your activity
+This is where your logic starts"><span class="description">Send SQS notification saying your activity started
+Implement this method in your activity
+This is where your logic starts</span><pre>do_activity()</pre></a></li>
+<li class="method public "><a href="#method_do_init" title="do_init() :: We initialise the Activity in SWF
+WE check if it is already registered or not
+If not we register it"><span class="description">We initialise the Activity in SWF
+WE check if it is already registered or not
+If not we register it</span><pre>do_init()</pre></a></li>
+<li class="method public "><a href="#method_do_input_validation" title="do_input_validation() :: Perform JSON input validation
+We capture the four keys that compose a CPE Task input"><span class="description">Perform JSON input validation
+We capture the four keys that compose a CPE Task input</span><pre>do_input_validation()</pre></a></li>
+<li class="method public "><a href="#method_do_task_check" title="do_task_check() :: We perform basic high level task verifications
+WE make sure it contains an input and we save it
+This is the first method to be called when your activity starts"><span class="description">We perform basic high level task verifications
+WE make sure it contains an input and we save it
+This is the first method to be called when your activity starts</span><pre>do_task_check()</pre></a></li>
+<li class="method public "><a href="#method_send_heartbeat" title="send_heartbeat() :: Send heartbeat to SWF to keep the task alive."><span class="description">Send heartbeat to SWF to keep the task alive.</span><pre>send_heartbeat()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_activityId" title="$activityId() :: "><span class="description"></span><pre>$activityId</pre></a></li>
+<li class="property public "><a href="#property_activityLogKey" title="$activityLogKey() :: "><span class="description"></span><pre>$activityLogKey</pre></a></li>
+<li class="property public "><a href="#property_activityType" title="$activityType() :: "><span class="description"></span><pre>$activityType</pre></a></li>
+<li class="property public "><a href="#property_client" title="$client() :: "><span class="description"></span><pre>$client</pre></a></li>
+<li class="property public "><a href="#property_cpeLogger" title="$cpeLogger() :: "><span class="description"></span><pre>$cpeLogger</pre></a></li>
+<li class="property public "><a href="#property_cpeSqsWriter" title="$cpeSqsWriter() :: "><span class="description"></span><pre>$cpeSqsWriter</pre></a></li>
+<li class="property public "><a href="#property_cpeSwfHandler" title="$cpeSwfHandler() :: "><span class="description"></span><pre>$cpeSwfHandler</pre></a></li>
+<li class="property public "><a href="#property_data" title="$data() :: "><span class="description"></span><pre>$data</pre></a></li>
+<li class="property public "><a href="#property_debug" title="$debug() :: "><span class="description"></span><pre>$debug</pre></a></li>
+<li class="property public "><a href="#property_input" title="$input() :: "><span class="description"></span><pre>$input</pre></a></li>
+<li class="property public "><a href="#property_input_str" title="$input_str() :: "><span class="description"></span><pre>$input_str</pre></a></li>
+<li class="property public "><a href="#property_jobId" title="$jobId() :: "><span class="description"></span><pre>$jobId</pre></a></li>
+<li class="property public "><a href="#property_params" title="$params() :: "><span class="description"></span><pre>$params</pre></a></li>
+<li class="property public "><a href="#property_time" title="$time() :: "><span class="description"></span><pre>$time</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\CpeActivity"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/SA.html">SA</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/SA.CpeSdk.html">CpeSdk</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/SA.CpeSdk.CpeActivity.html">CpeActivity</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description"></p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/Default.html">Default</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>__construct()
+        </h2>
+<pre>__construct($params, $debug) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$params</h4></div>
+<div class="subelement argument"><h4>$debug</h4></div>
+</div></div>
+</div>
+<a id="method_activity_completed"></a><div class="element clickable method public method_activity_completed " data-toggle="collapse" data-target=".method_activity_completed .collapse" title="public">
+<h2>Send activity completed to SQS and SWF
+Called by ActivityPoller once your activity completed</h2>
+<pre>activity_completed($task, $result<code> = null</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$task</h4></div>
+<div class="subelement argument"><h4>$result</h4></div>
+</div></div>
+</div>
+<a id="method_activity_failed"></a><div class="element clickable method public method_activity_failed " data-toggle="collapse" data-target=".method_activity_failed .collapse" title="public">
+<h2>Activity failed to SQS and SWF
+Called by ActivityPoller if your activity throws an exeception</h2>
+<pre>activity_failed($task, $reason<code> = ""</code>, $details<code> = ""</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$task</h4></div>
+<div class="subelement argument"><h4>$reason</h4></div>
+<div class="subelement argument"><h4>$details</h4></div>
+</div></div>
+</div>
+<a id="method_do_activity"></a><div class="element clickable method public method_do_activity " data-toggle="collapse" data-target=".method_do_activity .collapse" title="public">
+<h2>Send SQS notification saying your activity started
+Implement this method in your activity
+This is where your logic starts</h2>
+<pre>do_activity($task) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$task</h4></div>
+</div></div>
+</div>
+<a id="method_do_init"></a><div class="element clickable method public method_do_init " data-toggle="collapse" data-target=".method_do_init .collapse" title="public">
+<h2>We initialise the Activity in SWF
+WE check if it is already registered or not
+If not we register it</h2>
+<pre>do_init($task) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$task</h4></div>
+</div></div>
+</div>
+<a id="method_do_input_validation"></a><div class="element clickable method public method_do_input_validation " data-toggle="collapse" data-target=".method_do_input_validation .collapse" title="public">
+<h2>Perform JSON input validation
+We capture the four keys that compose a CPE Task input</h2>
+<pre>do_input_validation($task) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$task</h4></div>
+</div></div>
+</div>
+<a id="method_do_task_check"></a><div class="element clickable method public method_do_task_check " data-toggle="collapse" data-target=".method_do_task_check .collapse" title="public">
+<h2>We perform basic high level task verifications
+WE make sure it contains an input and we save it
+This is the first method to be called when your activity starts</h2>
+<pre>do_task_check($task) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$task</h4></div>
+</div></div>
+</div>
+<a id="method_send_heartbeat"></a><div class="element clickable method public method_send_heartbeat " data-toggle="collapse" data-target=".method_send_heartbeat .collapse" title="public">
+<h2>Send heartbeat to SWF to keep the task alive.</h2>
+<pre>send_heartbeat($task, $details<code> = null</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Timeout is configurable at the Activity level in SWF
+You must call this regularly within your logic to make sure SWF doesn't
+consider your activity as 'timeed out'.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$task</h4></div>
+<div class="subelement argument"><h4>$details</h4></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_activityId"> </a><div class="element clickable property public property_activityId" data-toggle="collapse" data-target=".property_activityId .collapse" title="public">
+<h2>$activityId</h2>
+<pre>$activityId </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_activityLogKey"> </a><div class="element clickable property public property_activityLogKey" data-toggle="collapse" data-target=".property_activityLogKey .collapse" title="public">
+<h2>$activityLogKey</h2>
+<pre>$activityLogKey </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_activityType"> </a><div class="element clickable property public property_activityType" data-toggle="collapse" data-target=".property_activityType .collapse" title="public">
+<h2>$activityType</h2>
+<pre>$activityType </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_client"> </a><div class="element clickable property public property_client" data-toggle="collapse" data-target=".property_client .collapse" title="public">
+<h2>$client</h2>
+<pre>$client </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cpeLogger"> </a><div class="element clickable property public property_cpeLogger" data-toggle="collapse" data-target=".property_cpeLogger .collapse" title="public">
+<h2>$cpeLogger</h2>
+<pre>$cpeLogger </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cpeSqsWriter"> </a><div class="element clickable property public property_cpeSqsWriter" data-toggle="collapse" data-target=".property_cpeSqsWriter .collapse" title="public">
+<h2>$cpeSqsWriter</h2>
+<pre>$cpeSqsWriter </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cpeSwfHandler"> </a><div class="element clickable property public property_cpeSwfHandler" data-toggle="collapse" data-target=".property_cpeSwfHandler .collapse" title="public">
+<h2>$cpeSwfHandler</h2>
+<pre>$cpeSwfHandler </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_data"> </a><div class="element clickable property public property_data" data-toggle="collapse" data-target=".property_data .collapse" title="public">
+<h2>$data</h2>
+<pre>$data </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_debug"> </a><div class="element clickable property public property_debug" data-toggle="collapse" data-target=".property_debug .collapse" title="public">
+<h2>$debug</h2>
+<pre>$debug </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_input"> </a><div class="element clickable property public property_input" data-toggle="collapse" data-target=".property_input .collapse" title="public">
+<h2>$input</h2>
+<pre>$input </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_input_str"> </a><div class="element clickable property public property_input_str" data-toggle="collapse" data-target=".property_input_str .collapse" title="public">
+<h2>$input_str</h2>
+<pre>$input_str </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_jobId"> </a><div class="element clickable property public property_jobId" data-toggle="collapse" data-target=".property_jobId .collapse" title="public">
+<h2>$jobId</h2>
+<pre>$jobId </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_params"> </a><div class="element clickable property public property_params" data-toggle="collapse" data-target=".property_params .collapse" title="public">
+<h2>$params</h2>
+<pre>$params </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_time"> </a><div class="element clickable property public property_time" data-toggle="collapse" data-target=".property_time .collapse" title="public">
+<h2>$time</h2>
+<pre>$time </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.3</a> and<br>
+            generated on 2015-07-07T02:23:24Z.<br></footer></div>
+</div>
+</body>
+</html>
