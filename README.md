@@ -1,4 +1,4 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/?branch=master) [![Build Status](https://travis-ci.org/sportarchive/CloudProcessingEngine-SDK.svg?branch=master)](https://travis-ci.org/sportarchive/CloudProcessingEngine-SDK)
 
 ## What for?
 
