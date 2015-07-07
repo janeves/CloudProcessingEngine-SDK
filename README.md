@@ -1,4 +1,4 @@
-[![API DOCS](http://apigenerator.org/badge.png)](http://<user>.github.io/<repo>/) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/?branch=master)
 
 ## What for?
 
@@ -18,3 +18,7 @@ Cloud Transcode (CT) is an example of project using this SDK.
 CT transcodes media files at scale using the CPE stack. It uses this SDK to implement its Activities and to report back to client applications that submitted jobs to the CPE stack.
 
 **See:** https://github.com/sportarchive/CloudProcessingEngine
+
+## SDK Documentation
+
+http://sportarchive.github.io/CloudProcessingEngine-SDK/
