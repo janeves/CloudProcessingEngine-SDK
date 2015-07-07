@@ -19,6 +19,11 @@ CT transcodes media files at scale using the CPE stack. It uses this SDK to impl
 
 **See:** https://github.com/sportarchive/CloudProcessingEngine
 
+## Install
+
+Composer package:<br>
+https://packagist.org/packages/sportarchive/cloud-processing-engine-sdk
+
 ## SDK Documentation
 
 http://sportarchive.github.io/CloudProcessingEngine-SDK/
