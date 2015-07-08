@@ -20,7 +20,6 @@ class CpeSqsWriter
 {
     private $debug;
     private $sqs;
-    private $logger;
 
     // Exceptions
     const INVALID_JSON       = "INVALID_JSON";
@@ -103,6 +102,7 @@ class CpeSqsWriter
 
     public function activity_canceled($task)
     {
+        // FIXME: To implement
     }
 
     public function activity_progress($task, $progress)
