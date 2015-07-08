@@ -18,7 +18,7 @@ use SA\CpeSdk;
 
 class CpeSqsWriter
 {
-    private $debug
+    private $debug;
     private $sqs;
     private $logger;
 
