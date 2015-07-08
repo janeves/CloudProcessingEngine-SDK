@@ -10,7 +10,7 @@ class CpeJsonValidator
         $schemas_path)
     {
         $retriever    = new JsonSchema\Uri\UriRetriever;
-        $json_schemas = $retriever->retrieve('file://' . $schemas_path . "/$schemas");
+        $json_schemas = $retriever->retrieve('file://' . $schemas_path . "/$schemas_name");
 
         $refResolver  = new JsonSchema\RefResolver($retriever);
         $refResolver->resolve($json_schemas, 'file://' . $schemas_path . "/");

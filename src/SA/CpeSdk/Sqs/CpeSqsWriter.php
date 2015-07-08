@@ -18,6 +18,7 @@ use SA\CpeSdk;
 
 class CpeSqsWriter
 {
+    private $debug
     private $sqs;
     private $logger;
 
@@ -36,9 +37,9 @@ class CpeSqsWriter
     const ACTIVITY_PREPARING = "ACTIVITY_PREPARING";
     const ACTIVITY_FINISHING = "ACTIVITY_FINISHING";
     
-    function __construct($debug)
+    public function __construct($debug)
     {
-        $this->debug  = $debug;
+        $this->debug = $debug;
 
         // Create AWS SDK instance
         $aws = Aws::factory(array(
@@ -91,7 +92,7 @@ class CpeSqsWriter
         );
     }
 
-    public function activity_timeout()
+    public function activity_timeout($task)
     {
         $this->send_activity_msg(
             $task, 
@@ -100,7 +101,7 @@ class CpeSqsWriter
         );
     }
 
-    public function activity_canceled()
+    public function activity_canceled($task)
     {
     }
 
@@ -152,8 +153,8 @@ class CpeSqsWriter
     private function send_activity_msg(
         $activityTask, 
         $eventType, 
-        $sendInput = false, 
-        $extra = false)
+        $sendInput = null, 
+        $extra = null)
     {
         if (!($input = json_decode($activityTask->get('input'))))
             throw new CpeException("Task input JSON is invalid!\n".$activityTask->get('input'),

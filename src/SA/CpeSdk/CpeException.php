@@ -8,11 +8,8 @@ class CpeException extends \Exception
     public $ref;
     
     // Redefine constructor so 'message' isn't optional
-    public function __construct(
-        $message,
-        $ref = "",
-        $code = 0, \Exception $previous = null) {
-        
+    public function __construct($message, $ref = "", $code = 0, $previous = null)
+    {
         $this->ref = $ref;
         parent::__construct($message, $code, $previous);
     }

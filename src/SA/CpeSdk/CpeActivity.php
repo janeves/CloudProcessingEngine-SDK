@@ -30,7 +30,7 @@ class CpeActivity
     public $input;           // Complete activity input JSON object
     public $activityLogKey;  // Create a key workflowId:activityId to put in logs
     
-    function __construct($params, $debug)
+    public function __construct($params, $debug)
     {
         $this->debug         = $debug;
         // For listening to the Input SQS queue
@@ -88,7 +88,7 @@ class CpeActivity
      * WE check if it is already registered or not
      * If not we register it
      */
-    public function do_init($task)
+    public function do_init()
     {
         // Save activity info
         $this->activityType = array(
@@ -110,14 +110,14 @@ class CpeActivity
         }
         
         // Register activites if doesn't exists in SWF
-        $this->cpeSwfHandler->swf->registerActivityType($params);
+        $this->cpeSwfHandler->swf->registerActivityType($this->params);
     }
 
     /**
      * Perform JSON input validation
      * We capture the four keys that compose a CPE Task input
      */
-    public function do_input_validation($task)
+    public function do_input_validation()
     {
         // Check JSON input
         if (!($this->input = json_decode($this->input_str)))

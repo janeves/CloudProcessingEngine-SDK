@@ -20,5 +20,5 @@ script:
   ## PHPDocumentor : Generation de la documentation dans le dossier de sortie
   - vendor/bin/phpdoc.php -d ./src -t ./build/docs
 after_script:
- ## PHPDocumentor : Upload vers les GitHub Pages
- - bash .travis_publish_doc.sh
+  ## PHPDocumentor : Upload vers les GitHub Pages
+  - bash .travis_publish_doc.sh

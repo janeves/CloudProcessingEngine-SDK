@@ -19,8 +19,6 @@ class CpeLogger
     // Specify the path where to create the log files
     public function __construct($logPath = null, $suffix = null)
     {
-        global $argv;
-        
         $this->logPath = "/var/tmp/logs/cpe/";
                 
         if ($logPath)
@@ -29,7 +27,7 @@ class CpeLogger
         if (!file_exists($this->logPath))
             mkdir($this->logPath, 0755, true);
 
-        $file = $argv[0];
+        $file = __FILE__;
         if ($suffix)
             $file .= "-".$suffix;
         // Append progname to the path
@@ -37,14 +35,12 @@ class CpeLogger
     }
 
     // Log message to syslog and log file
-    function log_out(
+    public function log_out(
         $type,
         $source,
         $message,
         $workflowId = null)
     {
-        global $argv;
-    
         $log = [
             "time"    => time(),
             "source"  => $source,
@@ -56,7 +52,7 @@ class CpeLogger
             $log["workflowId"] = $workflowId;
 
         // Open Syslog. Use programe name as key
-        if (!openlog ($argv[0], LOG_CONS|LOG_PID, LOG_LOCAL1))
+        if (!openlog (__FILE__, LOG_CONS|LOG_PID, LOG_LOCAL1))
             throw new CpeException("Unable to connect to Syslog!",
                 OPENLOG_ERROR);
 

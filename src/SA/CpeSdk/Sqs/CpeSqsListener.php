@@ -16,12 +16,13 @@ use SA\CpeSdk;
 
 class CpeSqsListener
 {
+    private $debug;
     private $sqs;
     private $cpeLogger;
     
-    function __construct($debug)
+    public function __construct($debug)
     {
-        $this->debug  = $debug;
+        $this->debug = $debug;
 
         // Create AWS SDK instance
         $aws = Aws::factory(array(
