@@ -52,6 +52,39 @@ class CpeActivity
         if (!isset($params["version"]) || !$params["version"])
             throw new CpeSdk\CpeException("Can't instantiate BasicActivity: 'version' is not provided or empty !\n", 
 			    Self::NO_ACTIVITY_VERSION);
+
+        // Initialize the activity in SWF if necessary
+        $this->init_activity();
+    }
+    
+    /**
+     * We initialise the Activity in SWF
+     * WE check if it is already registered or not
+     * If not we register it
+     */
+    private function init_activity()
+    {
+        // Save activity info
+        $this->activityType = array(
+            "name"    => $this->params["name"],
+            "version" => $this->params["version"]);
+
+        try {
+            // Check if activity already exists 
+            $this->cpeSwfHandler->swf->describeActivityType(array(
+                    "domain"       => $this->params["domain"],
+                    "activityType" => $this->activityType
+                ));
+            
+            // Activity exists as there is no exception
+            return true;
+        } catch (\Aws\Swf\Exception\UnknownResourceException $e) {
+            $this->cpeLogger->log_out("ERROR", basename(__FILE__), 
+                "Activity '" . $this->params["name"] . "' doesn't exists. Creating it ...\n");
+        }
+        
+        // Register activites if doesn't exists in SWF
+        $this->cpeSwfHandler->swf->registerActivityType($this->params);
     }
 
     /**
@@ -81,36 +114,6 @@ class CpeActivity
         $this->activityLogKey =
             $task->get("workflowExecution")['workflowId'] 
             . ":$this->activityId";
-    }
-
-    /**
-     * We initialise the Activity in SWF
-     * WE check if it is already registered or not
-     * If not we register it
-     */
-    public function do_init()
-    {
-        // Save activity info
-        $this->activityType = array(
-            "name"    => $this->params["name"],
-            "version" => $this->params["version"]);
-
-        try {
-            // Check if activity already exists 
-            $this->cpeSwfHandler->swf->describeActivityType(array(
-                    "domain"       => $this->params["domain"],
-                    "activityType" => $this->activityType
-                ));
-            
-            // Activity exists as there is no exception
-            return true;
-        } catch (\Aws\Swf\Exception\UnknownResourceException $e) {
-            $this->cpeLogger->log_out("ERROR", basename(__FILE__), 
-                "Activity '" . $this->params["name"] . "' doesn't exists. Creating it ...\n");
-        }
-        
-        // Register activites if doesn't exists in SWF
-        $this->cpeSwfHandler->swf->registerActivityType($this->params);
     }
 
     /**
