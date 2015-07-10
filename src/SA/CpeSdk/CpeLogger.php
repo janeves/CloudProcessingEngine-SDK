@@ -19,6 +19,8 @@ class CpeLogger
     // Specify the path where to create the log files
     public function __construct($logPath = null, $suffix = null)
     {
+        global $argv;
+        
         $this->logPath = "/var/tmp/logs/cpe/";
                 
         if ($logPath)
@@ -27,7 +29,7 @@ class CpeLogger
         if (!file_exists($this->logPath))
             mkdir($this->logPath, 0755, true);
 
-        $file = __FILE__;
+        $file = $argv[0];
         if ($suffix)
             $file .= "-".$suffix;
         // Append progname to the path
@@ -55,7 +57,7 @@ class CpeLogger
         if (!openlog (__FILE__, LOG_CONS|LOG_PID, LOG_LOCAL1))
             throw new CpeException("Unable to connect to Syslog!",
                 OPENLOG_ERROR);
-
+        
         // Change Syslog priority level
         switch ($type)
         {
@@ -78,7 +80,7 @@ class CpeLogger
             throw new CpeException("Unknown log Type!", 
                 LOG_TYPE_ERROR);
         }
-
+        
         // Print log in file
         $this->print_to_file($log, $workflowId);
         
