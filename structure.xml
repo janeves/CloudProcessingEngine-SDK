@@ -523,7 +523,7 @@ We use it to listen to SQS input messages from clients</description>
     </parse_markers>
     <source>eJytVdtu2kAQfecrRggFG0Hoc2ioKJAUleZmUB5CZC32YFYxtrO7JqJR/r2zvmIoVR46UiSzcz9zZvL1W7SOarVuq1WDFszWXILjMymBPmKJLix3oNYIw7sxDEOBMAmiWN2Fvo9CezyiNgOuQIXgc6kw0F/WvQVcW8IGpWQeSliJcEOxOQZKkmerW6sFjLQRcxCswWIYoeW+LKxX2aN6ujDYsN9hQDGXggmOsqbzDN7kYhhuNmGwoM9e8VZ4WQOgQGCNfia6Ii5p0770z1c5TSqlFt5rQBIJvmUKoeHiMvZ61TepY1denAinoeehSN9TZbz0uQOrOHAUp7pt2wkDqUTsKCMNayZ2aUItDUVod/qJDi6L3IWeuhkK1AkHj5buiBCVigUOliHYmyRXQuDiYsUcFYqdwYRgO6MwyaUp0KO6mnDZBw+p+a1Rp7j2aHw1mE9n9sP4enJ7UzcrjqbZOyyX0NDFUuJOn+IYTUKzaVbLTsE59CxQI/8A3yAb+DB/NrJkHyWoCS21tGA6sWbjG82t2/nsbj5LKPYaY4yFRcG+nLCElvMCq1BAGKt9MmYu3b1MXdCkhjDA3AqYAgaKbzDlro4aiXDLXVqLavbD4Qt0kG/RziIZjcS0TUhQNKrlkAp8BcY+HapTOMSv0/dDz6Ywx1Ouj8bf59f1Nhxplkyi3jfDtq8m07Ftm+1jbw0BD7y032ZadRPOz8/rVVr0Kj/3R5+AmLhrhGgWzhqzGeiZ59CW3BAoY19pShX86vQz/H5l8J2i9L2uby78Zv5C3M6gPjZ+ZFzNCH4LaTFdmSxCPo/2Sdbv93aNKiFB3gRNjQU7+nNp4CoWQXYGtY3D0guZiR6w0Shu4WXed7ZDWaO0SCacnVWKccI4UKWrWVLjvWL3bwolUH+eRlpOU0nLZ+iURLkppy71XnDc0vrwIN2ei4Jl9SP3UyzTkuFdwPL05bm0/iiPUWa3Yr7E/Lrk+z5Cn+4grXg+z4K25WLrG0yT1INlK0Wniw6yqzek8Prr/rtJ6OP138hT/wUS2qdu/5X1D3qTIvWDSOpjMzOmMp4ONM9mcX0/an8ATugvDg==</source>
   </file>
-  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="65af7b28961de1dc48519fad5a663713" package="Default">
+  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="1f56919c820cbee310b09464340c17d3" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -585,10 +585,10 @@ Send logs to Syslog for log offloading</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="38" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="40" package="Default">
         <name>log_out</name>
         <full_name>\SA\CpeSdk\CpeLogger::log_out()</full_name>
-        <docblock line="38">
+        <docblock line="40">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -613,10 +613,10 @@ Send logs to Syslog for log offloading</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="92" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="94" package="Default">
         <name>print_to_file</name>
         <full_name>\SA\CpeSdk\CpeLogger::print_to_file()</full_name>
-        <docblock line="92">
+        <docblock line="94">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -637,17 +637,17 @@ Send logs to Syslog for log offloading</description>
       <error line="20" code="PPC:ERR-50015">Argument $logPath is missing from the Docblock of __construct</error>
       <error line="20" code="PPC:ERR-50015">Argument $suffix is missing from the Docblock of __construct</error>
       <error line="20" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="38" code="PPC:ERR-50015">Argument $type is missing from the Docblock of log_out</error>
-      <error line="38" code="PPC:ERR-50015">Argument $source is missing from the Docblock of log_out</error>
-      <error line="38" code="PPC:ERR-50015">Argument $message is missing from the Docblock of log_out</error>
-      <error line="38" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of log_out</error>
-      <error line="38" code="PPC:ERR-50008">No summary for method log_out()</error>
-      <error line="92" code="PPC:ERR-50015">Argument $log is missing from the Docblock of print_to_file</error>
-      <error line="92" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of print_to_file</error>
-      <error line="92" code="PPC:ERR-50008">No summary for method print_to_file()</error>
+      <error line="40" code="PPC:ERR-50015">Argument $type is missing from the Docblock of log_out</error>
+      <error line="40" code="PPC:ERR-50015">Argument $source is missing from the Docblock of log_out</error>
+      <error line="40" code="PPC:ERR-50015">Argument $message is missing from the Docblock of log_out</error>
+      <error line="40" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of log_out</error>
+      <error line="40" code="PPC:ERR-50008">No summary for method log_out()</error>
+      <error line="94" code="PPC:ERR-50015">Argument $log is missing from the Docblock of print_to_file</error>
+      <error line="94" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of print_to_file</error>
+      <error line="94" code="PPC:ERR-50008">No summary for method print_to_file()</error>
       <error line="13" code="PPC:ERR-50007">No summary for property $logPath</error>
     </parse_markers>
-    <source>eJyNVm1v2kgQ/s6vmKyQgiOK2w/VSUnpiQKpOCFAQBSdaGQ5Zg0uZtfyrkPQXf57Z9eva2gDX7BnZp959TP75e9oGzUazN1TEbkehUXvRz+ii/XurtFIhPlu39w04AZ6YcgP4PN470pJ1xDyzSZgG+AMFsvB9GGpjBaUaY0AyWFxFPiojigRcN8PubvGM2hpN7zQFQLQyxiBaNz4rwH4i5LnMPCgiQdmrtyieyW1bRi+ejSSAWda4HEmJIyn353lv7OhM5zPp3PoAjEl5K5iPJ0NJ0qd2ipjQ0JKV4uIeoF/BLmlEGEQcNjSmKqMvJi6kmqFziwIqaiG7SfMUzGC42inceLJVp4LumRJGLahKRLfD16zd0sDpNmrX1NuA/Hha3mI2C9ubMt9ZKvC2l5E7Syx6q8QBD4ULi3D7AS5VuX89JXKy6GvgZCiZR6yTMT9bh3ENZM2fPzr8+c2YPLUqiA3FSo6dZz70XjoOHdmxGlNagHrIx0swQfSySzKY9ipXhSpgYtivlGzrFqUN+139VRoNqIp6A7poDgr5lvRfxxIwA9DuBuNKNIxdtPJ1k0/23NUOjyRrYrnY0Tb5avgSexVBZmTiuTA4x1+JYfR+nfToULowsqoE5HBnhL11P0K6rlltU2D1DXRBidxpBAYaw5RC1zrs1iJ1mcvhcVTWkKzo2Uuta5iCitSasmTGsXyvTIz2Iwpdjhjkg48IDWpZseq2brjroAdPZrjy/GIKlMrH7W2Zor+dLL4Xz3MRoNUMp72e+NPtZmW2xh5jtGD4qaCdVrkgbnPYcoCnDHqyZLirkj75Hs0yMUyc+pvXYazlfFjFAc8DuQRQvpCw8JOHALpbbGOqhlliOUoeC5Wg4wm91Nyaxa4QOzqNJWJSRjPyGO7uxpSSoN/hkKbC5Due8ve+B2k3ng4X16A9dibT0aT7++gZVYX4A2G3x7eQ9M2f8RaU99NQnl74eTsGD9ogoAlNhPHBU7mxdxcVunqzRidWRwwqZECVlKRTiLluUgZOJI7SqkXQbv6cVWAq7BD5vF1utRy5kP8fxbTiV7fzxRXfoy8Ggu9vnOXSHdYsp+CM4dqBO3QMjhaXwkKGi3HW7+2itK3NZpV5+JH1NGTfPHQi1rEBfe+l3WNRTVNBMLBDY35aPvVdZb49ZN1hq9K7ZmEq2fP1Lcpedq2boalKBqBOkBgRfAvk+JopNKnqjhl61xBjNqOfLXv8G4SCHAhzxdGgw48Ijem2zGQnQuJOY9T7chVxcxwW7WqlwZD/MFqlxPDt75ZRIlU1yNJGd4vTj6E2m3ijD71f6rRZN+bIfEOLOh2u+C7oaBmjnpQMq67hb7LriUc9IyhnBcL/qpI463x9gtGDfdw</source>
+    <source>eJyNVm1v4jgQ/s6vmEZIJRVL9j6sTirHnjigK1YIEFBVJ7aKTHAgR7Cj2ClFt/3vO3ZCEge6hS/EM+NnXv3Yf/0dbaNajZE9FRHxKMy7P3oRna937VotEebauburwR10w5AfwOfxnkhJ1xDyzSZgG+AM5ov+5HGhjOaUaY0AyWF+FPiptigRcN8POVnjHrR0al5IhAD0MkIgGtf+rwH+omQVBh7UccOUyC26V1LHgcGrRyMZcKYFHmdCwmjyzV38Ox24g9lsMoMOWKbEapeMJ9PBWKlTW2VsSKzC1TyiXuAfQW4pRBgEHLY0piojL6ZEUq3QmQUhFeWw/YR5KkZwXe00TjzZOOWCLlkShk2oi8T3g9dsbWuANHv124R8RUKok3jz0s6l+UddbgPx6WuBaTkvJHbkPnJU3R0voo5V7DvbH/iQR2QbZmfIlSacdt+otF36GggpGuYm20Tc79ZBXDFpwuc/v3xpAtaG2iXkukJVTlXey8/PbTPitGSVgPWWFpbgk9XKLIpt2MhuFKl5jGK+UaOuOnjq6Xv1VGgOoinoltVCcVbMt3w8cF4Bz40gG40o0ikn6eDrmbg4Eqh0eSIbJc/HiDaLpeBJ7JUFmZOS5MDjHR6iw3D9zvColqFqadTJksGeWuqr8xXUd8Numgapa0sbnMWRQmCsJ4hK4FqfxWppfbbILbJmmh0tcql0FVNYWoXWelZTUaxLM4PNmGCHM6JpwSMyl2p2rJqtO04E7OjRHF+OW1SZGq77MBwNXLepiaQ3Gc9/qo/psJ9KRpNed/RHZablNkYaZPSgqCsnpYb1yMgqTEmCM0Y9WTDgjdU8O48G99gXzjnm1tsShjOW0WgUBzwO5BFC+kLD3E4cAultsZ6qKUWoxUh4BKtiDccPE+veLHSO2NHpKhOTOFZId7t2BSlly99Doc0VSA/dRXf0AVJ3NJgtrsB66s7Gw/G3D9Ayqyvw+oN/Hj9C0za/xVpTnyShvL9ygnaMHzRRwAKbiWMDZ3NjXnClwXm7OELTOGBSIwasoCadTMp7kTJwJXeVUl8MzfJhe2cyB8zj6/QOPDEh4n+fT8b6tl9RfCHEyLOx0Lf9ySXSH5buP8GZSzWCdmgbnK1fEDmtFmOul428BU2NZle5+Ql19Cxf3PSi7u2ciz/KusKqmjYC4eKFjvlo++Vtlvjts32BvwrthYTLey/e8DxtWyfDUpSNQC2wYGnhXybFEUmlz2Vxyt4nhWXUduir+w+fMoEAAqd8YdhvwRNyZXpbBrJ1JVGf4lR35rJkZrgtW1VLgyH+YJXHiuFbvzSiRKrXlKQM3xtnB6LyurigT/2fazT5d6dIxH0bOp0O+CQU1MxRD0rGeffQI+xWwkHPGMp5fuHf5Gm81d5+AQlnAFM=</source>
   </file>
   <file path="CpeJsonValidator.php" generated-path="CpeJsonValidator.html" hash="1af88c9c842110d9c8a330479103c72f" package="Default">
     <docblock line="0">
