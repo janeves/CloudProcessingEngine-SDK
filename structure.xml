@@ -772,7 +772,7 @@ Send logs to Syslog for log offloading</description>
     </parse_markers>
     <source>eJx1UEtrwzAMvvtXiFBoC9u6c7oHJfS2w1iO6wiuo7TeUttY9iiU/PcpTl87VAcjyfoe0tOr2zohjNwhOakQysWqcFjWP3MhZjMoIgW7A9wrdEFbA6qVRNBYD2GLULQ21vDurUIibTawNBttUAxTTLQ8A3Ef0NQEq3NLHARwuLhutYKRx2aeGulh7Q+ssWE2UNZQ8FEFViULY/ZKcoNj0GTGAWxik+01WxONSrJVdUZPRkfgXRKDZ8gyTpWtkfNHTp3HX20jcWli204T4+Cyj1HYarp/GbAXv0lWejQhz2/I9RpX/NMB2P1bVw2nZnB/SI88TMwp0xq2Abv+RhVuLBlsmXCT6ZVfjyH6/rd4W5RlVcEDZDl8Hi57dF85nMqj225lspO9TvwBUjysDg==</source>
   </file>
-  <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="d15be256faff8b54f313a04e9fb51d6d" package="Default">
+  <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="ed7d90419706c244b694c0a92cb8aca1" package="Default">
     <docblock line="0">
       <description>This Class must be used to create your own activities.</description>
       <long-description>Extend it in your own activities and implement the do_activity method</long-description>
@@ -932,10 +932,20 @@ Send logs to Syslog for log offloading</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="62" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="65" package="Default">
+        <name>init_activity</name>
+        <full_name>\SA\CpeSdk\CpeActivity::init_activity()</full_name>
+        <docblock line="65">
+          <description>We initialise the Activity in SWF
+WE check if it is already registered or not
+If not we register it</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="95" package="Default">
         <name>do_task_check</name>
         <full_name>\SA\CpeSdk\CpeActivity::do_task_check()</full_name>
-        <docblock line="62">
+        <docblock line="95">
           <description>We perform basic high level task verifications
 WE make sure it contains an input and we save it
 This is the first method to be called when your activity starts</description>
@@ -947,29 +957,19 @@ This is the first method to be called when your activity starts</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="91" package="Default">
-        <name>do_init</name>
-        <full_name>\SA\CpeSdk\CpeActivity::do_init()</full_name>
-        <docblock line="91">
-          <description>We initialise the Activity in SWF
-WE check if it is already registered or not
-If not we register it</description>
-          <long-description></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="120" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="123" package="Default">
         <name>do_input_validation</name>
         <full_name>\SA\CpeSdk\CpeActivity::do_input_validation()</full_name>
-        <docblock line="120">
+        <docblock line="123">
           <description>Perform JSON input validation
 We capture the four keys that compose a CPE Task input</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="140" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="143" package="Default">
         <name>do_activity</name>
         <full_name>\SA\CpeSdk\CpeActivity::do_activity()</full_name>
-        <docblock line="140">
+        <docblock line="143">
           <description>Send SQS notification saying your activity started
 Implement this method in your activity
 This is where your logic starts</description>
@@ -981,10 +981,10 @@ This is where your logic starts</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="150" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="153" package="Default">
         <name>activity_failed</name>
         <full_name>\SA\CpeSdk\CpeActivity::activity_failed()</full_name>
-        <docblock line="150">
+        <docblock line="153">
           <description>Activity failed to SQS and SWF
 Called by ActivityPoller if your activity throws an exeception</description>
           <long-description></long-description>
@@ -1005,10 +1005,10 @@ Called by ActivityPoller if your activity throws an exeception</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="177" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="180" package="Default">
         <name>activity_completed</name>
         <full_name>\SA\CpeSdk\CpeActivity::activity_completed()</full_name>
-        <docblock line="177">
+        <docblock line="180">
           <description>Send activity completed to SQS and SWF
 Called by ActivityPoller once your activity completed</description>
           <long-description></long-description>
@@ -1024,10 +1024,10 @@ Called by ActivityPoller once your activity completed</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="204" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="207" package="Default">
         <name>send_heartbeat</name>
         <full_name>\SA\CpeSdk\CpeActivity::send_heartbeat()</full_name>
-        <docblock line="204">
+        <docblock line="207">
           <description>Send heartbeat to SWF to keep the task alive.</description>
           <long-description>Timeout is configurable at the Activity level in SWF
 You must call this regularly within your logic to make sure SWF doesn't
@@ -1050,15 +1050,15 @@ consider your activity as 'timeed out'.</long-description>
       <error line="33" code="PPC:ERR-50015">Argument $params is missing from the Docblock of __construct</error>
       <error line="33" code="PPC:ERR-50015">Argument $debug is missing from the Docblock of __construct</error>
       <error line="33" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="62" code="PPC:ERR-50015">Argument $task is missing from the Docblock of do_task_check</error>
-      <error line="140" code="PPC:ERR-50015">Argument $task is missing from the Docblock of do_activity</error>
-      <error line="150" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_failed</error>
-      <error line="150" code="PPC:ERR-50015">Argument $reason is missing from the Docblock of activity_failed</error>
-      <error line="150" code="PPC:ERR-50015">Argument $details is missing from the Docblock of activity_failed</error>
-      <error line="177" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_completed</error>
-      <error line="177" code="PPC:ERR-50015">Argument $result is missing from the Docblock of activity_completed</error>
-      <error line="204" code="PPC:ERR-50015">Argument $task is missing from the Docblock of send_heartbeat</error>
-      <error line="204" code="PPC:ERR-50015">Argument $details is missing from the Docblock of send_heartbeat</error>
+      <error line="95" code="PPC:ERR-50015">Argument $task is missing from the Docblock of do_task_check</error>
+      <error line="143" code="PPC:ERR-50015">Argument $task is missing from the Docblock of do_activity</error>
+      <error line="153" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_failed</error>
+      <error line="153" code="PPC:ERR-50015">Argument $reason is missing from the Docblock of activity_failed</error>
+      <error line="153" code="PPC:ERR-50015">Argument $details is missing from the Docblock of activity_failed</error>
+      <error line="180" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_completed</error>
+      <error line="180" code="PPC:ERR-50015">Argument $result is missing from the Docblock of activity_completed</error>
+      <error line="207" code="PPC:ERR-50015">Argument $task is missing from the Docblock of send_heartbeat</error>
+      <error line="207" code="PPC:ERR-50015">Argument $details is missing from the Docblock of send_heartbeat</error>
       <error line="14" code="PPC:ERR-50007">No summary for property $params</error>
       <error line="15" code="PPC:ERR-50007">No summary for property $debug</error>
       <error line="17" code="PPC:ERR-50007">No summary for property $activityId</error>
@@ -1074,7 +1074,7 @@ consider your activity as 'timeed out'.</long-description>
       <error line="30" code="PPC:ERR-50007">No summary for property $input</error>
       <error line="31" code="PPC:ERR-50007">No summary for property $activityLogKey</error>
     </parse_markers>
-    <source>eJzNWW1v2zgS/lz/iokRwHaRON+TTRZex7n62jo5221QNIUgS7StRha9ohTX6Oa/3wxJUdSLHWf3bu+Eoq0oDjlvz8xD+pdf18t1o3H29m0D3sJ0GQjoh64QsEpFAjMGqWA+JBy8mLkJgy1PY+CbCFwvCZ6CJGCiS5KDHwmLfAgSCKK6SeDS19U6ZCsWJZAsGfjc0d+3sGLJkvu40FmjEbkrJtaux2DSe+iv2cR/vGg0UI/Cuye1xNeeXqPxswH4rNNZGHhwvHZjdyUuwDxnZ5BNBfURPL4KogXMY74y3+54GLK4sJTPZunCWomWuqYxmIfuQk4tzM+sGvoXZv7wGvhcmp19rRWZbtfsQovQ/0moIFCQ8tbsA18sWHyRK6YGytMmv4v7OEj0TJz2SYd1Q6PofiHcBUYJgzf516QivZm/w/iFSpykJzopeJTEPITJ/U1VuyRYMdtr0iYcKzuiC32OCqgwHAfROk2K7ncTt7zONY6BnApzHpeWm+Lbdz6DDYMFT0hPn7+0iRcGmJfFdKF11Dhu4CYQs99TJugFUXKo9qiIyQN7YZOLw+tdSxTWkcOOSOxYoxgCKslt1y7BWZjXVfGSGrvE/zm5HQGffWdeUpukmGLv2fZCraHKgguPbAsbHj/OQ74Z+uc5Bsj/tCqmVsgXomLZPI1wLo/AcTCdUPXUS9oavicafB0poABOzzGF4PRKfjMWXWZIbVg23mB2hIHA4kRIR1UoVYbSTEx0wICmrLysjRdaNmIbUHXnAcdlCco+t21NOq/eGeq2NmArbb2Zy63N53angAp774n7ZEVV+bK8la6BufN0xWzYC/WXzHuEQAI2ZkB5H+ULU6U2s3FS+ygQgpnofW3ShOa3DvzxBxyVB40gPcky5hvbWvxn8MNja8qMdrPvRi3KIJG4URJQwv3misDLMHQOLVq0RfpFiPh1zJ8CH0sUhoCt1qjp0UPUPIHGmzdvaLcJC+fn56Nbp9efDj8Pp1+cUe/joFMyXWV2KOuphkOX6mbRfll/wrzoFoOpqnExkP1suB2lYXgCZcdcwEshgCcWC4LMiwHQEysxyMf/s2HQ6/6FSHwejCfD25HG0rNyhaQn9LyFewZrFqPTVzCjzWEZLJYQsicWQuKKR/JNMA88l1QWRmoAK/eRgUjJhYlsXC4aQumsih7xE2wYgpATJJmcJET4h7A7D2Is/oqpEJ6RHHkukgWUWzJNekxqoIviJNv+rLbeIf8hhR2PAoyFBP9frnMypNaXA+NkesuUHKL9bnldSK8bl097k/fO4OPd9AvlXqWe2HlFqnxtSo+ZnCqM4VBB09LXy0toNl9ly4jrAJlUQte3MgtbFaswl4aju0/TEpplRax0Rwuspr+q0cuS5jWrSecG0ZyXl7J6n7XU6dUCPdjMPzatflGSlNRvlyR9tGVritYr23GNBqrHw2U1mFqbbPHBD+alFKpm52sr37H1DQqiXWieV9zT3APyIMJzg4sNlEnw9XKKYtimwrWX1Uc6eyCgQ3SBv0WytqDmG6vag7UoExnOZWVCrGdTcrzvBCpp0y6js9Jo9yWDDOkluHHsbtsF16i6LzPlqtics5ZwUpyfFe+a+XldtxI2ibeW1lmmZG4z2meeYz/QKwJKka/Sk9MrsZkT9RFeHMzMOYwMbdeYadT3+QpLb1O/Vm3Q30tWG/ECDCxxe7wi2bHwQk/ZGya9tPGuyNttxHFU16OCXMySNI7QvSnLV3/GppB4S2g/9DZCkjZTzB4+RY8RHovHTGCv8PIqB8esU4pQmUKcXiFaHZ4i8gbj8e0Y6x62P0b50Xacm+GHgeN0TqBieN4LWk0EYW16EThbmOVMUHtXHuiqUkLUFXHV7XaxbVs+fK6tPuMMUDoWdKCclxYuABj2ZlaGz0JmFSzYyRLuNEWQRxlV9p+wmPhuHkRZZTx3nRAlkP2dGjjWTaFOex6ejjixPejfDbJinx3N9pYKaiT5bnVlQ4EvV67Ya9t2S8Ka8V3wyPGZx33WLnerTudV3dTyBxGbSKpZww1kC8VG+rn3YXhd12u0HnTGB9Wocr1Or3626EPr+aIqIc/DdRL4wQl8KbNjM7oIqN2MPtRupk/vVQn1AWXyKrlGVpBA87o37Z1DsytfnfyAh1ucSKibnDMqWnk3oUswOt5hizEsFEnlloBUwxCZb9qSdTeGodE0MyjxyjIv3cgiJadgfcBMLPLO+oO2dfFWTzupsZEhWkWZVCmybDIM6YO0bauvRvYdnvOi7Oil9H67YGuK1dwNQkX1aE/i5lbT7yvWPduWLu0IPUUfSzRIks+QpuhiuxfARmGlgdIXz2hYDBGFQPRVXkrg6SEUkLPZ3Hm13XZku4wuwGh5LDy7mmyNB2sVynXZ1+D+XDOp9pKvetdvZtdmdVYtkTxMu5oOINY88k0DQNNvlBv2EQzy0JQ/sowhSR6fD+4iFso2Q8S0g3dwGG2+nqtfq5Nt3pEzg7+l8X+K3FnICEKCsNySHUx5rwXKsdjdjkDSAiZZ/Ud1Ddyuif0hUdV8aO6GgpWpQhXrssIYpHr6LvLVmOeRx0qoN2sdhnQz3cKWSENqG3RB83fhe5cadd33hUQZjm5uD8W01hxdbZ1jhBWPoz+J8dfBum+s/68gmxyZIVvSKRYpOqV9/P+PXOOg/wl46e9aAC8Z9vUZnhQkbjGJ8J9HxtaSUcv7OGSYT6xriAvyQq7Yp8ejebBIY2msmxSP+epCr3jY/8JT9bMkXbspmoRHhDR043ALmwAHIpsKoSb5nR+ppg8i2XL0a0PgYwkpVg88+kn2ShcHadLq7i0iFCDH+MAgN+cHh1WQY5PDpTufPLd3ousV6K/JNQoicdNKHPHI92rgFzWk25CcetfXAY/HhTLwzrhy7w3Cgd1XTq6pGfK1Y1+R0INl/F7fX2k0CHXtTve/lMliydPQV/e+2HXCrMHoh85u0mgdOzVprH40ZH6zQ7ef8gRREPu5y8l1sb3vjUfD0T8ODa90QF/qAUtM7BnDDIszjfRPp5l5+oKg/qpS3REcwfsgDOXvWSRRnyOWCXsrDj0v/+BAqmuNu9hm80Q9wRrhPqEudQ2KHnWSfTfojae/DXpT56aHfrouKZFfZBxW5F9Q2ORvdoI5orPkyxX6RV2zQvzc+DeUar5j</source>
+    <source>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</source>
   </file>
   <package name="Default" full_name="Default"/>
   <package name="global" full_name="global"/>

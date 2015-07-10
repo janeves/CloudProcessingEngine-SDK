@@ -76,11 +76,6 @@ Implement this method in your activity
 This is where your logic starts"><span class="description">Send SQS notification saying your activity started
 Implement this method in your activity
 This is where your logic starts</span><pre>do_activity()</pre></a></li>
-<li class="method public "><a href="#method_do_init" title="do_init() :: We initialise the Activity in SWF
-WE check if it is already registered or not
-If not we register it"><span class="description">We initialise the Activity in SWF
-WE check if it is already registered or not
-If not we register it</span><pre>do_init()</pre></a></li>
 <li class="method public "><a href="#method_do_input_validation" title="do_input_validation() :: Perform JSON input validation
 We capture the four keys that compose a CPE Task input"><span class="description">Perform JSON input validation
 We capture the four keys that compose a CPE Task input</span><pre>do_input_validation()</pre></a></li>
@@ -91,6 +86,13 @@ WE make sure it contains an input and we save it
 This is the first method to be called when your activity starts</span><pre>do_task_check()</pre></a></li>
 <li class="method public "><a href="#method_send_heartbeat" title="send_heartbeat() :: Send heartbeat to SWF to keep the task alive."><span class="description">Send heartbeat to SWF to keep the task alive.</span><pre>send_heartbeat()</pre></a></li>
 </ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method_init_activity" title="init_activity() :: We initialise the Activity in SWF
+WE check if it is already registered or not
+If not we register it"><span class="description">We initialise the Activity in SWF
+WE check if it is already registered or not
+If not we register it</span><pre>init_activity()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
@@ -185,14 +187,6 @@ This is where your logic starts</h2>
 <div class="subelement argument"><h4>$task</h4></div>
 </div></div>
 </div>
-<a id="method_do_init"></a><div class="element clickable method public method_do_init " data-toggle="collapse" data-target=".method_do_init .collapse" title="public">
-<h2>We initialise the Activity in SWF
-WE check if it is already registered or not
-If not we register it</h2>
-<pre>do_init() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
 <a id="method_do_input_validation"></a><div class="element clickable method public method_do_input_validation " data-toggle="collapse" data-target=".method_do_input_validation .collapse" title="public">
 <h2>Perform JSON input validation
 We capture the four keys that compose a CPE Task input</h2>
@@ -224,6 +218,14 @@ consider your activity as 'timeed out'.</p></div>
 <div class="subelement argument"><h4>$task</h4></div>
 <div class="subelement argument"><h4>$details</h4></div>
 </div></div>
+</div>
+<a id="method_init_activity"></a><div class="element clickable method private method_init_activity " data-toggle="collapse" data-target=".method_init_activity .collapse" title="private">
+<h2>We initialise the Activity in SWF
+WE check if it is already registered or not
+If not we register it</h2>
+<pre>init_activity() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
@@ -374,7 +376,7 @@ consider your activity as 'timeed out'.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.3</a> and<br>
-            generated on 2015-07-08T03:11:35Z.<br></footer></div>
+            generated on 2015-07-10T05:27:49Z.<br></footer></div>
 </div>
 </body>
 </html>
