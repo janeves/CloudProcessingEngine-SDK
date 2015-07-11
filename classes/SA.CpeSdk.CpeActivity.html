@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">103</span></a></li>
+                <span class="label label-info">99</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -100,17 +100,25 @@ If not we register it</span><pre>init_activity()</pre></a></li></ul>
 <li class="property public "><a href="#property_activityId" title="$activityId() :: "><span class="description"></span><pre>$activityId</pre></a></li>
 <li class="property public "><a href="#property_activityLogKey" title="$activityLogKey() :: "><span class="description"></span><pre>$activityLogKey</pre></a></li>
 <li class="property public "><a href="#property_activityType" title="$activityType() :: "><span class="description"></span><pre>$activityType</pre></a></li>
-<li class="property public "><a href="#property_client" title="$client() :: "><span class="description"></span><pre>$client</pre></a></li>
+<li class="property public "><a href="#property_cpeJsonValidator" title="$cpeJsonValidator() :: "><span class="description"></span><pre>$cpeJsonValidator</pre></a></li>
 <li class="property public "><a href="#property_cpeLogger" title="$cpeLogger() :: "><span class="description"></span><pre>$cpeLogger</pre></a></li>
 <li class="property public "><a href="#property_cpeSqsWriter" title="$cpeSqsWriter() :: "><span class="description"></span><pre>$cpeSqsWriter</pre></a></li>
 <li class="property public "><a href="#property_cpeSwfHandler" title="$cpeSwfHandler() :: "><span class="description"></span><pre>$cpeSwfHandler</pre></a></li>
-<li class="property public "><a href="#property_data" title="$data() :: "><span class="description"></span><pre>$data</pre></a></li>
 <li class="property public "><a href="#property_debug" title="$debug() :: "><span class="description"></span><pre>$debug</pre></a></li>
 <li class="property public "><a href="#property_input" title="$input() :: "><span class="description"></span><pre>$input</pre></a></li>
 <li class="property public "><a href="#property_input_str" title="$input_str() :: "><span class="description"></span><pre>$input_str</pre></a></li>
-<li class="property public "><a href="#property_jobId" title="$jobId() :: "><span class="description"></span><pre>$jobId</pre></a></li>
 <li class="property public "><a href="#property_params" title="$params() :: "><span class="description"></span><pre>$params</pre></a></li>
-<li class="property public "><a href="#property_time" title="$time() :: "><span class="description"></span><pre>$time</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Constants" class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_ACTIVITY_TASK_EMPTY" title="ACTIVITY_TASK_EMPTY() :: "><span class="description">ACTIVITY_TASK_EMPTY</span><pre>ACTIVITY_TASK_EMPTY</pre></a></li>
+<li class="constant  "><a href="#constant_HEARTBEAT_FAILED" title="HEARTBEAT_FAILED() :: "><span class="description">HEARTBEAT_FAILED</span><pre>HEARTBEAT_FAILED</pre></a></li>
+<li class="constant  "><a href="#constant_INPUT_INVALID" title="INPUT_INVALID() :: "><span class="description">INPUT_INVALID</span><pre>INPUT_INVALID</pre></a></li>
+<li class="constant  "><a href="#constant_NO_ACTIVITY_NAME" title="NO_ACTIVITY_NAME() :: "><span class="description">NO_ACTIVITY_NAME</span><pre>NO_ACTIVITY_NAME</pre></a></li>
+<li class="constant  "><a href="#constant_NO_ACTIVITY_VERSION" title="NO_ACTIVITY_VERSION() :: "><span class="description">NO_ACTIVITY_VERSION</span><pre>NO_ACTIVITY_VERSION</pre></a></li>
+<li class="constant  "><a href="#constant_NO_INPUT" title="NO_INPUT() :: "><span class="description">NO_INPUT</span><pre>NO_INPUT</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -259,9 +267,9 @@ If not we register it</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_client"> </a><div class="element clickable property public property_client" data-toggle="collapse" data-target=".property_client .collapse" title="public">
-<h2>$client</h2>
-<pre>$client </pre>
+<a id="property_cpeJsonValidator"> </a><div class="element clickable property public property_cpeJsonValidator" data-toggle="collapse" data-target=".property_cpeJsonValidator .collapse" title="public">
+<h2>$cpeJsonValidator</h2>
+<pre>$cpeJsonValidator </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -299,16 +307,6 @@ If not we register it</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_data"> </a><div class="element clickable property public property_data" data-toggle="collapse" data-target=".property_data .collapse" title="public">
-<h2>$data</h2>
-<pre>$data </pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
 <a id="property_debug"> </a><div class="element clickable property public property_debug" data-toggle="collapse" data-target=".property_debug .collapse" title="public">
 <h2>$debug</h2>
 <pre>$debug </pre>
@@ -339,16 +337,6 @@ If not we register it</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_jobId"> </a><div class="element clickable property public property_jobId" data-toggle="collapse" data-target=".property_jobId .collapse" title="public">
-<h2>$jobId</h2>
-<pre>$jobId </pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
 <a id="property_params"> </a><div class="element clickable property public property_params" data-toggle="collapse" data-target=".property_params .collapse" title="public">
 <h2>$params</h2>
 <pre>$params </pre>
@@ -359,13 +347,41 @@ If not we register it</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_time"> </a><div class="element clickable property public property_time" data-toggle="collapse" data-target=".property_time .collapse" title="public">
-<h2>$time</h2>
-<pre>$time </pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
+<h3>
+<i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_ACTIVITY_TASK_EMPTY"> </a><div class="element clickable constant  constant_ACTIVITY_TASK_EMPTY" data-toggle="collapse" data-target=".constant_ACTIVITY_TASK_EMPTY .collapse" title="">
+<h2>ACTIVITY_TASK_EMPTY</h2>
+<pre>ACTIVITY_TASK_EMPTY = "ACTIVITY_TASK_EMPTY" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_HEARTBEAT_FAILED"> </a><div class="element clickable constant  constant_HEARTBEAT_FAILED" data-toggle="collapse" data-target=".constant_HEARTBEAT_FAILED .collapse" title="">
+<h2>HEARTBEAT_FAILED</h2>
+<pre>HEARTBEAT_FAILED = "HEARTBEAT_FAILED" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_INPUT_INVALID"> </a><div class="element clickable constant  constant_INPUT_INVALID" data-toggle="collapse" data-target=".constant_INPUT_INVALID .collapse" title="">
+<h2>INPUT_INVALID</h2>
+<pre>INPUT_INVALID = "INPUT_INVALID" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_NO_ACTIVITY_NAME"> </a><div class="element clickable constant  constant_NO_ACTIVITY_NAME" data-toggle="collapse" data-target=".constant_NO_ACTIVITY_NAME .collapse" title="">
+<h2>NO_ACTIVITY_NAME</h2>
+<pre>NO_ACTIVITY_NAME = "NO_ACTIVITY_NAME" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_NO_ACTIVITY_VERSION"> </a><div class="element clickable constant  constant_NO_ACTIVITY_VERSION" data-toggle="collapse" data-target=".constant_NO_ACTIVITY_VERSION .collapse" title="">
+<h2>NO_ACTIVITY_VERSION</h2>
+<pre>NO_ACTIVITY_VERSION = "NO_ACTIVITY_VERSION" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_NO_INPUT"> </a><div class="element clickable constant  constant_NO_INPUT" data-toggle="collapse" data-target=".constant_NO_INPUT .collapse" title="">
+<h2>NO_INPUT</h2>
+<pre>NO_INPUT = "NO_INPUT" </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -376,7 +392,7 @@ If not we register it</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.3</a> and<br>
-            generated on 2015-07-10T05:46:23Z.<br></footer></div>
+            generated on 2015-07-11T00:43:18Z.<br></footer></div>
 </div>
 </body>
 </html>
