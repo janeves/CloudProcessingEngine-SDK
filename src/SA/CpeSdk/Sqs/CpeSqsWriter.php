@@ -137,12 +137,11 @@ class CpeSqsWriter
      */
 
     // Craft a new message array
-    private function craft_new_msg($type, $jobId, $data)
+    private function craft_new_msg($type, $data)
     {
         $msg = array(
             'time'   => microtime(true),
             'type'   => $type,
-            'job_id' => $jobId,
             'data'   => $data
         );
 
@@ -167,7 +166,7 @@ class CpeSqsWriter
         
         // Want to send back the input data ?
         if ($sendInput)
-            $activity['input'] = $input->{"data"};
+            $activity['input'] = $input;
         
         // Extra data? Concat to data array.
         if ($extra && is_array($extra) && count($extra))
@@ -182,11 +181,10 @@ class CpeSqsWriter
         
         $msg = $this->craft_new_msg(
             $eventType,
-            $input->{"job_id"},
             $data
         );
 
-        // Send message to SQS output queue
+        // Send message to SQS output queue. 
         $client = $input->{"client"};
         $this->sqs->sendMessage(array(
                 'QueueUrl'    => $client->{'queues'}->{'output'},

@@ -20,30 +20,36 @@ class CpeActivity
     public $cpeLogger;       // Logger
     public $cpeSqsWriter;    // Used to write messages in SQS
     public $cpeSwfHandler;   // USed to control SWF
-    
-    public $time;            // Time of the activity. Comes from $input
-    public $data;            // Data input for the activity. The job we got to do. Comes from $input
-    public $client;          // The client that request this activity. Comes from $input
-    public $jobId;           // The Activity ID. Comes from $input
+    public $cpeJsonValidator;// Run JSON schemas validation
     
     public $input_str;       // Complete activity input string
     public $input;           // Complete activity input JSON object
     public $activityLogKey;  // Create a key workflowId:activityId to put in logs
     
+    const HEARTBEAT_FAILED     = "HEARTBEAT_FAILED";
+    const NO_ACTIVITY_NAME     = "NO_ACTIVITY_NAME";
+    const NO_ACTIVITY_VERSION  = "NO_ACTIVITY_VERSION";
+    const ACTIVITY_TASK_EMPTY  = "ACTIVITY_TASK_EMPTY";
+    const NO_INPUT             = "NO_INPUT";
+    const INPUT_INVALID        = "INPUT_INVALID";
+
     public function __construct($params, $debug)
     {
         $this->debug         = $debug;
+        
         // For listening to the Input SQS queue
         $this->cpeSqsWriter  = new CpeSdk\Sqs\CpeSqsWriter($this->debug);
         // For listening to the Input SQS queue 
-        $this->cpeSwfHandler = new CpeSdk\Swf\CpeSwfHandler();            
+        $this->cpeSwfHandler = new CpeSdk\Swf\CpeSwfHandler();        
+        // For listening to the Input SQS queue 
+        $this->cpeJsonValidator = new CpeSdk\CpeJsonValidator();     
         // Save activity params
         $this->params        = $params;
 
         // Check if there is an activity name
         if (!isset($params["name"]) || !$params["name"])
             throw new CpeSdk\CpeException("Can't instantiate BasicActivity: 'name' is not provided or empty !\n", 
-			    Self::NO_ACTIVITY_NAME);
+			    self::NO_ACTIVITY_NAME);
 
         // Create logger object. Use activity name for logger
         $this->cpeLogger = new CpeSdk\CpeLogger(null, $params["name"]); 
@@ -51,7 +57,7 @@ class CpeActivity
         // Check if there is a version name
         if (!isset($params["version"]) || !$params["version"])
             throw new CpeSdk\CpeException("Can't instantiate BasicActivity: 'version' is not provided or empty !\n", 
-			    Self::NO_ACTIVITY_VERSION);
+			    self::NO_ACTIVITY_VERSION);
 
         // Initialize the activity in SWF if necessary
         $this->init_activity();
@@ -102,7 +108,7 @@ class CpeActivity
             $task["input"] == "")
             throw new CpeSdk\CpeException("No input provided to 'Activity'", 
 			    self::NO_INPUT);
-
+        
         // Save input string
         $this->input_str      = $task["input"];
 
@@ -126,13 +132,6 @@ class CpeActivity
         if (!($this->input = json_decode($this->input_str)))
             throw new CpeSdk\CpeException("JSON input is invalid !", 
 			    self::INPUT_INVALID);
-        
-        $this->time   = $this->input->{'time'};  
-        $this->jobId  = $this->input->{'job_id'};         
-        $this->data   = $this->input->{'data'};  
-        $this->client = $this->input->{'client'};
-
-        print "DATA: ".print_r($this->data, true);
     }
     
     /**
