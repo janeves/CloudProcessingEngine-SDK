@@ -4,6 +4,9 @@ namespace SA\CpeSdk\Swf;
 
 use Aws\Swf\SwfClient;
 
+// SA Cpe SDK
+use SA\CpeSdk;
+
 /**
  * Create the AWS SWF connection
  * Check for AWS environment variables
