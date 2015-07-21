@@ -29,7 +29,7 @@ class CpeLogger
         if (!file_exists($this->logPath))
             mkdir($this->logPath, 0755, true);
 
-        $file = $argv[0];
+        $file = basename($argv[0]);
         if ($suffix)
             $file .= "-".$suffix;
         // Append progname to the path
