@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">99</span></a></li>
+                <span class="label label-info">103</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -77,9 +77,11 @@
         </span><pre>activity_preparing()</pre></a></li>
 <li class="method public "><a href="#method_activity_progress" title="activity_progress() :: "><span class="description">activity_progress()
         </span><pre>activity_progress()</pre></a></li>
-<li class="method public "><a href="#method_activity_started" title="activity_started() :: SEND messages to OUTPUT SQS queue"><span class="description">SEND messages to OUTPUT SQS queue</span><pre>activity_started()</pre></a></li>
+<li class="method public "><a href="#method_activity_started" title="activity_started() :: "><span class="description">activity_started()
+        </span><pre>activity_started()</pre></a></li>
 <li class="method public "><a href="#method_activity_timeout" title="activity_timeout() :: "><span class="description">activity_timeout()
         </span><pre>activity_timeout()</pre></a></li>
+<li class="method public "><a href="#method_workflow_scheduled" title="workflow_scheduled() :: SEND messages to OUTPUT SQS queue"><span class="description">SEND messages to OUTPUT SQS queue</span><pre>workflow_scheduled()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
@@ -114,6 +116,7 @@
 <li class="constant  "><a href="#constant_JOB_COMPLETED" title="JOB_COMPLETED() :: "><span class="description">JOB_COMPLETED</span><pre>JOB_COMPLETED</pre></a></li>
 <li class="constant  "><a href="#constant_JOB_FAILED" title="JOB_FAILED() :: "><span class="description">JOB_FAILED</span><pre>JOB_FAILED</pre></a></li>
 <li class="constant  "><a href="#constant_JOB_STARTED" title="JOB_STARTED() :: "><span class="description">JOB_STARTED</span><pre>JOB_STARTED</pre></a></li>
+<li class="constant  "><a href="#constant_WORKFLOW_SCHEDULED" title="WORKFLOW_SCHEDULED() :: "><span class="description">WORKFLOW_SCHEDULED</span><pre>WORKFLOW_SCHEDULED</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -226,14 +229,12 @@
 </div></div>
 </div>
 <a id="method_activity_started"></a><div class="element clickable method public method_activity_started " data-toggle="collapse" data-target=".method_activity_started .collapse" title="public">
-<h2>SEND messages to OUTPUT SQS queue</h2>
+<h2>activity_started()
+        </h2>
 <pre>activity_started($task) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Send messages to back to the clients.
-Clients listening to the SQS queue will receive them
-Send updates and notifications:
-Activity Started, Failed, Succeeded, etc</p></div>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$task</h4></div>
 </div></div>
@@ -247,6 +248,21 @@ Activity Started, Failed, Succeeded, etc</p></div>
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$task</h4></div>
+</div></div>
+</div>
+<a id="method_workflow_scheduled"></a><div class="element clickable method public method_workflow_scheduled " data-toggle="collapse" data-target=".method_workflow_scheduled .collapse" title="public">
+<h2>SEND messages to OUTPUT SQS queue</h2>
+<pre>workflow_scheduled($runId, $workflowId, $message) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Send messages to back to the clients.
+Clients listening to the SQS queue will receive them
+Send updates and notifications:
+Activity Started, Failed, Succeeded, etc</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$runId</h4></div>
+<div class="subelement argument"><h4>$workflowId</h4></div>
+<div class="subelement argument"><h4>$message</h4></div>
 </div></div>
 </div>
 <a id="method_craft_new_msg"></a><div class="element clickable method private method_craft_new_msg " data-toggle="collapse" data-target=".method_craft_new_msg .collapse" title="private">
@@ -365,6 +381,12 @@ Activity Started, Failed, Succeeded, etc</p></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_WORKFLOW_SCHEDULED"> </a><div class="element clickable constant  constant_WORKFLOW_SCHEDULED" data-toggle="collapse" data-target=".constant_WORKFLOW_SCHEDULED .collapse" title="">
+<h2>WORKFLOW_SCHEDULED</h2>
+<pre>WORKFLOW_SCHEDULED = "WORKFLOW_SCHEDULED" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 </div>
 </div>
 </div>
@@ -372,7 +394,7 @@ Activity Started, Failed, Succeeded, etc</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.3</a> and<br>
-            generated on 2015-07-11T00:43:18Z.<br></footer></div>
+            generated on 2015-07-21T03:18:24Z.<br></footer></div>
 </div>
 </body>
 </html>
