@@ -25,6 +25,7 @@ class CpeSqsWriter
     const INVALID_JSON       = "INVALID_JSON";
 
     // Statuses
+    const WORKFLOW_SCHEDULED = "WORKFLOW_SCHEDULED";
     const JOB_STARTED        = "JOB_STARTED";
     const JOB_COMPLETED      = "JOB_COMPLETED";
     const JOB_FAILED         = "JOB_FAILED";
@@ -56,6 +57,24 @@ class CpeSqsWriter
      * Send updates and notifications:
      * Activity Started, Failed, Succeeded, etc
      */
+    
+    public function workflow_scheduled($runId, $workflowId, $message)
+    {
+        $msg = [
+            'time'       => microtime(true),
+            'type'       => self::WORKFLOW_SCHEDULED,
+            "jobId"      => $message->{"jobId"},
+            "runId"      => $runId,
+            "workflowId" => $workflowId,
+            "input"      => $message->{'data'}
+        ];
+        
+        $client = $message->{'data'}->{"client"};
+        $this->sqs->sendMessage(array(
+                'QueueUrl'    => $client->{'queues'}->{'output'},
+                'MessageBody' => json_encode($msg),
+            ));
+    }
     
     public function activity_started($task)
     {
