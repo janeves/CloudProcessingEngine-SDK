@@ -188,8 +188,8 @@ class CpeSqsWriter
             $activity['input'] = $input;
         
         // Extra data? Concat to data array.
-        if ($extra && is_array($extra) && count($extra))
-            foreach ($extra as $key => $value)
+        if ($extra)
+            foreach ((array)$extra as $key => $value)
                 $activity[$key] = $value;
         
         // Initial data structure
