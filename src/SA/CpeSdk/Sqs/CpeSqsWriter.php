@@ -172,7 +172,7 @@ class CpeSqsWriter
         $activityTask, 
         $eventType, 
         $sendInput = null, 
-        $extra = null)
+        $result = null)
     {
         if (!($input = json_decode($activityTask->get('input'))))
             throw new CpeException("Task input JSON is invalid!\n".$activityTask->get('input'),
@@ -188,9 +188,8 @@ class CpeSqsWriter
             $activity['input'] = $input;
         
         // Extra data? Concat to data array.
-        if ($extra && is_array($extra) && count($extra))
-            foreach ($extra as $key => $value)
-                $activity[$key] = $value;
+        if ($result)
+            $activity['result'] = $result;
         
         // Initial data structure
         $data = array(
