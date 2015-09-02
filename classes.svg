@@ -52,11 +52,11 @@
 <polygon fill="none" stroke="black" points="287.491,-284 176.491,-284 176.491,-248 287.491,-248 287.491,-284"/>
 <text text-anchor="middle" x="231.991" y="-263.2" font-family="Courier,monospace" font-size="11.00">CpeSqsListener</text>
 </g>
-<!-- \\SA\\CpeSdk\\CpeActivity -->
+<!-- \\SA\\CpeSdk\\CpeLogger -->
 <g id="node4" class="node">
-<title>\\SA\\CpeSdk\\CpeActivity</title>
-<polygon fill="none" stroke="black" points="277.491,-230 186.491,-230 186.491,-194 277.491,-194 277.491,-230"/>
-<text text-anchor="middle" x="231.991" y="-209.2" font-family="Courier,monospace" font-size="11.00">CpeActivity</text>
+<title>\\SA\\CpeSdk\\CpeLogger</title>
+<polygon fill="none" stroke="black" points="270.491,-230 193.491,-230 193.491,-194 270.491,-194 270.491,-230"/>
+<text text-anchor="middle" x="231.991" y="-209.2" font-family="Courier,monospace" font-size="11.00">CpeLogger</text>
 </g>
 <!-- \\SA\\CpeSdk\\CpeJsonValidator -->
 <g id="node5" class="node">
@@ -64,29 +64,29 @@
 <polygon fill="none" stroke="black" points="294.491,-176 169.491,-176 169.491,-140 294.491,-140 294.491,-176"/>
 <text text-anchor="middle" x="231.991" y="-155.2" font-family="Courier,monospace" font-size="11.00">CpeJsonValidator</text>
 </g>
-<!-- \\SA\\CpeSdk\\CpeLogger -->
-<g id="node6" class="node">
-<title>\\SA\\CpeSdk\\CpeLogger</title>
-<polygon fill="none" stroke="black" points="270.491,-122 193.491,-122 193.491,-86 270.491,-86 270.491,-122"/>
-<text text-anchor="middle" x="231.991" y="-101.2" font-family="Courier,monospace" font-size="11.00">CpeLogger</text>
-</g>
 <!-- \\SA\\CpeSdk\\CpeException -->
-<g id="node7" class="node">
+<g id="node6" class="node">
 <title>\\SA\\CpeSdk\\CpeException</title>
-<polygon fill="none" stroke="black" points="280.991,-68 182.991,-68 182.991,-32 280.991,-32 280.991,-68"/>
-<text text-anchor="middle" x="231.991" y="-47.2" font-family="Courier,monospace" font-size="11.00">CpeException</text>
+<polygon fill="none" stroke="black" points="280.991,-122 182.991,-122 182.991,-86 280.991,-86 280.991,-122"/>
+<text text-anchor="middle" x="231.991" y="-101.2" font-family="Courier,monospace" font-size="11.00">CpeException</text>
 </g>
 <!-- \\Exception -->
 <g id="node8" class="node">
 <title>\\Exception</title>
-<ellipse fill="none" stroke="black" cx="48.7457" cy="-50" rx="48.9926" ry="18"/>
-<text text-anchor="middle" x="48.7457" y="-46.3" font-family="Times,serif" font-size="14.00" fill="gray">\Exception</text>
+<ellipse fill="none" stroke="black" cx="48.7457" cy="-104" rx="48.9926" ry="18"/>
+<text text-anchor="middle" x="48.7457" y="-100.3" font-family="Times,serif" font-size="14.00" fill="gray">\Exception</text>
 </g>
 <!-- \\SA\\CpeSdk\\CpeException&#45;&gt;\\Exception -->
 <g id="edge1" class="edge">
 <title>\\SA\\CpeSdk\\CpeException&#45;&gt;\\Exception</title>
-<path fill="none" stroke="black" d="M182.885,-50C159.787,-50 132.057,-50 107.82,-50"/>
-<polygon fill="none" stroke="black" points="107.67,-46.5001 97.6697,-50 107.67,-53.5001 107.67,-46.5001"/>
+<path fill="none" stroke="black" d="M182.885,-104C159.787,-104 132.057,-104 107.82,-104"/>
+<polygon fill="none" stroke="black" points="107.67,-100.5 97.6697,-104 107.67,-107.5 107.67,-100.5"/>
+</g>
+<!-- \\SA\\CpeSdk\\CpeActivity -->
+<g id="node7" class="node">
+<title>\\SA\\CpeSdk\\CpeActivity</title>
+<polygon fill="none" stroke="black" points="277.491,-68 186.491,-68 186.491,-32 277.491,-32 277.491,-68"/>
+<text text-anchor="middle" x="231.991" y="-47.2" font-family="Courier,monospace" font-size="11.00">CpeActivity</text>
 </g>
 </g>
 </svg>
