@@ -20,7 +20,7 @@ class CpeSqsListener
     private $sqs;
     private $cpeLogger;
     
-    public function __construct($debug)
+    public function __construct($debug, $cpeLogger = null)
     {
         $this->debug = $debug;
 
@@ -31,7 +31,10 @@ class CpeSqsListener
         $this->sqs = $aws->get('Sqs');
 
         // Logger
-        $this->cpeLogger = new CpeSdk\CpeLogger();
+        if (!$cpeLogger)
+            $this->cpeLogger = new CpeSdk\CpeLogger();
+        else
+            $this->cpeLogger = $cpeLogger;
     }
     
     /**

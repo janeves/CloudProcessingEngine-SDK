@@ -33,7 +33,7 @@ class CpeActivity
     const NO_INPUT             = "NO_INPUT";
     const INPUT_INVALID        = "INPUT_INVALID";
 
-    public function __construct($params, $debug)
+    public function __construct($params, $debug, $cpeLogger = null)
     {
         $this->debug         = $debug;
         
@@ -50,9 +50,13 @@ class CpeActivity
         if (!isset($params["name"]) || !$params["name"])
             throw new CpeSdk\CpeException("Can't instantiate BasicActivity: 'name' is not provided or empty !\n", 
 			    self::NO_ACTIVITY_NAME);
-
+        
+        if (!$cpeLogger)
+            $this->cpeLogger = new CpeSdk\CpeLogger(null, $params["name"]); 
+        else
+            $this->cpeLogger = $cpeLogger;
+        
         // Create logger object. Use activity name for logger
-        $this->cpeLogger = new CpeSdk\CpeLogger(null, $params["name"]); 
 
         // Check if there is a version name
         if (!isset($params["version"]) || !$params["version"])
