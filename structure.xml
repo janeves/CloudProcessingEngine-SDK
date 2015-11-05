@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="Cloud Processing Engine SDK" version="2.8.5">
   <partials/>
+  <file path="CpeException.php" generated-path="CpeException.html" hash="61e7d6faa5829e48988a3bec346c2c1a" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="SA\CpeSdk" line="6" package="Default">
+      <extends>\Exception</extends>
+      <name>CpeException</name>
+      <full_name>\SA\CpeSdk\CpeException</full_name>
+      <docblock line="6">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="6" description="Default"/>
+      </docblock>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="8" package="Default">
+        <name>$ref</name>
+        <full_name>\SA\CpeSdk\CpeException::ref</full_name>
+        <default></default>
+        <docblock line="8">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="11" package="Default">
+        <name>__construct</name>
+        <full_name>\SA\CpeSdk\CpeException::__construct()</full_name>
+        <docblock line="11">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$message</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$ref</name>
+          <default>""</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$code</name>
+          <default>0</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$previous</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="18" package="Default">
+        <name>__toString</name>
+        <full_name>\SA\CpeSdk\CpeException::__toString()</full_name>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="6" code="PPC:ERR-50005">No summary for class \SA\CpeSdk\CpeException</error>
+      <error line="11" code="PPC:ERR-50015">Argument $message is missing from the Docblock of __construct</error>
+      <error line="11" code="PPC:ERR-50015">Argument $ref is missing from the Docblock of __construct</error>
+      <error line="11" code="PPC:ERR-50015">Argument $code is missing from the Docblock of __construct</error>
+      <error line="11" code="PPC:ERR-50015">Argument $previous is missing from the Docblock of __construct</error>
+      <error line="11" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="18" code="PPC:ERR-50008">No summary for method __toString()</error>
+      <error line="8" code="PPC:ERR-50007">No summary for property $ref</error>
+    </parse_markers>
+    <source>eJx1UEtrwzAMvvtXiFBoC9u6c7oHJfS2w1iO6wiuo7TeUttY9iiU/PcpTl87VAcjyfoe0tOr2zohjNwhOakQysWqcFjWP3MhZjMoIgW7A9wrdEFbA6qVRNBYD2GLULQ21vDurUIibTawNBttUAxTTLQ8A3Ef0NQEq3NLHARwuLhutYKRx2aeGulh7Q+ssWE2UNZQ8FEFViULY/ZKcoNj0GTGAWxik+01WxONSrJVdUZPRkfgXRKDZ8gyTpWtkfNHTp3HX20jcWli204T4+Cyj1HYarp/GbAXv0lWejQhz2/I9RpX/NMB2P1bVw2nZnB/SI88TMwp0xq2Abv+RhVuLBlsmXCT6ZVfjyH6/rd4W5RlVcEDZDl8Hi57dF85nMqj225lspO9TvwBUjysDg==</source>
+  </file>
   <file path="Swf/CpeSwfHandler.php" generated-path="Swf.CpeSwfHandler.html" hash="dde408306be89d80228f7e7322d6d5bd" package="Default">
     <docblock line="0">
       <description></description>
@@ -560,132 +634,6 @@ We use it to listen to SQS input messages from clients</description>
     </parse_markers>
     <source>eJytVW1P20AM/p5f4VWIphXQfaajU1cKQ+t4Sys+AIquqRtOS5NwdynqEP99dl6bdmV8mCWk9M722Y+fx3z5Gj/FltVpty1ow/hJavACoTXQR6JxBtMVmCeEwfUQBpFCuAjjxFxHQYCKI+6Q3UAaMBEEUhsM+cu5cUCyJyxQa+GjhrmKFpRbYmg0RbY7lhUKuo2Fh+D0HwYxOrNfD86z7lI9HegvxO8opJxTJZREbfE7/Rf9MIgWiyh8oM9ueVZGOX2gROCc/kjvyrx0m/XFP5/1KK2UWni1gCxWcikMwt4Mp4nfrZ9pzl078WIcRb6PKjvPLpNpID2YJ6FnJNXtul4UaqMSz9hZ2oO1QDiBMAmCVhqa1cC2Z2gAh73UnVyKcsp7anCgkGvo3zncJIGsjQg9rFKIF02hBMrx8Vx4JlIrWyglVnbpUlhToU+lNuGkBz4SHku7QXnd0+FZfzIau7fD84ury0arFthqdTfLJYC4WHr4sEd57CYB3GzVy87aLk/kHOxPFRz1J/K0NbDwBXKCDIpje60SDDT+K8fm2N6q4aX0Z2vD6MIZDy+Zw1eT8fVknFL5OcEES4+S5YUwaATeL5hHCqLErJM+D+msvdQBFg9EIRZeIAwIMHKBmUY4a6yipZyR/Oqvb5JMoYdyiW6eyd5LXYlonI1q2eQXw77OsfdxP+wFke9Smm3qNE6H3ybnjQPYupkKjaxr23XPLkZD120dbEczBDL0s36bWdVNODo6atS51q39XOdTCmIazgjRLLwnzGfAXCmgraiqUCeBYRqUpD3s5fj9zOHbpZMbrm+igmZxQoLJod52vhPSjAl+B2kBzHSqrmIeBzultN7bOZqUBEUTNDURruhvRgM3iQrzdcs+nsg2cW48YHuv3LknRd+5MPNGSZ0t2N+vFeNFSWiq0FZFjdea3/sUSqH+OI3YdlOJ7SN0SrNcVlPXrAuJS5KPDDP1HJcsa2yF72IZW453Ccv958fK+63acLnfXNAeKrZLofdTDGi5ksSLeZa0rYTNi50myYMVc0Prirb8jBVSRv1V/7M09bb8F9rf8a8lpX0W9l9Zf8tKis13ImmAzdyZyrjfuHksSP9mvVl/AJYTSoU=</source>
   </file>
-  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="082c15a4217ca9b2e2e922b6b16c9d5b" package="Default">
-    <docblock line="0">
-      <description></description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <namespace-alias name="CpeSdk">\SA\CpeSdk</namespace-alias>
-    <class final="false" abstract="false" namespace="SA\CpeSdk" line="11" package="Default">
-      <extends/>
-      <name>CpeLogger</name>
-      <full_name>\SA\CpeSdk\CpeLogger</full_name>
-      <docblock line="11">
-        <description>Allow formatted logging on STDOUT
-Send logs to Syslog for log offloading</description>
-        <long-description></long-description>
-        <tag name="package" line="11" description="Default"/>
-      </docblock>
-      <constant namespace="SA\CpeSdk" line="16" package="Default">
-        <name>LOG_TYPE_ERROR</name>
-        <full_name>\SA\CpeSdk\CpeLogger::LOG_TYPE_ERROR</full_name>
-        <value>"LOG_TYPE_ERROR"</value>
-        <docblock line="16">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </constant>
-      <constant namespace="SA\CpeSdk" line="17" package="Default">
-        <name>OPENLOG_ERROR</name>
-        <full_name>\SA\CpeSdk\CpeLogger::OPENLOG_ERROR</full_name>
-        <value>"OPENLOG_ERROR"</value>
-        <docblock line="17">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </constant>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="13" package="Default">
-        <name>$logPath</name>
-        <full_name>\SA\CpeSdk\CpeLogger::logPath</full_name>
-        <default></default>
-        <docblock line="13">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="20" package="Default">
-        <name>__construct</name>
-        <full_name>\SA\CpeSdk\CpeLogger::__construct()</full_name>
-        <docblock line="20">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$logPath</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$suffix</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="40" package="Default">
-        <name>log_out</name>
-        <full_name>\SA\CpeSdk\CpeLogger::log_out()</full_name>
-        <docblock line="40">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$type</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$source</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$message</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$workflowId</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="94" package="Default">
-        <name>print_to_file</name>
-        <full_name>\SA\CpeSdk\CpeLogger::print_to_file()</full_name>
-        <docblock line="94">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$log</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$workflowId</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="20" code="PPC:ERR-50015">Argument $logPath is missing from the Docblock of __construct</error>
-      <error line="20" code="PPC:ERR-50015">Argument $suffix is missing from the Docblock of __construct</error>
-      <error line="20" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="40" code="PPC:ERR-50015">Argument $type is missing from the Docblock of log_out</error>
-      <error line="40" code="PPC:ERR-50015">Argument $source is missing from the Docblock of log_out</error>
-      <error line="40" code="PPC:ERR-50015">Argument $message is missing from the Docblock of log_out</error>
-      <error line="40" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of log_out</error>
-      <error line="40" code="PPC:ERR-50008">No summary for method log_out()</error>
-      <error line="94" code="PPC:ERR-50015">Argument $log is missing from the Docblock of print_to_file</error>
-      <error line="94" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of print_to_file</error>
-      <error line="94" code="PPC:ERR-50008">No summary for method print_to_file()</error>
-      <error line="13" code="PPC:ERR-50007">No summary for property $logPath</error>
-    </parse_markers>
-    <source>eJyNVm1v4jgQ/s6vmFpIJRVL9j6sTirHnjigK1YIEFBVJxZFITiQI7Wj2ClFt/3vO3ZCEge6hS/EM+NnXv3Yf/0d7aJajbnPVESuR2He/dGL6Hyzb9dqiTDX9t1dDe6gG4b8AD6Pn10p6QZCvt0GbAucwXzRnzwulNGcMq0RIDnMjwI/1RYlAu77IXc3uAct7ZoXukIAehkhEI1r/9cAf1GyDgMP6rhh6soduldS24bBq0cjGXCmBR5nQsJo8s1Z/DsdOIPZbDKDDhBTQtol48l0MFbq1FYZGxJSuJpH1Av8I8gdhQiDgMOOxlRl5MXUlVQrdGZBSEU5bD9hnooRHEc7jRNPNk65oEuWhGET6iLx/eA1W1saIM1e/bYhX7sh1N14+9LOpflHXe4C8elrgUnsFze25XNkq7rbXkRtUuw72x/4kEdkGWZnyJUmnHbfqLQd+hoIKRrmJstEfN5vgrhi0oTPf3750gSsDbVKyHWFik7XrqBqLhu6AMvPK6ttxp4WrxK63tzCYnwircyi2IYt7UaRmswo5lsFrnp56u57lVVoNqIp6BZpoTgr61s+KDi5gCdIuFuNKNJ5d9MjoKfj4nCg0uGJbJQ8HyPaLJaCJ7FXFmROSpIDj/d4nA7DzTtjpJqHqqVRJyKDZ0rUV+crqO+G1TQNUtdEG5zFkUJgrCeISuBan8VKtD5b5BartIRmR4tcKl3FFJak0JKVGspiXZoebMYEO5xRTgsekcNUs2PVbN1xV8CeHs1B5rhFlanhOA/D0cBxmppSepPx/Kf6mA77qWQ06XVHf1SmW+5iJERGD4rEcnpqkEfmrsOULjhj1JMFF96Q5tnJNFjIunDiMbfezmU4YxmhRnHA40AeIaQvNMztxCGQ3g7rqZpShFqMhIdHC8hw/DAh92ahc8SOTleZmBSyRuLbtytIKW/+HgptrkB66C66ow+QuqPBbHEF1lN3Nh6Ov32Allldgdcf/PP4EZq2+S3WhvpuEsr7Kydoz/hBEwUssJk4NnA2N+ZVVxqct4sjNI0DJjViwApq0smkvBcpA0dyRyn1FdEsH7Z3JnPAPL5Jb8MTEyL+9/lkrO/9NcW3Qow8Gwt9759cIv1h6f4TnDlUI2iHlsHZ+i2R02ox5nrZyFvQ1GhWlZufUEfP8sVNL+oGz7n4o6wrrKppIxAOXu2Yj7Zf3maJ366sC/xVaC8kXN578a7nads6GZaibARqAYElwb9MiiOSSldlccreJwUxajv01f2Hj5pAgAunfGHYb8ETcmV6WwaydSVRn+JUd+ayZGa4LVtVS4Mh/mCVZ4vhW785okSqd5WkDF8eZwei8s64oE/9n2s0+XenSMR9CzqdDvhuKKiZox6UjPPuoeeyWwkHPWMo5/mFf5On8VZ7+wWu0gPg</source>
-  </file>
   <file path="CpeJsonValidator.php" generated-path="CpeJsonValidator.html" hash="1af88c9c842110d9c8a330479103c72f" package="Default">
     <docblock line="0">
       <description></description>
@@ -734,80 +682,6 @@ Send logs to Syslog for log offloading</description>
       <error line="7" code="PPC:ERR-50008">No summary for method validate_json()</error>
     </parse_markers>
     <source>eJx9kl1rwjAUhu/zK0JRmkLV+zkdY+xml8p2M0WyeGIzaxqS6Bjif1/S2qbZZIFAzuf79JzeP6hCISTpAYyiDPDycfWkYLndTxFiJTUGO/PFVPKNlmJLbaXRGWF31PGjFAzzo2RWVBKfmjhsPl0yqVP8GXgzD6ZhBRyo2XjFG25FbZHV7nMIarBawAm0t2ZYwhf2RMu6ZvWqhb+LNmkaa2+urV1haDSat0+SclHC3WSS4nGM4exkEvEmmRtKj4ovwFRlzfWHahGiJOhm05v1Hqd+kQg5x//DxTyndkE3p9Stj/QZuprR3KWxfaOfx5PrqwiOSb9KmLoxybIuxR/3wUctMaelgUYuaG7BUlH6fSRJQOGVBsqKuPsO7LPWlTYkw26DA/BGrNS1G8+wUVpIy0nyPjRrPDQrmeTXovdU6UqBtt/pOvjcT2/oDtJ19gvyyt82b6IXdPkBoDTzBg==</source>
-  </file>
-  <file path="CpeException.php" generated-path="CpeException.html" hash="61e7d6faa5829e48988a3bec346c2c1a" package="Default">
-    <docblock line="0">
-      <description></description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <class final="false" abstract="false" namespace="SA\CpeSdk" line="6" package="Default">
-      <extends>\Exception</extends>
-      <name>CpeException</name>
-      <full_name>\SA\CpeSdk\CpeException</full_name>
-      <docblock line="6">
-        <description></description>
-        <long-description></long-description>
-        <tag name="package" line="6" description="Default"/>
-      </docblock>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="8" package="Default">
-        <name>$ref</name>
-        <full_name>\SA\CpeSdk\CpeException::ref</full_name>
-        <default></default>
-        <docblock line="8">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="11" package="Default">
-        <name>__construct</name>
-        <full_name>\SA\CpeSdk\CpeException::__construct()</full_name>
-        <docblock line="11">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$message</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$ref</name>
-          <default>""</default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$code</name>
-          <default>0</default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$previous</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="18" package="Default">
-        <name>__toString</name>
-        <full_name>\SA\CpeSdk\CpeException::__toString()</full_name>
-        <docblock line="18">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="6" code="PPC:ERR-50005">No summary for class \SA\CpeSdk\CpeException</error>
-      <error line="11" code="PPC:ERR-50015">Argument $message is missing from the Docblock of __construct</error>
-      <error line="11" code="PPC:ERR-50015">Argument $ref is missing from the Docblock of __construct</error>
-      <error line="11" code="PPC:ERR-50015">Argument $code is missing from the Docblock of __construct</error>
-      <error line="11" code="PPC:ERR-50015">Argument $previous is missing from the Docblock of __construct</error>
-      <error line="11" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="18" code="PPC:ERR-50008">No summary for method __toString()</error>
-      <error line="8" code="PPC:ERR-50007">No summary for property $ref</error>
-    </parse_markers>
-    <source>eJx1UEtrwzAMvvtXiFBoC9u6c7oHJfS2w1iO6wiuo7TeUttY9iiU/PcpTl87VAcjyfoe0tOr2zohjNwhOakQysWqcFjWP3MhZjMoIgW7A9wrdEFbA6qVRNBYD2GLULQ21vDurUIibTawNBttUAxTTLQ8A3Ef0NQEq3NLHARwuLhutYKRx2aeGulh7Q+ssWE2UNZQ8FEFViULY/ZKcoNj0GTGAWxik+01WxONSrJVdUZPRkfgXRKDZ8gyTpWtkfNHTp3HX20jcWli204T4+Cyj1HYarp/GbAXv0lWejQhz2/I9RpX/NMB2P1bVw2nZnB/SI88TMwp0xq2Abv+RhVuLBlsmXCT6ZVfjyH6/rd4W5RlVcEDZDl8Hi57dF85nMqj225lspO9TvwBUjysDg==</source>
   </file>
   <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="ab3910712c5c05b552b3a830ae2be023" package="Default">
     <docblock line="0">
@@ -1142,6 +1016,132 @@ consider your activity as 'timeed out'.</long-description>
       <error line="27" code="PPC:ERR-50007">No summary for property $activityLogKey</error>
     </parse_markers>
     <source>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</source>
+  </file>
+  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="082c15a4217ca9b2e2e922b6b16c9d5b" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="CpeSdk">\SA\CpeSdk</namespace-alias>
+    <class final="false" abstract="false" namespace="SA\CpeSdk" line="11" package="Default">
+      <extends/>
+      <name>CpeLogger</name>
+      <full_name>\SA\CpeSdk\CpeLogger</full_name>
+      <docblock line="11">
+        <description>Allow formatted logging on STDOUT
+Send logs to Syslog for log offloading</description>
+        <long-description></long-description>
+        <tag name="package" line="11" description="Default"/>
+      </docblock>
+      <constant namespace="SA\CpeSdk" line="16" package="Default">
+        <name>LOG_TYPE_ERROR</name>
+        <full_name>\SA\CpeSdk\CpeLogger::LOG_TYPE_ERROR</full_name>
+        <value>"LOG_TYPE_ERROR"</value>
+        <docblock line="16">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk" line="17" package="Default">
+        <name>OPENLOG_ERROR</name>
+        <full_name>\SA\CpeSdk\CpeLogger::OPENLOG_ERROR</full_name>
+        <value>"OPENLOG_ERROR"</value>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="13" package="Default">
+        <name>$logPath</name>
+        <full_name>\SA\CpeSdk\CpeLogger::logPath</full_name>
+        <default></default>
+        <docblock line="13">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="20" package="Default">
+        <name>__construct</name>
+        <full_name>\SA\CpeSdk\CpeLogger::__construct()</full_name>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$logPath</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$suffix</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="40" package="Default">
+        <name>log_out</name>
+        <full_name>\SA\CpeSdk\CpeLogger::log_out()</full_name>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$type</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$source</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$message</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$workflowId</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="94" package="Default">
+        <name>print_to_file</name>
+        <full_name>\SA\CpeSdk\CpeLogger::print_to_file()</full_name>
+        <docblock line="94">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$log</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$workflowId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="20" code="PPC:ERR-50015">Argument $logPath is missing from the Docblock of __construct</error>
+      <error line="20" code="PPC:ERR-50015">Argument $suffix is missing from the Docblock of __construct</error>
+      <error line="20" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="40" code="PPC:ERR-50015">Argument $type is missing from the Docblock of log_out</error>
+      <error line="40" code="PPC:ERR-50015">Argument $source is missing from the Docblock of log_out</error>
+      <error line="40" code="PPC:ERR-50015">Argument $message is missing from the Docblock of log_out</error>
+      <error line="40" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of log_out</error>
+      <error line="40" code="PPC:ERR-50008">No summary for method log_out()</error>
+      <error line="94" code="PPC:ERR-50015">Argument $log is missing from the Docblock of print_to_file</error>
+      <error line="94" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of print_to_file</error>
+      <error line="94" code="PPC:ERR-50008">No summary for method print_to_file()</error>
+      <error line="13" code="PPC:ERR-50007">No summary for property $logPath</error>
+    </parse_markers>
+    <source>eJyNVm1v4jgQ/s6vmFpIJRVL9j6sTirHnjigK1YIEFBVJxZFITiQI7Wj2ClFt/3vO3ZCEge6hS/EM+NnXv3Yf/0d7aJajbnPVESuR2He/dGL6Hyzb9dqiTDX9t1dDe6gG4b8AD6Pn10p6QZCvt0GbAucwXzRnzwulNGcMq0RIDnMjwI/1RYlAu77IXc3uAct7ZoXukIAehkhEI1r/9cAf1GyDgMP6rhh6soduldS24bBq0cjGXCmBR5nQsJo8s1Z/DsdOIPZbDKDDhBTQtol48l0MFbq1FYZGxJSuJpH1Av8I8gdhQiDgMOOxlRl5MXUlVQrdGZBSEU5bD9hnooRHEc7jRNPNk65oEuWhGET6iLx/eA1W1saIM1e/bYhX7sh1N14+9LOpflHXe4C8elrgUnsFze25XNkq7rbXkRtUuw72x/4kEdkGWZnyJUmnHbfqLQd+hoIKRrmJstEfN5vgrhi0oTPf3750gSsDbVKyHWFik7XrqBqLhu6AMvPK6ttxp4WrxK63tzCYnwircyi2IYt7UaRmswo5lsFrnp56u57lVVoNqIp6BZpoTgr61s+KDi5gCdIuFuNKNJ5d9MjoKfj4nCg0uGJbJQ8HyPaLJaCJ7FXFmROSpIDj/d4nA7DzTtjpJqHqqVRJyKDZ0rUV+crqO+G1TQNUtdEG5zFkUJgrCeISuBan8VKtD5b5BartIRmR4tcKl3FFJak0JKVGspiXZoebMYEO5xRTgsekcNUs2PVbN1xV8CeHs1B5rhFlanhOA/D0cBxmppSepPx/Kf6mA77qWQ06XVHf1SmW+5iJERGD4rEcnpqkEfmrsOULjhj1JMFF96Q5tnJNFjIunDiMbfezmU4YxmhRnHA40AeIaQvNMztxCGQ3g7rqZpShFqMhIdHC8hw/DAh92ahc8SOTleZmBSyRuLbtytIKW/+HgptrkB66C66ow+QuqPBbHEF1lN3Nh6Ov32Allldgdcf/PP4EZq2+S3WhvpuEsr7Kydoz/hBEwUssJk4NnA2N+ZVVxqct4sjNI0DJjViwApq0smkvBcpA0dyRyn1FdEsH7Z3JnPAPL5Jb8MTEyL+9/lkrO/9NcW3Qow8Gwt9759cIv1h6f4TnDlUI2iHlsHZ+i2R02ox5nrZyFvQ1GhWlZufUEfP8sVNL+oGz7n4o6wrrKppIxAOXu2Yj7Zf3maJ366sC/xVaC8kXN578a7nads6GZaibARqAYElwb9MiiOSSldlccreJwUxajv01f2Hj5pAgAunfGHYb8ETcmV6WwaydSVRn+JUd+ayZGa4LVtVS4Mh/mCVZ4vhW785okSqd5WkDF8eZwei8s64oE/9n2s0+XenSMR9CzqdDvhuKKiZox6UjPPuoeeyWwkHPWMo5/mFf5On8VZ7+wWu0gPg</source>
   </file>
   <package name="Default" full_name="Default"/>
   <package name="global" full_name="global"/>
