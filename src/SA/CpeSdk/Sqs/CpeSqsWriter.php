@@ -58,15 +58,16 @@ class CpeSqsWriter
      * Activity Started, Failed, Succeeded, etc
      */
     
-    public function workflow_scheduled($runId, $workflowId, $message)
+    public function workflow_scheduled($workflowType, $runId, $workflowId, $message)
     {
         $msg = [
-            'time'       => microtime(true),
-            'type'       => self::WORKFLOW_SCHEDULED,
-            "jobId"      => $message->{"jobId"},
-            "runId"      => $runId,
-            "workflowId" => $workflowId,
-            "input"      => $message->{'data'}
+            'time'         => microtime(true),
+            'type'         => self::WORKFLOW_SCHEDULED,
+            "jobId"        => $message->{"jobId"},
+            "runId"        => $runId,
+            "workflowId"   => $workflowId,,
+            "workflowType" => $workflowType,
+            "input"        => $message->{'data'}
         ];
         
         $client = $message->{'data'}->{"client"};
