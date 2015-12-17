@@ -65,7 +65,7 @@ class CpeSqsWriter
             'type'         => self::WORKFLOW_SCHEDULED,
             "jobId"        => $message->{"jobId"},
             "runId"        => $runId,
-            "workflowId"   => $workflowId,,
+            "workflowId"   => $workflowId,
             "workflowType" => $workflowType,
             "input"        => $message->{'data'}
         ];
