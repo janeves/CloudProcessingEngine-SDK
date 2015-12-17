@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">105</span></a></li>
+                <span class="label label-info">106</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -252,7 +252,7 @@
 </div>
 <a id="method_workflow_scheduled"></a><div class="element clickable method public method_workflow_scheduled " data-toggle="collapse" data-target=".method_workflow_scheduled .collapse" title="public">
 <h2>SEND messages to OUTPUT SQS queue</h2>
-<pre>workflow_scheduled($runId, $workflowId, $message) </pre>
+<pre>workflow_scheduled($workflowType, $runId, $workflowId, $message) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"><p>Send messages to back to the clients.
@@ -260,6 +260,7 @@ Clients listening to the SQS queue will receive them
 Send updates and notifications:
 Activity Started, Failed, Succeeded, etc</p></div>
 <h3>Parameters</h3>
+<div class="subelement argument"><h4>$workflowType</h4></div>
 <div class="subelement argument"><h4>$runId</h4></div>
 <div class="subelement argument"><h4>$workflowId</h4></div>
 <div class="subelement argument"><h4>$message</h4></div>
@@ -394,7 +395,7 @@ Activity Started, Failed, Succeeded, etc</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2015-11-05T01:27:55Z.<br></footer></div>
+            generated on 2015-12-17T18:53:06Z.<br></footer></div>
 </div>
 </body>
 </html>
