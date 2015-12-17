@@ -44,7 +44,7 @@ class CpeLogger
         $workflowId = null)
     {
         $log = [
-            "time"    => time(),
+            "time"    => date("Y-m-d H:i:s", time()),
             "source"  => $source,
             "type"    => $type,
             "message" => $message
