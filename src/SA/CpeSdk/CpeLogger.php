@@ -11,16 +11,21 @@ use SA\CpeSdk;
 class CpeLogger
 {
     public $logPath;
+    public $printout;
 
     // Exception
     const LOG_TYPE_ERROR = "LOG_TYPE_ERROR";
     const OPENLOG_ERROR  = "OPENLOG_ERROR";
 
     // Specify the path where to create the log files
-    public function __construct($logPath = null, $suffix = null)
+    public function __construct(
+        $logPath = null,
+        $suffix = null, 
+        $printout = false)
     {
         global $argv;
         
+        $this->printout = $printout;
         $this->logPath = "/var/tmp/logs/cpe/";
                 
         if ($logPath)
@@ -34,6 +39,11 @@ class CpeLogger
             $file .= "-".$suffix;
         // Append progname to the path
         $this->logPath .= "/".$file.".log";
+
+        $this->log_out(
+            "INFO",
+            "[CPE SDK] ".basename(__FILE__),
+            "Logging to: ".$this->logPath);
     }
 
     // Log message to syslog and log file
@@ -101,7 +111,10 @@ class CpeLogger
         if ($workflowId)
             $toPrint .= "[$workflowId] ";
         $toPrint .= $log['message'] . "\n";
-            
+
+        if ($this->printout)
+            print $toPrint;
+        
         if (file_put_contents(
                 $this->logPath,
                 $toPrint,

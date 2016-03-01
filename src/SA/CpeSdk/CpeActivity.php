@@ -52,7 +52,7 @@ class CpeActivity
 			    self::NO_ACTIVITY_NAME);
         
         if (!$cpeLogger)
-            $this->cpeLogger = new CpeSdk\CpeLogger(null, $params["name"]); 
+            $this->cpeLogger = new CpeSdk\CpeLogger(null, $params["name"], $debug); 
         else
             $this->cpeLogger = $cpeLogger;
         
@@ -89,7 +89,7 @@ class CpeActivity
             // Activity exists as there is no exception
             return true;
         } catch (\Aws\Swf\Exception\UnknownResourceException $e) {
-            $this->cpeLogger->log_out("ERROR", basename(__FILE__), 
+            $this->cpeLogger->log_out("ERROR", "[CPE SDK] ".basename(__FILE__), 
                 "Activity '" . $this->params["name"] . "' doesn't exists. Creating it ...\n");
         }
         
@@ -159,7 +159,7 @@ class CpeActivity
             // Notify client of failure
             $this->cpeSqsWriter->activity_failed($task, $reason, $details);
             
-            $this->cpeLogger->log_out("ERROR", basename(__FILE__),
+            $this->cpeLogger->log_out("ERROR", "[CPE SDK] ".basename(__FILE__),
                 "[$reason] $details",
                 $this->activityLogKey);
             
@@ -169,7 +169,7 @@ class CpeActivity
                     "details"   => $details,
                 ));
         } catch (\Exception $e) {
-            $this->cpeLogger->log_out("ERROR", basename(__FILE__), 
+            $this->cpeLogger->log_out("ERROR", "[CPE SDK] ".basename(__FILE__), 
                 "Unable to send 'Task Failed' response ! " . $e->getMessage(),
                 $this->activityLogKey);
             return false;
@@ -186,7 +186,7 @@ class CpeActivity
             // Notify client of failure
             $this->cpeSqsWriter->activity_completed($task, $result);
         
-            $this->cpeLogger->log_out("INFO", basename(__FILE__),
+            $this->cpeLogger->log_out("INFO", "[CPE SDK] ".basename(__FILE__),
                 "Notify SWF activity is completed !",
                 $this->activityLogKey);
             $this->cpeSwfHandler->swf->respondActivityTaskCompleted(array(
@@ -194,7 +194,7 @@ class CpeActivity
                     "result"    => json_encode($result),
                 ));
         } catch (\Exception $e) {
-            $this->cpeLogger->log_out("ERROR", basename(__FILE__), 
+            $this->cpeLogger->log_out("ERROR", "[CPE SDK] ".basename(__FILE__), 
                 "Unable to send 'Task Completed' response ! " . $e->getMessage(),
                 $this->activityLogKey);
             return false;
@@ -211,7 +211,7 @@ class CpeActivity
     {
         try {
             $taskToken = $task->get("taskToken");
-            $this->cpeLogger->log_out("INFO", basename(__FILE__), 
+            $this->cpeLogger->log_out("INFO", "[CPE SDK] ".basename(__FILE__), 
                 "Sending heartbeat to SWF ...",
                 $this->activityLogKey);
       
@@ -222,7 +222,7 @@ class CpeActivity
             // Workflow returns if this task should be canceled
             if ($info->get("cancelRequested") == true)
             {
-                $this->cpeLogger->log_out("WARNING", basename(__FILE__), 
+                $this->cpeLogger->log_out("WARNING", "[CPE SDK] ".basename(__FILE__), 
                     "Cancel has been requested for this task '" . $task->get("activityId") . "' ! Killing task ...",
                     $this->activityLogKey);
                 throw new CpeSdk\CpeException("Cancel request. No heartbeat, leaving!",

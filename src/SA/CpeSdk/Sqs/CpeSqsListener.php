@@ -48,7 +48,7 @@ class CpeSqsListener
         if ($this->debug)
             $this->cpeLogger->log_out(
                 "DEBUG", 
-                basename(__FILE__),
+                "[CPE SDK] ".basename(__FILE__),
                 "Polling from '$queue' ..."
             );
             
@@ -65,7 +65,7 @@ class CpeSqsListener
             if ($this->debug)
                 $this->cpeLogger->log_out(
                     "DEBUG", 
-                    basename(__FILE__),
+                    "[CPE SDK] ".basename(__FILE__),
                     "New messages recieved in queue: '$queue'"
                 );
             

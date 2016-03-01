@@ -41,7 +41,8 @@ class CpeSqsWriter
     {
         $this->debug = $debug;
 
-        // Create AWS SDK instance
+        // Create AWS SDK instance.
+        // We expect an AWS role or the proper AWS env variable sets for KEY/SECRET
         $aws = Aws::factory(array(
                 'region' => getenv("AWS_DEFAULT_REGION")
             ));
