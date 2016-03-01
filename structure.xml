@@ -44,7 +44,7 @@ Check for AWS environment variables</description>
     </parse_markers>
     <source>eJxtkW9LwzAQxt/nU9zqoO1A9n66ydgfFUXBKHszKFl2Xcu6NCTp6pB9dy9dKYoelNDL7+557nJ7pzPNmBIHtFpIBD5dzzTy7X7N6/SGscoiTGvr//w3K3JUjvLDIaFAKPD5U0N1lf52MGAwgJlB4RBcRj1WHPhqCbJUCqXLS9UAGco9pKVp7lEdc1OqAynAUZhcbAq0hA2ZLIS1Xo0sPAi1LdCwLwYUutoUuYS+bdz+yKSVamQgSUjTOlNJF8UNcan0cdU6yFPQBjUa78FrWxAGwaKrdAcTFPWivsGdbzuGHTqio4CsJ/PFcvrx/J68Le4fX1+COI67Mh8uM2UNCmtol0vH4lOi9g6jgKOD8G+b8N+N9IK4ndSHfwe/1uZdumzfZbm9ntBSyGf3bKNRKqQrzSkSxohT9MtieJkrBBhPoB2yA2KS9OeZnb8BzX2lVg==</source>
   </file>
-  <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="ab3910712c5c05b552b3a830ae2be023" package="Default">
+  <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="f57cf186f970d143359849451e65e377" package="Default">
     <docblock line="0">
       <description>This Class must be used to create your own activities.</description>
       <long-description>Extend it in your own activities and implement the do_activity method</long-description>
@@ -376,9 +376,9 @@ consider your activity as 'timeed out'.</long-description>
       <error line="26" code="PPC:ERR-50007">No summary for property $input</error>
       <error line="27" code="PPC:ERR-50007">No summary for property $activityLogKey</error>
     </parse_markers>
-    <source>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</source>
+    <source>eJzVWW1z2kgS/hx+RVuVKiDl4O/m7CsW4wubhPiAxJWyU5QQA2gtNEQjmXC7+e/XPTMajQYBtm/3rk4fbBjNS789T3cPf/v7ermu1c7evKnBGxgvQwHdyBcCVplIYcogE2wGKYcgYX7KYMuzBPgmBj9Iw8cwDZlo0crej5TFMwhTCOOqSeDT29U6YisWp5AuGcz4RL/fwoqlSz7Djc5qtdhfMbH2Awajzn13zUazh3athnKUvgdSSvza0XvUfq8BPutsGoUBvF77ib8SbTDP2RnkU0G9hICvwngB84SvzLsbHkUsKW01Y9NsYe1EW13RGMwjfyGnlubnWvVnbTO/fwV8LtXO31YuGW/XrK2X0GdaVFpQWhWs2Qe+WLCkXQimBtxpo+/iNglTPROnfdZu3dAoml8If4FeQueN/jnaWb2Zv0P/RWo5rR7poOBxmvAIRrfX7ppfBY+/+FE481OetHHNMIvh19GnAYhgyVa+gEf1NuTxrmZhvM7SiUhtzbqcwictLAhyFuAs9OLucsdj+5ZLmfj0NxaklS5Bg75n27baQ4HAhwe2hQ1PHuYR3/Rn54XHySq0Kxoy4gtRaIamQkC963WG4196nfHkutP/0LuSwl2A5457bWvR4NOk0x33v/THXyeDzsdevsgd37voS2846qOW7iI9XlpnXo47o/eT3seb8Ve5rmLcPa8/uPk8BvtR58nx0mQ5guNfOh/6V9bk0jiusB0yz+KAggUmE7lJkgVpQ8P8VIP01MIE7hdnUdSUeyhuoOd1ihz39lJOt+TUIDfTzAf0+jVPIAoFEhyxBTqYYNyXwYNgge8Zy5i7v4052j9mG1DcdY/jksby1w1bpGb7uSdD1dEGsM7Rm7k82rxuNNsv1bjq3BLoy0d3nbf5yfaxI//RgqdyrXuKpu7CcZroa/ZG3SULHiCUhJswCCn9FBtTgjGzcVLjJBSCmWC682iC960Jf/wBJ+6gWUhPukz4xtGy9yNgawrUhtf14zpRgUj9OA2JOX7xRRjkqeYc6rRpneSLeQrrhD+GM2RWtB1brVHSk/vYO4Xaq1ev6DTBovn5uYv6ZkXQSqUKKJSFLtxVAKWkgRpuEHpOwdE/Rxp6z2zKIsGOnWDlqkqMaWaN1HxFxy3KUmW3wZwiU6W4Iw6HR5YI4ouj7tYTdzxejP+5Ttf7/gd+18TdLEd9P8ZSC/H1L1YqNGRSv70m1WMWUKZPti6qQlxqqrGGDqmfRfaS9SE9b+AWzasPEuqgTvkgM7EHQe4WqgvRJxF6ebaFhC2IXBKlMpogX9KfS4NsmJmCK/XLM5UMkvCRbGqygSO5w/Y7pBLGc+4qbxdfGKp+kvjbRsnlKvjp08VlmYgMLsrz89CpmF9EleW9NNlaUrtBbaTPDch+oHEE7AFdQe9vL8VmTplFBEk4NaUyKdqoUNOIP+MrP4w9/XVXB/3e0dostw1qm8Ae31nZtIiMHtcaJsq08lhBGrDHHEc1AkvrEpZmSYzmzVix+08I/DRYQuO+sxEyJxr43n+OH2LsXIZMYA8TFLiG16zpeMhlubeXSEwTnqUNrzccfhoigr277k0PRlfvv4HXmvqCUbA0JpNrrPEmk+Yp7FjBM2rWPWhVxxqOe3Vsn5ggplHmaCkGpXSNWGu1WsgglkF/VpLuMAeZdgw1AHNn4xKo4WCY5ZgthVlJA0MsFaSyZgmS+wqmxJawDBdLiNgjiyD1xQOReTgPA9kuCIthVv4DA5FRGKSyHcG4lNleFffUdSKbCOIAwySqzQ1l/MA8TLAgVf0nVTrY8gY+toC4bsl0K2vwh5yepKJMSE51il0tCTyR1Ifa42eXlFR2Lt7kz5HEYiJjTAbRiWInTVTU6XaurkyEJMqdJy1mkmBpDIec0C+9vcDS3XuWLgOuHWRyH5q+nmtYr0p+sjeoKnZyjt/pBq1wNf2kGr1wNCjnUbmbNPKhbIG9nrXV28sFWtIrXtroq8oz+1ZKztyj5svazwoJVE8LF7tO1dLkm/d+sCAjl3nNu3pxYv1bmbmQkM53zOPtA/uNRrrsvJXXnLsAxQiBv04J2RKmhENUm0DrE9JXa07FIRDBal/hRsegqeKgOK2qYFBptxCuDJmGHVHow9+wqZnMWMBnrOEGW7P5LFBY9iB+iqWYFRAvdckHa7UR3clRx4ZVlaFPZMMt5YkKamMzU4lZV3UojObH0CFEl1A3MiHLKRh+aPsyYcI+t5j6rZIvCZKkiBZRmjHD9ECKYbxL3bYQRCGKe6gPL4JzorfS5+0LVMO4cz+MFEfRmZRUrDq3q9LFdOvcIVK8lG0s/S+zE0Nc6cLiYMgagZUESl7swZAIMO7oysSTHRmmvUhAQcOF8Sory4FtMrpjpO0RavsKygoLVgpUyHKomPsTCqfduulOi/DNiODtzqqkwaeJWlHtiDWPZ6bYQTtcK5scqqzJXGP+wPLWQGahYnBfRa10Mx2Itvae4l2rr+fqr7uT7YK7KIn/+xXv59ifRozAJQjldcnmypR1UFZGpj8BWQ8zmaA+qvvqRkUgPMXFuiuY+5Fgbo28ywKSewyGA32N/Gw24HHAHD4wez2NA8x0C3Uii9I9N51/FfL3iVFVtByJmv7g+tOL0K7VoGuNorUXlnNOXoj+5wG+a0zxl2CerJpjXtYZLFZ1hjb4/xmmjbX+J7Cmv5XQXjKsBaZYWUtEY0ThvwfG1rLulM0n1mGPrGWKnXDFuKrRsOGch4sskcr6afk2THWv5TuxrzxTv6xSj6lKK+yas8hPIqzoQxyI7fIJJSkaXBJN9+b5dvRDCHZPicMrvoB6ilLS/VqW1lsH6YUcNDE2MJguaoqncctrE9BOY1ME+l6ovZQXKgKPPErF7Y5TW63WsymhLC41g1K3AwwR8KREEO+MXQ9etz0xY8vJFWwivzbt+0R6kO1vdcemoSHUDTndfFBYiyXPopm68cDkFOV5SD/U7kiltSPVpCH7njGBIPaa1PfTzVq5yfl9n5GrHH3bGQ76g3+8yNfSGl0pFCwx5KcMYy/JxZO/FBS66tu06k5dXaidwPswiuQPXrSiOmAsfQ5yET3Hfygg0bXELUzNRdSeInv4jyhLVR6jR3WC7s/GjhDFrd/TcsERgU0w5/3QyTn66jh3H5U1p+iftX8DVrbwpQ==</source>
   </file>
-  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="1fce1e74864f67acd5cd8bd4a1e31728" package="Default">
+  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="e337c3f702f5a55d5fb4cea483c7a6f2" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -395,20 +395,20 @@ Send logs to Syslog for log offloading</description>
         <long-description></long-description>
         <tag name="package" line="11" description="Default"/>
       </docblock>
-      <constant namespace="SA\CpeSdk" line="16" package="Default">
+      <constant namespace="SA\CpeSdk" line="17" package="Default">
         <name>LOG_TYPE_ERROR</name>
         <full_name>\SA\CpeSdk\CpeLogger::LOG_TYPE_ERROR</full_name>
         <value>"LOG_TYPE_ERROR"</value>
-        <docblock line="16">
+        <docblock line="17">
           <description></description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="SA\CpeSdk" line="17" package="Default">
+      <constant namespace="SA\CpeSdk" line="18" package="Default">
         <name>OPENLOG_ERROR</name>
         <full_name>\SA\CpeSdk\CpeLogger::OPENLOG_ERROR</full_name>
         <value>"OPENLOG_ERROR"</value>
-        <docblock line="17">
+        <docblock line="18">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -422,10 +422,19 @@ Send logs to Syslog for log offloading</description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="20" package="Default">
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="14" package="Default">
+        <name>$printout</name>
+        <full_name>\SA\CpeSdk\CpeLogger::printout</full_name>
+        <default></default>
+        <docblock line="14">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="21" package="Default">
         <name>__construct</name>
         <full_name>\SA\CpeSdk\CpeLogger::__construct()</full_name>
-        <docblock line="20">
+        <docblock line="21">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -439,11 +448,16 @@ Send logs to Syslog for log offloading</description>
           <default>null</default>
           <type/>
         </argument>
+        <argument line="0" by_reference="false">
+          <name>$printout</name>
+          <default>false</default>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="40" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="50" package="Default">
         <name>log_out</name>
         <full_name>\SA\CpeSdk\CpeLogger::log_out()</full_name>
-        <docblock line="40">
+        <docblock line="50">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -468,10 +482,10 @@ Send logs to Syslog for log offloading</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="94" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="104" package="Default">
         <name>print_to_file</name>
         <full_name>\SA\CpeSdk\CpeLogger::print_to_file()</full_name>
-        <docblock line="94">
+        <docblock line="104">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -489,22 +503,24 @@ Send logs to Syslog for log offloading</description>
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="20" code="PPC:ERR-50015">Argument $logPath is missing from the Docblock of __construct</error>
-      <error line="20" code="PPC:ERR-50015">Argument $suffix is missing from the Docblock of __construct</error>
-      <error line="20" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="40" code="PPC:ERR-50015">Argument $type is missing from the Docblock of log_out</error>
-      <error line="40" code="PPC:ERR-50015">Argument $source is missing from the Docblock of log_out</error>
-      <error line="40" code="PPC:ERR-50015">Argument $message is missing from the Docblock of log_out</error>
-      <error line="40" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of log_out</error>
-      <error line="40" code="PPC:ERR-50008">No summary for method log_out()</error>
-      <error line="94" code="PPC:ERR-50015">Argument $log is missing from the Docblock of print_to_file</error>
-      <error line="94" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of print_to_file</error>
-      <error line="94" code="PPC:ERR-50008">No summary for method print_to_file()</error>
+      <error line="21" code="PPC:ERR-50015">Argument $logPath is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50015">Argument $suffix is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50015">Argument $printout is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="50" code="PPC:ERR-50015">Argument $type is missing from the Docblock of log_out</error>
+      <error line="50" code="PPC:ERR-50015">Argument $source is missing from the Docblock of log_out</error>
+      <error line="50" code="PPC:ERR-50015">Argument $message is missing from the Docblock of log_out</error>
+      <error line="50" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of log_out</error>
+      <error line="50" code="PPC:ERR-50008">No summary for method log_out()</error>
+      <error line="104" code="PPC:ERR-50015">Argument $log is missing from the Docblock of print_to_file</error>
+      <error line="104" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of print_to_file</error>
+      <error line="104" code="PPC:ERR-50008">No summary for method print_to_file()</error>
       <error line="13" code="PPC:ERR-50007">No summary for property $logPath</error>
+      <error line="14" code="PPC:ERR-50007">No summary for property $printout</error>
     </parse_markers>
-    <source>eJyNVl1v4jgUfedX3FpIJRWF2YfRSrDMigU6ywgBAqpqxKDIBAeyBDuKnVK00/8+107IF3RaXkjux7HvvSfH/uvvYBdUKpwemAyow2De/dEL2Hyzb1cqkSy+N+/uKnAHXd8XR3BFeKBKsQ34Yrv1+BYEh/miP3lc6KA548YjQQmYnyQ+6hRtAuG6vqAbzMHIZsXxqZSAq4wQiIWV/yuAvyBa+54DVUyYUrXD5bW12YTBi8MC5QluDI7gUsFo8tVefJ8O7MFsNplBB0jRQtq54Ml0MNbuOFYHFywkW2oeMMdzT6B2DALcBBx3LGS6IidkVDHjMJV5PpP5bbsRd/QewbbNomHkqNq5FlySR75fh6qMXNd7Sd4tAxBXr39bX6ypD1Uabp/bqTV9qKqdJ++/ZJik+UzDpjoETd33phOwJsnyLvI9F9IdWYWwC+TSEM7ZN7psm714UslaMckqIh72Gy8shdTh05+fP9cBe8OsHHJVo+KiayqZ5mXNNGD5aWW1i3uPm1faukluYDPuSSOJyNJwpN0g0MwMQrHV4HqW5+m+1VmN1kQ0Dd0gDTQnbX1NiYLMBfyCJN0aRBnzncafgGHHVXKg0xaRquVWPgWsnr1KEYVO3pAskrMcRbjHz+k43LxBIz08dC0LfSLKOzCinzpfYINUrpHv94f7Dfzb8lqS4FTQX7OsejEr3g8xWRebi3GxgDNuqRrjTwogxp+8pBGruK/FMWcFlkaNdS1J5iUrzdTsPUcpnNAEx57oUAMeUdg0A0LNAEMDKmHPTkV2C0zRvavZ9sNwNLDtutGZ3mQ8/6kfpsN+bBlNet3RHyXKq12IKsnZUStbqlk18sjp2o81RHDOHJUJ5A2pX3yuBWmyrsgA1tbbUY7ES1Q2CD0ReuoEPntmfhonj55ydthPPZRsqxlPHPzegAzHDxPSKjY6ReyYcnVIUVfWqIb7dgkpFtPfQ2HMB5Aeuovu6B2k7mgwW3wA66k7Gw/HX99BS6I+gNcf/PP4HpqJ+S3Whrk08lXrgwzac3E06gELHCbSBi54Uzz/csR5vUqhaehxZRA9numVKSYWw0AH2ErY2mnOjXr+Y3uDmQPuiE18RJ7lEfG/zSdjcxlYM7xAhCi+oTSXgfOSqInYuv+k4DYzCGZBqyDk5oKRam1Gc/NaS0dQN2hWWbCf0Mcu6sWkZ32spwL9XtUlqTWy4Ukbz3usx8Qvb5PCb1fWFf3KvFcKzudevQCIeGydBEtrNgI1gMCS4F9iRYrE1lXeHKv32UEKvR26+lDEm44ngcK5Xhj2G/CEWhkfoZ5qfFCoz/vUB+kyF1ZYNh9Vbg1u8Qcv3WUKa5uLSBApfdlSjON15OKDKF0+rvjj9S89Rvy7UxTivgWdTgdc6ktWrNEQJdG8FvQov1VwNBxDu0hvATdpGa+V11+lHwmb</source>
+    <source>eJyNVm1vGjkQ/s6vmFiRwkYEeh+qk+DoiQLp0UOAgCiqKFotixe2LPZqbUJQL//9xt5XL7SBL8DM+PHM+JmXv/4Ot2Glwpw9FaHjUph1vndDOlvvWpXKQZj/G/f3FbiHThDwI3g82jtS0jUEfLPx2QY4g9m8N36aK6MZZVojQHKYnQT+VEeUCLjnBdxZ4xm0bFTcwBEC8JYhAtGo8rMC+AkPq8B34RYPTBy5bRnCMPKZ5AeJTilxowH9V5eG0udMC1zOhITh+Is9/zbp2/3pdDyFNhBTQloF4/GkP1Lq2FYZGxKSXzULqet7J5BbCiG6BsctjaiK042oI6lW6Hj9gIqi396BucpHsG19aXRwZVUbqE8aKt7NDkFQyxXi4Hn+ayqHXJHmAVWeEwhqadXPzGAT8JUTwK0TbV5amTQ/L7e+ePhUQClktmSUO0caL07UkPuwod634Ya0QXLzs0t8D6ppaJZhdoacP7Zx+kYl0qavvpCiah6yTMT9bu1HJZMafPjz48caYLapVUC+Vah46coRVPG/qrO0+LC0WqbvcfZLruvDdUzGA6knFvkxJEknDFUFhBHfKHDFjpQvv8qsQmsgmoKukzqKSdHdzNjG56ka3pDB6HFMaqZs0Z30Ydb7dwmknsVo24+DYd+2rZLxMKlhyZtoXspxHNhbVgBoDNgvhLPRcYm4up244DXrL5L+zPVbeQppkeb8ELlFQXJJQXLk0Q6bx3GwTqqhzHhFIVQtzPCkv6dE/Wp/gjWWaJV8e9g/rOGfpt8UBLmB+qpVTkrsD9GnzpyLcTGAFLcUjdYnARCtT/5kFss4rybZ8gBLhMO4FiTXkqWql/x/gSn4QmMkX9J16/CEbVzxMFI81GR0BOzoyawxjkdU7jKK1HT/7I5Hs//Uj8mgF0uG425n+Eep8OQ2wpnA6FH18awXV8kTc1ZB3Bs5Y9SV+Ti4KRFWfYyWa13oWBhbd+swJF4yU7Bf8ciXJwjoCw0yO3H0pbvFfKpHyV3NeeJiRSR10zQTnSG2dbjKxOxuK+zyu1YJKR4Sv4dCmyuQHjvzzvAdpM6wP51fgfXcmY4Goy/voCVWV+D1+p+f3kPTNr/FWlPPOQSyeSWDdowfdfeAOT4m0gbOeGPO9QJx3i5SaKKGnEb0Wd6vdDCFiWhLbiulnl61YrH9gpl95vJ1PPrT9oj4X2fjkV59VhTXpQhHQCT06pNeGU/eH4Izm2oEfaFljBO9TmW9Nqe5/lvNnqCm0c4a9jPq6Fm8eOhFrStZg34v6lKr1W3DFzbuMRiPtl/cJYHfLa0L/SvXXgi4ePbirsLjZ2snWKpnI1AdCCwIfiVSpEgsXRbFcfdOFcTI7cBToxk3OF+AA2m8MOjV4Rl7ZTzIfVm/slGnfqpxviiYGdcWrcqpQRe/M1LagUqrmnmnlmaYF5KnEPQSFR6kWj0lZbhKnZVRaXG6oI9vONfokdGZYPvuWdBuG+uo6WXcKZvQddidhKNmpoop2x1udPDqwFvl7X9yPlRf</source>
   </file>
-  <file path="Sqs/CpeSqsListener.php" generated-path="Sqs.CpeSqsListener.html" hash="ef840d1c7268ca9290d627a950c2ba11" package="Default">
+  <file path="Sqs/CpeSqsListener.php" generated-path="Sqs.CpeSqsListener.html" hash="2fd2a39c371e7acd7d93265279df608e" package="Default">
     <docblock line="0">
       <description>This class is used by the CPE Core InputPoller
 We use it to listen to SQS input messages from clients</description>
@@ -620,9 +636,9 @@ We use it to listen to SQS input messages from clients</description>
       <error line="20" code="PPC:ERR-50007">No summary for property $sqs</error>
       <error line="21" code="PPC:ERR-50007">No summary for property $cpeLogger</error>
     </parse_markers>
-    <source>eJytVW1P20AM/p5f4VWIphXQfaajU1cKQ+t4Sys+AIquqRtOS5NwdynqEP99dl6bdmV8mCWk9M722Y+fx3z5Gj/FltVpty1ow/hJavACoTXQR6JxBtMVmCeEwfUQBpFCuAjjxFxHQYCKI+6Q3UAaMBEEUhsM+cu5cUCyJyxQa+GjhrmKFpRbYmg0RbY7lhUKuo2Fh+D0HwYxOrNfD86z7lI9HegvxO8opJxTJZREbfE7/Rf9MIgWiyh8oM9ueVZGOX2gROCc/kjvyrx0m/XFP5/1KK2UWni1gCxWcikMwt4Mp4nfrZ9pzl078WIcRb6PKjvPLpNpID2YJ6FnJNXtul4UaqMSz9hZ2oO1QDiBMAmCVhqa1cC2Z2gAh73UnVyKcsp7anCgkGvo3zncJIGsjQg9rFKIF02hBMrx8Vx4JlIrWyglVnbpUlhToU+lNuGkBz4SHku7QXnd0+FZfzIau7fD84ury0arFthqdTfLJYC4WHr4sEd57CYB3GzVy87aLk/kHOxPFRz1J/K0NbDwBXKCDIpje60SDDT+K8fm2N6q4aX0Z2vD6MIZDy+Zw1eT8fVknFL5OcEES4+S5YUwaATeL5hHCqLErJM+D+msvdQBFg9EIRZeIAwIMHKBmUY4a6yipZyR/Oqvb5JMoYdyiW6eyd5LXYlonI1q2eQXw77OsfdxP+wFke9Smm3qNE6H3ybnjQPYupkKjaxr23XPLkZD120dbEczBDL0s36bWdVNODo6atS51q39XOdTCmIazgjRLLwnzGfAXCmgraiqUCeBYRqUpD3s5fj9zOHbpZMbrm+igmZxQoLJod52vhPSjAl+B2kBzHSqrmIeBzultN7bOZqUBEUTNDURruhvRgM3iQrzdcs+nsg2cW48YHuv3LknRd+5MPNGSZ0t2N+vFeNFSWiq0FZFjdea3/sUSqH+OI3YdlOJ7SN0SrNcVlPXrAuJS5KPDDP1HJcsa2yF72IZW453Ccv958fK+63acLnfXNAeKrZLofdTDGi5ksSLeZa0rYTNi50myYMVc0Prirb8jBVSRv1V/7M09bb8F9rf8a8lpX0W9l9Zf8tKis13ImmAzdyZyrjfuHksSP9mvVl/AJYTSoU=</source>
+    <source>eJytVdtO20AQffdXTCNEnAhIn0lJlYZAUVNuTsQDIGvjTMyqjm1210Ep4t8742ucNLSVuhKSs3PZmTPnDJ8+x0+xZXXabQvaMH6SGrxAaA30kWicwXQF5glhcD2EQaQQLsI4MddREKDiiDtkN5AGTASB1AZD/nJuHJDsCQvUWvioYa6iBeWWGBpNke2OZYWCrLHwEJz+wyBGZ/bjwXnWXaqnA/2F+BmFlHOqhJKoLX6n/6IfBtFiEYUP9Nkt78oopw+UCJzTb6mtzEvWrC/++axHaaXUwqsFdGIll8Ig7M1wmvjd+p3m3LUbL8ZR5PuosvvMmEwD6cE8CT0jqW7X9aJQG5V4xs7SHqwFwgmESRC00tCsBj57hgZw2EvdyaUop7RTgwOFXEP/zuEmCWRtROhhlUK8aAolUI6P58IzkVrZQimxskuX4jQV+lRqE0564CPhsbQblNc9HZ71J6Oxezs8v7i6bLRqga1Wd7NcAoiLpYcPe5THbhLAzVa97Kzt8kbOwf5QwVF/Ik9bAwtfICfIoLi21yrBQOOfcmyO7a0aXkp/Pm0YXTjj4SVz+Goyvp6MUyo/J5hg6VGyvBAGjcD7AfNIQZSYddLnIZ21lzrA4oEoxMILhAEBRi4w0whnjVW0lDOSX/31TZIp9FAu0c0z2XupKxGNs1Etm/xi2Nc59j7uh70g8l1Ks02dxunwy+S8cQDblntGhKj5CI2jqdDIIrdd9+xiNHTd1sF2AOMhQz9rvpm10ISjo6NGnXjd2s91cqWIpuEMFw3Ge8J8IEycAueKtwp1EhjmRMngw14O5vccy12iueH6JipoFjeknhz3bec7Ic2YZuEgbYOZTqVWDOdgp67WeztHkzKiaIJGKMIV/c1o+iZRYb572ccT2VrOD0/b3isX8EnRd67SvFGSagv292vFeFESmiq0VfHkteb3Pp9SqP+eU3x28yq1/iu30qDLigKaFSNxScKSYaar45Jyja3wXZTjk4NfYnT/8bHyfqt2X+43F7Shir1TbIJTDGjtkviL4ZYcriTPK5/GylMWc0OLjPb/jOVSRv12M8zS1NuLYaH9Hf90Ug1kYf9VArcsq9h8JcYG2MydqYz7DctjoYA36836BRgQUM0=</source>
   </file>
-  <file path="Sqs/CpeSqsWriter.php" generated-path="Sqs.CpeSqsWriter.html" hash="2d408dff92c831ec8ca02acde59f09b6" package="Default">
+  <file path="Sqs/CpeSqsWriter.php" generated-path="Sqs.CpeSqsWriter.html" hash="0762cb7753b51df60c614bd3d528d77d" package="Default">
     <docblock line="0">
       <description>This class is used by the CPE Core ActivityPoller
 AND can be also used by the Custom Activities</description>
@@ -780,10 +796,10 @@ AND can be also used by the Custom Activities</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="61" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="62" package="Default">
         <name>workflow_scheduled</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::workflow_scheduled()</full_name>
-        <docblock line="61">
+        <docblock line="62">
           <description>SEND messages to OUTPUT SQS queue</description>
           <long-description>Send messages to back to the clients.
 Clients listening to the SQS queue will receive them
@@ -811,10 +827,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="80" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="81" package="Default">
         <name>activity_started</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_started()</full_name>
-        <docblock line="80">
+        <docblock line="81">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -824,10 +840,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="90" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="91" package="Default">
         <name>activity_completed</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_completed()</full_name>
-        <docblock line="90">
+        <docblock line="91">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -842,10 +858,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="101" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="102" package="Default">
         <name>activity_failed</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_failed()</full_name>
-        <docblock line="101">
+        <docblock line="102">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -865,10 +881,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="114" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="115" package="Default">
         <name>activity_timeout</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_timeout()</full_name>
-        <docblock line="114">
+        <docblock line="115">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -878,10 +894,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="123" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="124" package="Default">
         <name>activity_canceled</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_canceled()</full_name>
-        <docblock line="123">
+        <docblock line="124">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -891,10 +907,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="128" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="129" package="Default">
         <name>activity_progress</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_progress()</full_name>
-        <docblock line="128">
+        <docblock line="129">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -909,10 +925,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="138" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="139" package="Default">
         <name>activity_preparing</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_preparing()</full_name>
-        <docblock line="138">
+        <docblock line="139">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -922,10 +938,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="146" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="147" package="Default">
         <name>activity_finishing</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_finishing()</full_name>
-        <docblock line="146">
+        <docblock line="147">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -935,10 +951,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="160" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="161" package="Default">
         <name>craft_new_msg</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::craft_new_msg()</full_name>
-        <docblock line="160">
+        <docblock line="161">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -953,10 +969,10 @@ Activity Started, Failed, Succeeded, etc</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="172" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="173" package="Default">
         <name>send_activity_msg</name>
         <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::send_activity_msg()</full_name>
-        <docblock line="172">
+        <docblock line="173">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -983,48 +999,48 @@ Activity Started, Failed, Succeeded, etc</long-description>
       </method>
     </class>
     <markers>
-      <fixme line="125">To implement</fixme>
+      <fixme line="126">To implement</fixme>
     </markers>
     <parse_markers>
       <error line="19" code="PPC:ERR-50005">No summary for class \SA\CpeSdk\Sqs\CpeSqsWriter</error>
       <error line="40" code="PPC:ERR-50015">Argument $debug is missing from the Docblock of __construct</error>
       <error line="40" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="61" code="PPC:ERR-50015">Argument $workflowType is missing from the Docblock of workflow_scheduled</error>
-      <error line="61" code="PPC:ERR-50015">Argument $runId is missing from the Docblock of workflow_scheduled</error>
-      <error line="61" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of workflow_scheduled</error>
-      <error line="61" code="PPC:ERR-50015">Argument $message is missing from the Docblock of workflow_scheduled</error>
-      <error line="80" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_started</error>
-      <error line="80" code="PPC:ERR-50008">No summary for method activity_started()</error>
-      <error line="90" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_completed</error>
-      <error line="90" code="PPC:ERR-50015">Argument $result is missing from the Docblock of activity_completed</error>
-      <error line="90" code="PPC:ERR-50008">No summary for method activity_completed()</error>
-      <error line="101" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_failed</error>
-      <error line="101" code="PPC:ERR-50015">Argument $reason is missing from the Docblock of activity_failed</error>
-      <error line="101" code="PPC:ERR-50015">Argument $details is missing from the Docblock of activity_failed</error>
-      <error line="101" code="PPC:ERR-50008">No summary for method activity_failed()</error>
-      <error line="114" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_timeout</error>
-      <error line="114" code="PPC:ERR-50008">No summary for method activity_timeout()</error>
-      <error line="123" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_canceled</error>
-      <error line="123" code="PPC:ERR-50008">No summary for method activity_canceled()</error>
-      <error line="128" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_progress</error>
-      <error line="128" code="PPC:ERR-50015">Argument $progress is missing from the Docblock of activity_progress</error>
-      <error line="128" code="PPC:ERR-50008">No summary for method activity_progress()</error>
-      <error line="138" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_preparing</error>
-      <error line="138" code="PPC:ERR-50008">No summary for method activity_preparing()</error>
-      <error line="146" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_finishing</error>
-      <error line="146" code="PPC:ERR-50008">No summary for method activity_finishing()</error>
-      <error line="160" code="PPC:ERR-50015">Argument $type is missing from the Docblock of craft_new_msg</error>
-      <error line="160" code="PPC:ERR-50015">Argument $data is missing from the Docblock of craft_new_msg</error>
-      <error line="160" code="PPC:ERR-50008">No summary for method craft_new_msg()</error>
-      <error line="172" code="PPC:ERR-50015">Argument $activityTask is missing from the Docblock of send_activity_msg</error>
-      <error line="172" code="PPC:ERR-50015">Argument $eventType is missing from the Docblock of send_activity_msg</error>
-      <error line="172" code="PPC:ERR-50015">Argument $sendInput is missing from the Docblock of send_activity_msg</error>
-      <error line="172" code="PPC:ERR-50015">Argument $result is missing from the Docblock of send_activity_msg</error>
-      <error line="172" code="PPC:ERR-50008">No summary for method send_activity_msg()</error>
+      <error line="62" code="PPC:ERR-50015">Argument $workflowType is missing from the Docblock of workflow_scheduled</error>
+      <error line="62" code="PPC:ERR-50015">Argument $runId is missing from the Docblock of workflow_scheduled</error>
+      <error line="62" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of workflow_scheduled</error>
+      <error line="62" code="PPC:ERR-50015">Argument $message is missing from the Docblock of workflow_scheduled</error>
+      <error line="81" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_started</error>
+      <error line="81" code="PPC:ERR-50008">No summary for method activity_started()</error>
+      <error line="91" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_completed</error>
+      <error line="91" code="PPC:ERR-50015">Argument $result is missing from the Docblock of activity_completed</error>
+      <error line="91" code="PPC:ERR-50008">No summary for method activity_completed()</error>
+      <error line="102" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_failed</error>
+      <error line="102" code="PPC:ERR-50015">Argument $reason is missing from the Docblock of activity_failed</error>
+      <error line="102" code="PPC:ERR-50015">Argument $details is missing from the Docblock of activity_failed</error>
+      <error line="102" code="PPC:ERR-50008">No summary for method activity_failed()</error>
+      <error line="115" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_timeout</error>
+      <error line="115" code="PPC:ERR-50008">No summary for method activity_timeout()</error>
+      <error line="124" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_canceled</error>
+      <error line="124" code="PPC:ERR-50008">No summary for method activity_canceled()</error>
+      <error line="129" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_progress</error>
+      <error line="129" code="PPC:ERR-50015">Argument $progress is missing from the Docblock of activity_progress</error>
+      <error line="129" code="PPC:ERR-50008">No summary for method activity_progress()</error>
+      <error line="139" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_preparing</error>
+      <error line="139" code="PPC:ERR-50008">No summary for method activity_preparing()</error>
+      <error line="147" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_finishing</error>
+      <error line="147" code="PPC:ERR-50008">No summary for method activity_finishing()</error>
+      <error line="161" code="PPC:ERR-50015">Argument $type is missing from the Docblock of craft_new_msg</error>
+      <error line="161" code="PPC:ERR-50015">Argument $data is missing from the Docblock of craft_new_msg</error>
+      <error line="161" code="PPC:ERR-50008">No summary for method craft_new_msg()</error>
+      <error line="173" code="PPC:ERR-50015">Argument $activityTask is missing from the Docblock of send_activity_msg</error>
+      <error line="173" code="PPC:ERR-50015">Argument $eventType is missing from the Docblock of send_activity_msg</error>
+      <error line="173" code="PPC:ERR-50015">Argument $sendInput is missing from the Docblock of send_activity_msg</error>
+      <error line="173" code="PPC:ERR-50015">Argument $result is missing from the Docblock of send_activity_msg</error>
+      <error line="173" code="PPC:ERR-50008">No summary for method send_activity_msg()</error>
       <error line="21" code="PPC:ERR-50007">No summary for property $debug</error>
       <error line="22" code="PPC:ERR-50007">No summary for property $sqs</error>
     </parse_markers>
-    <source>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</source>
+    <source>eJzVWN1T2zgQf89foWYy44Sh4R1aOmkwrdtAaBzKdUonozgKqDi2K8kJXIf//VaSLVv+oMdc+3B+AHm139r9aZ1Xb5LbpNM52NvroD00v6UcBSHmHMEi5WSFlg9I3BI0vnDROGYEjQJBt1Q8XMRhSJgUGp2foABHaEkQDnlsi6VcxJtciBIOAlLmkhNEBRIx4iRaoTRZYUG4fFdSISWR4EPg3DvodCK8ITzBAUH+6HqcEH91d+3/4Efg9gEabfDfcYRCumSYSQNgHo12/HocbzZxdA3LI0MzUv4IgSLkn3xUe0Yv7Orw5esPfsWogCB/dhA8CaNb8BL1VmSZ3hzZNK40SxJod+8DkggaR1xRAlgI5J1/Hk28k8UHf3qO9PMadcvUbqHBF1iAY2X5q+ns4+lkerXwx+/dk8uJeyLl69TuUUnow/Ttwp+PZnPgLoyWqDXu8fTsYuIa/ozbUGv8pyNvUijP+TXVYh6N595nb/6l5A8wV6nNIoWRsshTRubemTu9nFckMmqzSBF5WaQ5crN9MZu+m7m+b9vJqW0y7sVo5p2/q8hk1JYUeOee/74qZKiZkC7KdBnSAK3TKJBFiBYLpYulgejr4h0oPl3W8ukJaPyXx2oP9OcVbvahIseMyEIfXfmyaxAFhTgKyLDMc0UQuU9IIBDAgeRkcUhQzFRTJyxOCFNkEm3RFroVL2GbE8HRGpg+ul8OfHc8c+eFX3jHwR9o3cPDNQ5EzB76mDH80Dcs+eMwcgPBOuj1MbohAkz0u2BrceKeji4n88XMfedBiw0swcHgqJoDaGSZATD88hj09B2AASdje+wUSVaIKZ895LuAgABRHN9oDIMSu4Da8z/56EdKUpIxGn4JeWX+JQ7ucuwLDPZp5gwLAeA4BEWjm5zRaEc7GoaIkYDQLZFbG8tQjq0Y1lEs6JoGWGHTYc6WQ7pEHSbIah+dYhrK/34aBISs5JKIIOM/aK+0Xczu1mG8W/DglqxS0NHv5bT5Q0L2UY+lkQfqDFm9ZMmoleWGy3L8ap2ZI+iGOOYVjntDAxZLah9qnAz2K+xg12LnJFwfHtaB05brfo+X3qpbksu9fHn8M9t8rIio2CwRHa3NVUTezbhKuWhmlbnrWqwqmzYzjZJUtDjsQA1g59EIfCvqvsi2Lj1Z/TVBGbPe7j42tQz8gVo702KtLfpJluslC53cQa1SmlGVzJUhJ04FROJUsqs0ZBbexqsH1enfeRwtSBTEK9KX1VI5/IFpXBNptWRxVvwLrou/3xOY31UrEcANxgKBEszwRnagI0vNkSuAroCoMUY2p6NOwQF8XBd9rcOspQ1EFsY8OG9nTPmxjyyaLt3qnWnHLB0zBBu4WmMP4k0SEhO9bFPC01DWQpSGYUM2JkU2cJJInCH3gmEkyyVHqKyKzJRXh7kh8iIk1NCJucIulBmWeoa/P2PmNrdztobBtdJOWQaem8m1Qs5SGjFU6L68UQXs8JaL978HpmehX0b1tdZSXe1iN8Mr7W+dK/Nfg1D2YnF9e26mJGBDpzf322/LSzbx/YYWkdNO+AQ+nHp/nbmHaB4jKptpk3f8rxTDXHQDtcZNzeSEP5aTfDqtcDU1Qe7Lc7OVMALgAID4h4/XDM3P7lMaUX775x00A3qLg9VZ8nLuTXwzaOWfg2OG1zBUo4jsDKqqS9b6CDVRBpJ9AczK5Z7Qk5eE1JYJq+HCNmPWvx6wJDKI2liiB4hsW67LiTBrRkTKIuWOlR75KSyvDly+TOTkq2eE0nhdS8ITZ9fLyXP7/HpkC12rB9WCKBV58lbPbsPy3pPXJF2j/ot+j2ayalZZET2rlD3IPjT05DCAxwarWxbv1MmPE2J+Weh3pSTSutVPCnCJ0miLQ7p6cR11h09YqMN7+VeIQdNomCurT+P5jrfKD7nBcImpWj2GW1XRL+QVU5GepilWfobiSFSGDhgsdKrUfPLGOqLigO3EG0e+Zon7JkdjtWy265oJ6A0axxF8ZkkvlEXVYEPbrK6dVpt6WxvV62arXkQFxaG2o7/yU1Zcb6rnWlo8/5hozXvO4N6TIJVl13p8tooq2Fk+Z5iTQayNVXYyina06a0wksPFE2AxbPzgUaf6v//IefwHJNPqkw==</source>
   </file>
   <file path="CpeException.php" generated-path="CpeException.html" hash="61e7d6faa5829e48988a3bec346c2c1a" package="Default">
     <docblock line="0">

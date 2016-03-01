@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">106</span></a></li>
+                <span class="label label-info">108</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -75,7 +75,10 @@
 </li>
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
-                    <ul><li class="property public "><a href="#property_logPath" title="$logPath() :: "><span class="description"></span><pre>$logPath</pre></a></li></ul>
+                    <ul>
+<li class="property public "><a href="#property_logPath" title="$logPath() :: "><span class="description"></span><pre>$logPath</pre></a></li>
+<li class="property public "><a href="#property_printout" title="$printout() :: "><span class="description"></span><pre>$printout</pre></a></li>
+</ul>
 </li>
 <li class="nav-header">
 <i title="Constants" class="icon-custom icon-constant"></i> Constants
@@ -113,13 +116,14 @@ Send logs to Syslog for log offloading</p>
 <a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
 <h2>__construct()
         </h2>
-<pre>__construct($logPath<code> = null</code>, $suffix<code> = null</code>) </pre>
+<pre>__construct($logPath<code> = null</code>, $suffix<code> = null</code>, $printout<code> = false</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$logPath</h4></div>
 <div class="subelement argument"><h4>$suffix</h4></div>
+<div class="subelement argument"><h4>$printout</h4></div>
 </div></div>
 </div>
 <a id="method_log_out"></a><div class="element clickable method public method_log_out " data-toggle="collapse" data-target=".method_log_out .collapse" title="public">
@@ -160,6 +164,16 @@ Send logs to Syslog for log offloading</p>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property_printout"> </a><div class="element clickable property public property_printout" data-toggle="collapse" data-target=".property_printout .collapse" title="public">
+<h2>$printout</h2>
+<pre>$printout </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <h3>
 <i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
 <a id="constant_LOG_TYPE_ERROR"> </a><div class="element clickable constant  constant_LOG_TYPE_ERROR" data-toggle="collapse" data-target=".constant_LOG_TYPE_ERROR .collapse" title="">
@@ -181,7 +195,7 @@ Send logs to Syslog for log offloading</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2015-12-17T19:41:08Z.<br></footer></div>
+            generated on 2016-03-01T06:12:44Z.<br></footer></div>
 </div>
 </body>
 </html>
