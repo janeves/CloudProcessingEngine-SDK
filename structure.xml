@@ -689,16 +689,147 @@ Check for AWS environment variables</description>
     </parse_markers>
     <source>eJx1UEtrwzAMvvtXiFBoC9u6c7oHJfS2w1iO6wiuo7TeUttY9iiU/PcpTl87VAcjyfoe0tOr2zohjNwhOakQysWqcFjWP3MhZjMoIgW7A9wrdEFbA6qVRNBYD2GLULQ21vDurUIibTawNBttUAxTTLQ8A3Ef0NQEq3NLHARwuLhutYKRx2aeGulh7Q+ssWE2UNZQ8FEFViULY/ZKcoNj0GTGAWxik+01WxONSrJVdUZPRkfgXRKDZ8gyTpWtkfNHTp3HX20jcWli204T4+Cyj1HYarp/GbAXv0lWejQhz2/I9RpX/NMB2P1bVw2nZnB/SI88TMwp0xq2Abv+RhVuLBlsmXCT6ZVfjyH6/rd4W5RlVcEDZDl8Hi57dF85nMqj225lspO9TvwBUjysDg==</source>
   </file>
-  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="f914bb50b38b2d6b75e557998a35b3d5" package="Default">
+  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="bf44fa6838d8f28ec65d375a6e3bb2ba" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
+    <namespace-alias name="CpeSdk">\SA\CpeSdk</namespace-alias>
+    <class final="false" abstract="false" namespace="SA\CpeSdk" line="11" package="Default">
+      <extends/>
+      <name>CpeLogger</name>
+      <full_name>\SA\CpeSdk\CpeLogger</full_name>
+      <docblock line="11">
+        <description>Allow formatted logging on STDOUT
+Send logs to Syslog for log offloading</description>
+        <long-description></long-description>
+        <tag name="package" line="11" description="Default"/>
+      </docblock>
+      <constant namespace="SA\CpeSdk" line="17" package="Default">
+        <name>LOG_TYPE_ERROR</name>
+        <full_name>\SA\CpeSdk\CpeLogger::LOG_TYPE_ERROR</full_name>
+        <value>"LOG_TYPE_ERROR"</value>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk" line="18" package="Default">
+        <name>OPENLOG_ERROR</name>
+        <full_name>\SA\CpeSdk\CpeLogger::OPENLOG_ERROR</full_name>
+        <value>"OPENLOG_ERROR"</value>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="13" package="Default">
+        <name>$logPath</name>
+        <full_name>\SA\CpeSdk\CpeLogger::logPath</full_name>
+        <default></default>
+        <docblock line="13">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="14" package="Default">
+        <name>$printout</name>
+        <full_name>\SA\CpeSdk\CpeLogger::printout</full_name>
+        <default></default>
+        <docblock line="14">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="21" package="Default">
+        <name>__construct</name>
+        <full_name>\SA\CpeSdk\CpeLogger::__construct()</full_name>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$logPath</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$suffix</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$printout</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="52" package="Default">
+        <name>log_out</name>
+        <full_name>\SA\CpeSdk\CpeLogger::log_out()</full_name>
+        <docblock line="52">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$type</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$source</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$message</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$workflowId</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="106" package="Default">
+        <name>print_to_file</name>
+        <full_name>\SA\CpeSdk\CpeLogger::print_to_file()</full_name>
+        <docblock line="106">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$log</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$workflowId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="21" code="PPC:ERR-50015">Argument $logPath is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50015">Argument $suffix is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50015">Argument $printout is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="52" code="PPC:ERR-50015">Argument $type is missing from the Docblock of log_out</error>
+      <error line="52" code="PPC:ERR-50015">Argument $source is missing from the Docblock of log_out</error>
+      <error line="52" code="PPC:ERR-50015">Argument $message is missing from the Docblock of log_out</error>
+      <error line="52" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of log_out</error>
+      <error line="52" code="PPC:ERR-50008">No summary for method log_out()</error>
+      <error line="106" code="PPC:ERR-50015">Argument $log is missing from the Docblock of print_to_file</error>
+      <error line="106" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of print_to_file</error>
+      <error line="106" code="PPC:ERR-50008">No summary for method print_to_file()</error>
+      <error line="13" code="PPC:ERR-50007">No summary for property $logPath</error>
+      <error line="14" code="PPC:ERR-50007">No summary for property $printout</error>
     </parse_markers>
-    <source>eJyNVm1vIjkM/s6vcKNKMBWFvQ+rk+ixJw7oHncIEC+qViwaDUMG5hiS0SSU9nb739fJvGZgt/AFsJ0ntmM/9h9/hruwUmHOgYrQcSnMOl+7IZ1t9g+VylGY/5t3dxW4g04Q8BN4PDo4UtINBHy79dkWOIPZvDdezJXRjDKtESA5zF4F/lRHlAi45wXc2eAZtGxW3MARAvCWIQLRqPKtAvgJj+vAd+EWD0wcuXswhGHkM8mPEp1S4mYT+i8uDaXPmRa4nAkJw/Fne/5l0rf70+l4Cm0gpoQ8FIzHk/5IqWNbZWxISH7VLKSu772C3FEI0TU47WhEVZxuRB1JtULH6wdUFP32jsxVPoJt60ujoytr2kB90lDxbnYMgnquEEfP819SOeSKNA+o8pxAUEurvmUG24CvnQBunWj7nASgPhv00t5QzzkG0pb+gf7PGbUFlbXqYt6tWplhfpPc+eL+U+G+whuUjPIwSPPZiZryEDZVJTTdkDZJbn52ie9BLU2CZZidIedlYZy+USm36YsvpKiZhywT8bDf+FHJpA4ffv/4sQ74LtQqIN8qVLx07QiqOqWm87n8sLIeTN/jdyq5rg83MBn3pJFY5MewnDphqHoljPhWgas6SivrZ5lVaE1EU9AN0kAxKbqbGdv4PDXDGzIYPY5J3ZQtu5M+zHr/roA0shht+3Ew7Nu2VTIeJt0ueQvNSzmOA3vLWgWNAZlFOFsdl4h5wImpQffHxfY4c/1Wvoa02BD8GLlFQXJJQXLi0R5p5jTYJH1T7g1VQqhamuGpbiDqV/uTbpMa+XJ/uN/A3y2/JQjWBuprVjkpsT9EnzpzLsbFAFLcUjRanwRAtD75k1ms4ryaxZYHWCo4jGtJci1ZqX7J/xcqBV9ojMWX8HMDFkj4qg4jVYe6GB0Be/pq9hjHIyp3WYnUNdN2x6PZd/VjMujFkuG42xn+Vmo8uYtwejB6UoyfsXaNLJizDmIW5YxRV+aD46ZUsOpjkHOhD4uxdXcOw8JLpg/yFY98+QoBfaZBZidOvnR3mE/1KLmreZ242BFJ37TMRGeIbR2uMjHZbY3zYP9QQorHya+h0OYKpMfOvDN8B6kz7E/nV2A9daajwejzO2iJ1RV4vf5fi/fQtM0vsZIZ1bqygvaMnzR7wBwfE8sGzurG3AAKhfN2sYQmashpRJ/lfKWDKUxEW3JbKfX0qheb7SeV2Wcu38RLQkqPiP/PbDzSS9Ka4mIV4QiIhF6S0ivjyfuf4MymGkFfaBnjRC9eGdfmZa7/1rInqGu0M8J+Qh09ixcPPavFJiPo96IuUa2mDV/YuPFgPNp+WU0Cr66sC/yVay8EXDx7Ib+3ksfP1k6wFGcjUAMILAl+JVIskVi6Kopj9k4VxMjtwFOjGXc9X4ADabww6DXgCbkyHuS+bFxJ1KmfapwvC2bGtUWrcmrQxa+MlHag0qpm3qmlGeaF5CkEvUSFR6mWVEkZrlJnbVRanC7o4xvONXpkdCZI3z0L2m1jcTW9jJmyBV2HVSWcdGWqmLLd4UYHrw68Vd5+AEjNYVU=</source>
+    <source>eJyNVm2PGjkM/s6v8EYrASsWeh+qk+DoiQO2xx0CxItWFUWjYcjAHEMymoRluXb/e53MawbahS+A7TyxHfux//gz2AWlErMPVAS2Q2HW+doN6Gyzb5VKR2H+bzw8lOABOr7PT+Dy8GBLSTfg8+3WY1vgDGbz3ngxV0YzyrRGgOQwOwv8qY4oEXDX9bm9wTNo2Sg5vi0E4C1DBKJh6VsJ8BMc177nwD0emNhy1zKEQegxyY8SnVLiRgP6rw4NpMeZFjicCQnD8Wdr/mXSt/rT6XgKbSCmhLRyxuNJf6TUka0yNiQku2oWUMdzzyB3FAJ0DU47GlIVpxNSW1Kt0PF6PhV5v90jc5SPYFn60vDoyIo2UJ8kVLybHX2/linE0XW910QOmSLJA6pc2xe0qlXfUoOtz9e2D/d2uH2JA1CfDXppbahrH31pSe9A/+eMWoLKSnkx75arrdQyu0ruPPH4KXdh7hEKRlkcpPFihw15CBqqFBpOQBskM7+4xHOhkmShaphdIGd1YZy+Uzm36KsnpKiYh6om4mG/8cKCSQ0+/P7xYw3wYWg1h3yvUPHStS2oapWKTujywyqXKe179FAF1/XhOibjkdRji+wY1lMnCFSzBCHfKnBVSElp/SyzCq2BaAq6TuooJnl3U2MLn6dieEMGo6cxqZmyZXfSh1nv3xWQehqjZT0Nhn3LqhaMh3G7S95E80KOo8De0l5BY0BqEfZWxyUiIrAjbtANcrU/Lly/l+eA5juCH0MnL4gvyUlOPNwjz5wGm7hxis2hSghVSzM81Q5E/Wp/0n1SIV8eD48b+LvpNQXB2kB9pVpMSuQP0acunItwMYAEtxCN1scBEK2P/6QWqyivZrFlARYKDuNakkxLVqpfsv+5SsEXGmPxxQRdhwUyvqrDUNWhLkZbwJ6ezR7jeETlLi2Rmqba7ng0+65+TAa9SDIcdzvD3wqNJ3chjg9GT4ryU9qukAWz135Eo5wx6shsctwVClZ9DHa+xlgYW3dnMyy8ePwgX/HQk2fw6Qv1Uztx8qSzw3yqR8lczerEwY6I+6ZpJjpFbOtwlYnJbmscCPtWASmaJ7+GQpsbkJ46887wHaTOsD+d34D13JmOBqPP76DFVjfg9fp/Ld5D0za/xIqHVPPGCtozftLsAXN8TCwbuKgbcwXIFc7b1RKaqCGnET2W8ZUOJjcRLcktpdTTq5Zvtp9UZp85fBNtCQk9Iv4/s/FIb0lriptViCMgFHpLSq6MJu9/gjOLagR9YdUYJ3rzSrk2K3P9t5I+QU2jXRD2M+roRbx46EVtNilBvxd1gWo1bXjCwpUH49H2y3IceHlVvcJfmfZKwPmzV3cVHj1bO8ZSnI1AdSCwJPgVS7FEIukqL47YO1EQI7cDV41mXPY8ATYk8cKgV4dn5MpokHuyfiNRJ36qcb7MmRnX5q2KqUEXvzJS2IEKq5p5p5ammFeSpxD0EhUcpdpSJWW4Sl20UWFxuqKPbrjU6JHRmSB996rQbhubq+llxJRN6NqsLOGkK1PFlO4Odzp4deCt9PYDYIhhkA==</source>
   </file>
   <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="f57cf186f970d143359849451e65e377" package="Default">
     <docblock line="0">

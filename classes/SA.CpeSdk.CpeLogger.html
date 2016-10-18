@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Cloud Processing Engine SDK » \SA\CpeSdk\Sqs\CpeSqsListener</title>
+<title>Cloud Processing Engine SDK » \SA\CpeSdk\CpeLogger</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -65,27 +65,32 @@
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
         </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_delete_message" title="delete_message() :: "><span class="description">delete_message()
-        </span><pre>delete_message()</pre></a></li>
-<li class="method public "><a href="#method_receive_message" title="receive_message() :: "><span class="description">receive_message()
-        </span><pre>receive_message()</pre></a></li>
+<li class="method public "><a href="#method_log_out" title="log_out() :: "><span class="description">log_out()
+        </span><pre>log_out()</pre></a></li>
 </ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method_print_to_file" title="print_to_file() :: "><span class="description">print_to_file()
+        </span><pre>print_to_file()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
-                    <ul></ul>
-</li>
-<li class="nav-header private">» Private
                     <ul>
-<li class="property private "><a href="#property_cpeLogger" title="$cpeLogger() :: "><span class="description"></span><pre>$cpeLogger</pre></a></li>
-<li class="property private "><a href="#property_debug" title="$debug() :: "><span class="description"></span><pre>$debug</pre></a></li>
-<li class="property private "><a href="#property_sqs" title="$sqs() :: "><span class="description"></span><pre>$sqs</pre></a></li>
+<li class="property public "><a href="#property_logPath" title="$logPath() :: "><span class="description"></span><pre>$logPath</pre></a></li>
+<li class="property public "><a href="#property_printout" title="$printout() :: "><span class="description"></span><pre>$printout</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Constants" class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_LOG_TYPE_ERROR" title="LOG_TYPE_ERROR() :: "><span class="description">LOG_TYPE_ERROR</span><pre>LOG_TYPE_ERROR</pre></a></li>
+<li class="constant  "><a href="#constant_OPENLOG_ERROR" title="OPENLOG_ERROR() :: "><span class="description">OPENLOG_ERROR</span><pre>OPENLOG_ERROR</pre></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\Sqs\CpeSqsListener"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\CpeLogger"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
 <li>
 <a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -93,15 +98,13 @@
 <li>
 <span class="divider">\</span><a href="../namespaces/SA.CpeSdk.html">CpeSdk</a>
 </li>
-<li>
-<span class="divider">\</span><a href="../namespaces/SA.CpeSdk.Sqs.html">Sqs</a>
-</li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/SA.CpeSdk.Sqs.CpeSqsListener.html">CpeSqsListener</a>
+<span class="divider">\</span><a href="../classes/SA.CpeSdk.CpeLogger.html">CpeLogger</a>
 </li>
 </ul>
 <div xmlns:php="http://php.net/xsl" class="element class">
-<p class="short_description"></p>
+<p class="short_description">Allow formatted logging on STDOUT
+Send logs to Syslog for log offloading</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
@@ -113,44 +116,47 @@
 <a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
 <h2>__construct()
         </h2>
-<pre>__construct($debug, $cpeLogger<code> = null</code>) </pre>
+<pre>__construct($logPath<code> = null</code>, $suffix<code> = null</code>, $printout<code> = false</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$debug</h4></div>
-<div class="subelement argument"><h4>$cpeLogger</h4></div>
+<div class="subelement argument"><h4>$logPath</h4></div>
+<div class="subelement argument"><h4>$suffix</h4></div>
+<div class="subelement argument"><h4>$printout</h4></div>
 </div></div>
 </div>
-<a id="method_delete_message"></a><div class="element clickable method public method_delete_message " data-toggle="collapse" data-target=".method_delete_message .collapse" title="public">
-<h2>delete_message()
+<a id="method_log_out"></a><div class="element clickable method public method_log_out " data-toggle="collapse" data-target=".method_log_out .collapse" title="public">
+<h2>log_out()
         </h2>
-<pre>delete_message($queue, $msg) </pre>
+<pre>log_out($type, $source, $message, $workflowId<code> = null</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$queue</h4></div>
-<div class="subelement argument"><h4>$msg</h4></div>
+<div class="subelement argument"><h4>$type</h4></div>
+<div class="subelement argument"><h4>$source</h4></div>
+<div class="subelement argument"><h4>$message</h4></div>
+<div class="subelement argument"><h4>$workflowId</h4></div>
 </div></div>
 </div>
-<a id="method_receive_message"></a><div class="element clickable method public method_receive_message " data-toggle="collapse" data-target=".method_receive_message .collapse" title="public">
-<h2>receive_message()
+<a id="method_print_to_file"></a><div class="element clickable method private method_print_to_file " data-toggle="collapse" data-target=".method_print_to_file .collapse" title="private">
+<h2>print_to_file()
         </h2>
-<pre>receive_message($queue, $timeout) </pre>
+<pre>print_to_file($log, $workflowId) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$queue</h4></div>
-<div class="subelement argument"><h4>$timeout</h4></div>
+<div class="subelement argument"><h4>$log</h4></div>
+<div class="subelement argument"><h4>$workflowId</h4></div>
 </div></div>
 </div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_cpeLogger"> </a><div class="element clickable property private property_cpeLogger" data-toggle="collapse" data-target=".property_cpeLogger .collapse" title="private">
-<h2>$cpeLogger</h2>
-<pre>$cpeLogger </pre>
+<a id="property_logPath"> </a><div class="element clickable property public property_logPath" data-toggle="collapse" data-target=".property_logPath .collapse" title="public">
+<h2>$logPath</h2>
+<pre>$logPath </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -158,9 +164,9 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_debug"> </a><div class="element clickable property private property_debug" data-toggle="collapse" data-target=".property_debug .collapse" title="private">
-<h2>$debug</h2>
-<pre>$debug </pre>
+<a id="property_printout"> </a><div class="element clickable property public property_printout" data-toggle="collapse" data-target=".property_printout .collapse" title="public">
+<h2>$printout</h2>
+<pre>$printout </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -168,13 +174,17 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_sqs"> </a><div class="element clickable property private property_sqs" data-toggle="collapse" data-target=".property_sqs .collapse" title="private">
-<h2>$sqs</h2>
-<pre>$sqs </pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
+<h3>
+<i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_LOG_TYPE_ERROR"> </a><div class="element clickable constant  constant_LOG_TYPE_ERROR" data-toggle="collapse" data-target=".constant_LOG_TYPE_ERROR .collapse" title="">
+<h2>LOG_TYPE_ERROR</h2>
+<pre>LOG_TYPE_ERROR = "LOG_TYPE_ERROR" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_OPENLOG_ERROR"> </a><div class="element clickable constant  constant_OPENLOG_ERROR" data-toggle="collapse" data-target=".constant_OPENLOG_ERROR .collapse" title="">
+<h2>OPENLOG_ERROR</h2>
+<pre>OPENLOG_ERROR = "OPENLOG_ERROR" </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
