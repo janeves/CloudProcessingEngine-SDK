@@ -24,6 +24,8 @@ class CpeLogger
         $printout = false)
     {
         global $argv;
+
+        date_default_timezone_set('UTC')
         
         $this->printout = $printout;
         $this->logPath = "/var/tmp/logs/cpe/";
