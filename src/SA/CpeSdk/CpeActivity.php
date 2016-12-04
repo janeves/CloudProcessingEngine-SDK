@@ -88,7 +88,7 @@ class CpeActivity
             
             // Activity exists as there is no exception
             return true;
-        } catch (\Aws\Swf\Exception\UnknownResourceException $e) {
+        } catch (\Exception $e) {
             $this->cpeLogger->log_out("ERROR", "[CPE SDK] ".basename(__FILE__), 
                 "Activity '" . $this->params["name"] . "' doesn't exists. Creating it ...\n");
         }
