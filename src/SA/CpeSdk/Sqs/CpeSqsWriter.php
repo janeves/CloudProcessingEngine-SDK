@@ -9,10 +9,6 @@
 
 namespace SA\CpeSdk\Sqs;
 
-// Amazon libraries
-use Aws\Common\Aws;
-use Aws\Sqs;
-
 // SA Cpe SDK
 use SA\CpeSdk;
 
@@ -43,10 +39,10 @@ class CpeSqsWriter
 
         // Create AWS SDK instance.
         // We expect an AWS role or the proper AWS env variable sets for KEY/SECRET
-        $aws = Aws::factory(array(
-                'region' => getenv("AWS_DEFAULT_REGION")
-            ));
-        $this->sqs = $aws->get('Sqs');
+        $this->sqs = new \Aws\Sqs\SqsClient([
+                'region'  => getenv("AWS_DEFAULT_REGION"),
+                'version' => 'latest'
+            ]);
     }
 
     

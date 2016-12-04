@@ -7,10 +7,6 @@
 
 namespace SA\CpeSdk\Sqs;
 
-// Amazon libraries
-use Aws\Common\Aws;
-use Aws\Sqs;
-
 // SA Cpe SDK
 use SA\CpeSdk;
 
@@ -25,10 +21,10 @@ class CpeSqsListener
         $this->debug = $debug;
 
         // Create AWS SDK instance
-        $aws = Aws::factory(array(
-                'region' => getenv("AWS_DEFAULT_REGION")
-            ));
-        $this->sqs = $aws->get('Sqs');
+        $this->sqs = new \Aws\Sqs\SqsClient([
+                'region'  => getenv("AWS_DEFAULT_REGION"),
+                'version' => 'latest'
+            ]);
 
         // Logger
         if (!$cpeLogger)

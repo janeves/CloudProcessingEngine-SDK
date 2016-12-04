@@ -2,8 +2,6 @@
 
 namespace SA\CpeSdk\Swf;
 
-use Aws\Swf\SwfClient;
-
 // SA Cpe SDK
 use SA\CpeSdk;
 
@@ -22,8 +20,9 @@ class CpeSwfHandler
             throw new CpeSdk\CpeException("Set 'AWS_DEFAULT_REGION' environment variable!");
 
         // SWF client
-        $this->swf = SwfClient::factory(array(
-            'region'  => $region
-        ));
+        $this->swf = new \Aws\Swf\SwfClient([
+                'region'  => $region,
+                'version' => 'latest'
+            ]);
     }
 }
