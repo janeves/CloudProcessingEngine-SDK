@@ -6,12 +6,12 @@ namespace SA\CpeSdk\Swf;
 use SA\CpeSdk;
 
 /**
- * Create the AWS SWF connection
+ * Create the AWS Sfn Client
  * Check for AWS environment variables
  */
-class CpeSwfHandler
+class CpeSfnHandler
 {
-    public $swf;
+    public $sfn;
 
     public function __construct()
     {
@@ -20,7 +20,7 @@ class CpeSwfHandler
             throw new CpeSdk\CpeException("Set 'AWS_DEFAULT_REGION' environment variable!");
 
         // SWF client
-        $this->swf = new \Aws\Swf\SwfClient([
+        $this->snf = new \Aws\Sfn\SfnClient([
                 'region'  => $region,
                 'version' => 'latest'
             ]);

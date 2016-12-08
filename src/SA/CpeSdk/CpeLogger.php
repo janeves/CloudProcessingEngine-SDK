@@ -16,6 +16,7 @@ class CpeLogger
     // Exception
     const LOG_TYPE_ERROR = "LOG_TYPE_ERROR";
     const OPENLOG_ERROR  = "OPENLOG_ERROR";
+    const LOGFILE_ERROR  = "LOGFILE_ERROR";
 
     // Specify the path where to create the log files
     public function __construct(
@@ -42,14 +43,14 @@ class CpeLogger
         // Append progname to the path
         $this->logPath .= "/".$file.".log";
 
-        $this->log_out(
+        $this->logOut(
             "INFO",
             "[CPE SDK] ".basename(__FILE__),
             "Logging to: ".$this->logPath);
     }
 
     // Log message to syslog and log file
-    public function log_out(
+    public function logOut(
         $type,
         $source,
         $message,
@@ -94,7 +95,7 @@ class CpeLogger
         }
         
         // Print log in file
-        $this->print_to_file($log, $workflowId);
+        $this->printToFile($log, $workflowId);
         
         // Encode log message in JSON for better parsing
         $out = json_encode($log);
@@ -103,7 +104,7 @@ class CpeLogger
     }
 
     // Write log in file
-    private function print_to_file($log, $workflowId)
+    private function printToFile($log, $workflowId)
     {
         if (!is_string($log['message']))
             $log['message'] = json_encode($log['message']);
@@ -120,7 +121,9 @@ class CpeLogger
         if (file_put_contents(
                 $this->logPath,
                 $toPrint,
-                FILE_APPEND) === false)
-            print "ERROR: Can't write into log file!\n";
+                FILE_APPEND) === false) {
+            throw new CpeException("Can't write into log file: $this->logPath", 
+                LOGFILE_ERROR);
+        }
     }
 }
