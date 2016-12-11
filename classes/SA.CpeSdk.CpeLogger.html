@@ -76,6 +76,8 @@
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
                     <ul>
+<li class="property public "><a href="#property_activityName" title="$activityName() :: "><span class="description"></span><pre>$activityName</pre></a></li>
+<li class="property public "><a href="#property_filePath" title="$filePath() :: "><span class="description"></span><pre>$filePath</pre></a></li>
 <li class="property public "><a href="#property_logPath" title="$logPath() :: "><span class="description"></span><pre>$logPath</pre></a></li>
 <li class="property public "><a href="#property_printout" title="$printout() :: "><span class="description"></span><pre>$printout</pre></a></li>
 </ul>
@@ -117,20 +119,19 @@ Send logs to Syslog for log offloading</p>
 <a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
 <h2>__construct()
         </h2>
-<pre>__construct($logPath<code> = null</code>, $suffix<code> = null</code>, $printout<code> = false</code>) </pre>
+<pre>__construct($activityName, $logPath<code> = null</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
+<div class="subelement argument"><h4>$activityName</h4></div>
 <div class="subelement argument"><h4>$logPath</h4></div>
-<div class="subelement argument"><h4>$suffix</h4></div>
-<div class="subelement argument"><h4>$printout</h4></div>
 </div></div>
 </div>
 <a id="method_logOut"></a><div class="element clickable method public method_logOut " data-toggle="collapse" data-target=".method_logOut .collapse" title="public">
 <h2>logOut()
         </h2>
-<pre>logOut($type, $source, $message, $workflowId<code> = null</code>) </pre>
+<pre>logOut($type, $source, $message, $logKey<code> = null</code>, $printOut<code> = true</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -138,23 +139,43 @@ Send logs to Syslog for log offloading</p>
 <div class="subelement argument"><h4>$type</h4></div>
 <div class="subelement argument"><h4>$source</h4></div>
 <div class="subelement argument"><h4>$message</h4></div>
-<div class="subelement argument"><h4>$workflowId</h4></div>
+<div class="subelement argument"><h4>$logKey</h4></div>
+<div class="subelement argument"><h4>$printOut</h4></div>
 </div></div>
 </div>
 <a id="method_printToFile"></a><div class="element clickable method private method_printToFile " data-toggle="collapse" data-target=".method_printToFile .collapse" title="private">
 <h2>printToFile()
         </h2>
-<pre>printToFile($log, $workflowId) </pre>
+<pre>printToFile($log) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$log</h4></div>
-<div class="subelement argument"><h4>$workflowId</h4></div>
 </div></div>
 </div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_activityName"> </a><div class="element clickable property public property_activityName" data-toggle="collapse" data-target=".property_activityName .collapse" title="public">
+<h2>$activityName</h2>
+<pre>$activityName </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_filePath"> </a><div class="element clickable property public property_filePath" data-toggle="collapse" data-target=".property_filePath .collapse" title="public">
+<h2>$filePath</h2>
+<pre>$filePath </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_logPath"> </a><div class="element clickable property public property_logPath" data-toggle="collapse" data-target=".property_logPath .collapse" title="public">
 <h2>$logPath</h2>
 <pre>$logPath </pre>
@@ -170,7 +191,7 @@ Send logs to Syslog for log offloading</p>
 <pre>$printout </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
-<div class="subelement argument"></div>
+<div class="subelement argument"><code>true</code></div>
 </div></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
@@ -202,7 +223,7 @@ Send logs to Syslog for log offloading</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2016-12-09T20:44:19Z.<br></footer></div>
+            generated on 2016-12-11T03:51:11Z.<br></footer></div>
 </div>
 </body>
 </html>

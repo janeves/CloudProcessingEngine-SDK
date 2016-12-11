@@ -76,8 +76,14 @@ Notifies Snf that the activity has succeeded
 Call this from your activity logic once the process is successful."><span class="description">Activity Success and completed
 Notifies Snf that the activity has succeeded
 Call this from your activity logic once the process is successful.</span><pre>activitySuccess()</pre></a></li>
-<li class="method public "><a href="#method_doActivity" title="doActivity() :: Perform Snf long polling and call user callback function when receiving new activity"><span class="description">Perform Snf long polling and call user callback function when receiving new activity</span><pre>doActivity()</pre></a></li>
+<li class="method public "><a href="#method_doActivity" title="doActivity() :: This must be called fro your activity to start listening for task
+Perform Snf long polling and call user callback function when receiving new activity"><span class="description">This must be called fro your activity to start listening for task
+Perform Snf long polling and call user callback function when receiving new activity</span><pre>doActivity()</pre></a></li>
 </ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_process" title="process() :: "><span class="description">process()
+        </span><pre>process()</pre></a></li></ul>
 </li>
 <li class="nav-header private">» Private
                     <ul><li class="method private "><a href="#method_doInputValidation" title="doInputValidation() :: Perform JSON input validation
@@ -87,11 +93,14 @@ Decode JSON to Associative array</span><pre>doInputValidation()</pre></a></li></
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
                     <ul>
-<li class="property public "><a href="#property_activityLogKey" title="$activityLogKey() :: "><span class="description"></span><pre>$activityLogKey</pre></a></li>
+<li class="property public "><a href="#property_arn" title="$arn() :: "><span class="description"></span><pre>$arn</pre></a></li>
 <li class="property public "><a href="#property_client" title="$client() :: "><span class="description"></span><pre>$client</pre></a></li>
 <li class="property public "><a href="#property_cpeLogger" title="$cpeLogger() :: "><span class="description"></span><pre>$cpeLogger</pre></a></li>
 <li class="property public "><a href="#property_debug" title="$debug() :: "><span class="description"></span><pre>$debug</pre></a></li>
 <li class="property public "><a href="#property_input" title="$input() :: "><span class="description"></span><pre>$input</pre></a></li>
+<li class="property public "><a href="#property_logKey" title="$logKey() :: "><span class="description"></span><pre>$logKey</pre></a></li>
+<li class="property public "><a href="#property_logPath" title="$logPath() :: "><span class="description"></span><pre>$logPath</pre></a></li>
+<li class="property public "><a href="#property_name" title="$name() :: "><span class="description"></span><pre>$name</pre></a></li>
 <li class="property public "><a href="#property_params" title="$params() :: "><span class="description"></span><pre>$params</pre></a></li>
 <li class="property public "><a href="#property_token" title="$token() :: "><span class="description"></span><pre>$token</pre></a></li>
 </ul>
@@ -134,7 +143,7 @@ Decode JSON to Associative array</span><pre>doInputValidation()</pre></a></li></
 <a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
 <h2>__construct()
         </h2>
-<pre>__construct(\CpeSdk\CpeClientInterface $client<code> = null</code>, $params, $debug, $cpeLogger<code> = null</code>) </pre>
+<pre>__construct($client<code> = null</code>, $params, $debug, $cpeLogger) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -149,26 +158,24 @@ Decode JSON to Associative array</span><pre>doInputValidation()</pre></a></li></
 <h2>Activity failed
 Called by parent Activity when something went wrong
 Notifies Snf that the activity has failed</h2>
-<pre>activityFail($taskToken, $error<code> = ""</code>, $cause<code> = ""</code>) </pre>
+<pre>activityFail($error<code> = ""</code>, $cause<code> = ""</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"><p>Return false ONLY if Snf call failed.
 True otherwise, even of your client interface failed as the Snf work is successful.</p></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$taskToken</h4></div>
 <div class="subelement argument"><h4>$error</h4></div>
 <div class="subelement argument"><h4>$cause</h4></div>
 </div></div>
 </div>
 <a id="method_activityHeartbeat"></a><div class="element clickable method public method_activityHeartbeat " data-toggle="collapse" data-target=".method_activityHeartbeat .collapse" title="public">
 <h2>Send heartbeat to Snf to keep the task alive.</h2>
-<pre>activityHeartbeat($taskToken, $data<code> = null</code>) </pre>
+<pre>activityHeartbeat($data<code> = null</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"><p>Call this from your activity logic. If return false then the heartbeat was not sent
 Try again or throw an exception to mark the Activity as failed</p></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$taskToken</h4></div>
 <div class="subelement argument"><h4>$data</h4></div>
 </div></div>
 </div>
@@ -176,26 +183,31 @@ Try again or throw an exception to mark the Activity as failed</p></div>
 <h2>Activity Success and completed
 Notifies Snf that the activity has succeeded
 Call this from your activity logic once the process is successful.</h2>
-<pre>activitySuccess($taskToken, $output<code> = ''</code>) </pre>
+<pre>activitySuccess($output<code> = ''</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"><p>If return false then the call to Snf sndTaskSuccess failed
 Try again or throw an exception to mark the Activity as failed</p></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$taskToken</h4></div>
 <div class="subelement argument"><h4>$output</h4></div>
 </div></div>
 </div>
 <a id="method_doActivity"></a><div class="element clickable method public method_doActivity " data-toggle="collapse" data-target=".method_doActivity .collapse" title="public">
-<h2>Perform Snf long polling and call user callback function when receiving new activity</h2>
-<pre>doActivity($arn, $name, $callback) </pre>
+<h2>This must be called fro your activity to start listening for task
+Perform Snf long polling and call user callback function when receiving new activity</h2>
+<pre>doActivity() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_process"></a><div class="element clickable method protected method_process " data-toggle="collapse" data-target=".method_process .collapse" title="protected">
+<h2>process()
+        </h2>
+<pre>process($task) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$arn</h4></div>
-<div class="subelement argument"><h4>$name</h4></div>
-<div class="subelement argument"><h4>$callback</h4></div>
+<div class="subelement argument"><h4>$task</h4></div>
 </div></div>
 </div>
 <a id="method_doInputValidation"></a><div class="element clickable method private method_doInputValidation " data-toggle="collapse" data-target=".method_doInputValidation .collapse" title="private">
@@ -211,9 +223,9 @@ Decode JSON to Associative array</h2>
 </div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_activityLogKey"> </a><div class="element clickable property public property_activityLogKey" data-toggle="collapse" data-target=".property_activityLogKey .collapse" title="public">
-<h2>$activityLogKey</h2>
-<pre>$activityLogKey </pre>
+<a id="property_arn"> </a><div class="element clickable property public property_arn" data-toggle="collapse" data-target=".property_arn .collapse" title="public">
+<h2>$arn</h2>
+<pre>$arn </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -254,6 +266,36 @@ Decode JSON to Associative array</h2>
 <a id="property_input"> </a><div class="element clickable property public property_input" data-toggle="collapse" data-target=".property_input .collapse" title="public">
 <h2>$input</h2>
 <pre>$input </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_logKey"> </a><div class="element clickable property public property_logKey" data-toggle="collapse" data-target=".property_logKey .collapse" title="public">
+<h2>$logKey</h2>
+<pre>$logKey </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_logPath"> </a><div class="element clickable property public property_logPath" data-toggle="collapse" data-target=".property_logPath .collapse" title="public">
+<h2>$logPath</h2>
+<pre>$logPath </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_name"> </a><div class="element clickable property public property_name" data-toggle="collapse" data-target=".property_name .collapse" title="public">
+<h2>$name</h2>
+<pre>$name </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -320,7 +362,7 @@ Decode JSON to Associative array</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2016-12-09T20:44:19Z.<br></footer></div>
+            generated on 2016-12-11T03:51:11Z.<br></footer></div>
 </div>
 </body>
 </html>

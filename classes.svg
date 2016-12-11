@@ -25,13 +25,13 @@
 <text text-anchor="middle" x="222.893" y="-327.2" font-family="Times,serif" font-size="11.00" fill="gray">CpeSdk</text>
 </g>
 <g id="clust4" class="cluster">
-<title>cluster_\SA\CpeSdk\Swf</title>
+<title>cluster_\SA\CpeSdk\Sfn</title>
 <path fill="none" stroke="gray" d="M174.893,-240C174.893,-240 270.893,-240 270.893,-240 276.893,-240 282.893,-246 282.893,-252 282.893,-252 282.893,-300 282.893,-300 282.893,-306 276.893,-312 270.893,-312 270.893,-312 174.893,-312 174.893,-312 168.893,-312 162.893,-306 162.893,-300 162.893,-300 162.893,-252 162.893,-252 162.893,-246 168.893,-240 174.893,-240"/>
-<text text-anchor="middle" x="222.893" y="-299.2" font-family="Times,serif" font-size="11.00" fill="gray">Swf</text>
+<text text-anchor="middle" x="222.893" y="-299.2" font-family="Times,serif" font-size="11.00" fill="gray">Sfn</text>
 </g>
-<!-- \\SA\\CpeSdk\\Swf\\CpeSfnHandler -->
+<!-- \\SA\\CpeSdk\\Sfn\\CpeSfnHandler -->
 <g id="node1" class="node">
-<title>\\SA\\CpeSdk\\Swf\\CpeSfnHandler</title>
+<title>\\SA\\CpeSdk\\Sfn\\CpeSfnHandler</title>
 <polygon fill="none" stroke="black" points="274.893,-284 170.893,-284 170.893,-248 274.893,-248 274.893,-284"/>
 <text text-anchor="middle" x="222.893" y="-263.2" font-family="Courier,monospace" font-size="11.00">CpeSfnHandler</text>
 </g>
@@ -39,7 +39,8 @@
 <g id="node2" class="node">
 <title>\\SA\\CpeSdk\\CpeActivity</title>
 <polygon fill="none" stroke="black" points="268.393,-230 177.393,-230 177.393,-194 268.393,-194 268.393,-230"/>
-<text text-anchor="middle" x="222.893" y="-209.2" font-family="Courier,monospace" font-size="11.00">CpeActivity</text>
+<text text-anchor="start" x="188.893" y="-215.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="185.393" y="-203.2" font-family="Courier,monospace" font-size="11.00">CpeActivity</text>
 </g>
 <!-- \\SA\\CpeSdk\\CpeException -->
 <g id="node3" class="node">
