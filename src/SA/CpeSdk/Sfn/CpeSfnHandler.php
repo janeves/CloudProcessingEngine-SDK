@@ -1,9 +1,6 @@
 <?php
 
-namespace SA\CpeSdk\Swf;
-
-// SA Cpe SDK
-use SA\CpeSdk;
+namespace SA\CpeSdk\Sfn;
 
 /**
  * Create the AWS Sfn Client
@@ -17,7 +14,7 @@ class CpeSfnHandler
     {
         # Check if preper env vars are setup
         if (!($region = getenv("AWS_DEFAULT_REGION")))
-            throw new CpeSdk\CpeException("Set 'AWS_DEFAULT_REGION' environment variable!");
+            throw new \SA\CpeSdk\CpeException("Set 'AWS_DEFAULT_REGION' environment variable!");
 
         // SWF client
         $this->snf = new \Aws\Sfn\SfnClient([

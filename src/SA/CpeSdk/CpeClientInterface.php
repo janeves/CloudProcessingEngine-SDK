@@ -12,9 +12,9 @@ interface CpeClientInterface
 {
     /*
      * Called right before initiating your Activity callback function in do_activity
-     * $result contains the return value of Snf `getActivityTask` method
+     * $task contains the return value of Snf `getActivityTask` method
      */
-    public function onStart($result);
+    public function onStart(Array $task);
     
     /*
      * Called right after notifying Snf that your activity has failed
@@ -31,13 +31,13 @@ interface CpeClientInterface
      * We forward the `$data` you passed to `activity_heartbeat` method so you can 
      * use it in your client application. Like a progress status for example :)
      */
-    public function onHeartbeat($taskToken, $data = null);
+    public function onHeartbeat($taskToken, Array $data = null);
 
     /*
      * Called if there is an Exception with Snf.
      * This way you can flag your job accordingly in your client app
      * and send a SNS notification, alert, etc
      */
-    public function onException($context, $exception);
+    public function onException(Array $context, \Exception $exception);
     
 }

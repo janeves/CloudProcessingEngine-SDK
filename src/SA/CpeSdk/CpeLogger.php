@@ -10,8 +10,10 @@ use SA\CpeSdk;
  */
 class CpeLogger
 {
+    public $activityName;
     public $logPath;
-    public $printout;
+    public $filePath;
+    public $printout = true; // By default Will print ALL in STDOUT along with writing in a file. Can be disabled when using logOut()
 
     // Exception
     const LOG_TYPE_ERROR = "LOG_TYPE_ERROR";
@@ -19,42 +21,32 @@ class CpeLogger
     const LOGFILE_ERROR  = "LOGFILE_ERROR";
 
     // Specify the path where to create the log files
-    public function __construct(
-        $logPath = null,
-        $suffix = null, 
-        $printout = false)
+    public function __construct($activityName, $logPath = null)
     {
-        global $argv;
-
         date_default_timezone_set('UTC');
         
-        $this->printout = $printout;
+        $this->activityName = $activityName;
         $this->logPath = "/var/tmp/logs/cpe/";
-                
+        
         if ($logPath)
             $this->logPath = $logPath;
 
         if (!file_exists($this->logPath))
             mkdir($this->logPath, 0755, true);
 
-        $file = basename($argv[0]);
-        if ($suffix)
-            $file .= "-".$suffix;
-        // Append progname to the path
-        $this->logPath .= "/".$file.".log";
-
         $this->logOut(
             "INFO",
-            "[CPE SDK] ".basename(__FILE__),
+            basename(__FILE__),
             "Logging to: ".$this->logPath);
     }
 
-    // Log message to syslog and log file
+    // Log message to syslog and log file. Will print
     public function logOut(
         $type,
         $source,
         $message,
-        $workflowId = null)
+        $logKey = null,
+        $printOut = true)
     {
         $log = [
             "time"    => date("Y-m-d H:i:s", time()),
@@ -62,9 +54,20 @@ class CpeLogger
             "type"    => $type,
             "message" => $message
         ];
+
+        if ($printOut)
+            $this->printOut = $printOut;
     
-        if ($workflowId)
-            $log["workflowId"] = $workflowId;
+        if ($logKey)
+            $log["logKey"] = $logKey;
+
+        // Set the log filaname based on the logkey If provided.
+        // If not then it will log in a file that has the name of the PHP activity file
+        $file = $this->activityName;
+        if ($logKey)
+            $file .= "-".$logKey;
+        // Append progname to the path
+        $this->filePath = $this->logPath . "/" . $file.".log";
 
         // Open Syslog. Use programe name as key
         if (!openlog (__FILE__, LOG_CONS|LOG_PID, LOG_LOCAL1))
@@ -95,7 +98,7 @@ class CpeLogger
         }
         
         // Print log in file
-        $this->printToFile($log, $workflowId);
+        $this->printToFile($log);
         
         // Encode log message in JSON for better parsing
         $out = json_encode($log);
@@ -104,22 +107,22 @@ class CpeLogger
     }
 
     // Write log in file
-    private function printToFile($log, $workflowId)
+    private function printToFile($log)
     {
         if (!is_string($log['message']))
             $log['message'] = json_encode($log['message']);
         
         $toPrint = $log['time'] . " [" . $log['type'] . "] [" . $log['source'] . "] ";
         // If there is a workflow ID. We append it.
-        if ($workflowId)
-            $toPrint .= "[$workflowId] ";
+        if (isset($log['logKey']) && $log['logKey'])
+            $toPrint .= "[".$log['logKey']."] ";
         $toPrint .= $log['message'] . "\n";
 
         if ($this->printout)
             print $toPrint;
         
         if (file_put_contents(
-                $this->logPath,
+                $this->filePath,
                 $toPrint,
                 FILE_APPEND) === false) {
             throw new CpeException("Can't write into log file: $this->logPath", 
