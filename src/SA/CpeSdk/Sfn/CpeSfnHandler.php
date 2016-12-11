@@ -17,7 +17,7 @@ class CpeSfnHandler
             throw new \SA\CpeSdk\CpeException("Set 'AWS_DEFAULT_REGION' environment variable!");
 
         // SWF client
-        $this->snf = new \Aws\Sfn\SfnClient([
+        $this->sfn = new \Aws\Sfn\SfnClient([
                 'region'  => $region,
                 'version' => 'latest'
             ]);

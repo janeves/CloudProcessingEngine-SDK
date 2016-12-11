@@ -65,7 +65,7 @@ class CpeLogger
         // If not then it will log in a file that has the name of the PHP activity file
         $file = $this->activityName;
         if ($logKey)
-            $file .= "-".$logKey;
+            $file .= "-".preg_replace('/[\\\\\/\%\[\]\.\(\)-]/s', "_", $logKey);
         // Append progname to the path
         $this->filePath = $this->logPath . "/" . $file.".log";
 
