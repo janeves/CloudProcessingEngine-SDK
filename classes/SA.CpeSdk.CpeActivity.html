@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">67</span></a></li>
+                <span class="label label-info">68</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -67,18 +67,18 @@
         </span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#method_activityFail" title="activityFail() :: Activity failed
 Called by parent Activity when something went wrong
-Notifies Snf that the activity has failed"><span class="description">Activity failed
+Notifies Sfn that the activity has failed"><span class="description">Activity failed
 Called by parent Activity when something went wrong
-Notifies Snf that the activity has failed</span><pre>activityFail()</pre></a></li>
-<li class="method public "><a href="#method_activityHeartbeat" title="activityHeartbeat() :: Send heartbeat to Snf to keep the task alive."><span class="description">Send heartbeat to Snf to keep the task alive.</span><pre>activityHeartbeat()</pre></a></li>
+Notifies Sfn that the activity has failed</span><pre>activityFail()</pre></a></li>
+<li class="method public "><a href="#method_activityHeartbeat" title="activityHeartbeat() :: Send heartbeat to Sfn to keep the task alive."><span class="description">Send heartbeat to Sfn to keep the task alive.</span><pre>activityHeartbeat()</pre></a></li>
 <li class="method public "><a href="#method_activitySuccess" title="activitySuccess() :: Activity Success and completed
-Notifies Snf that the activity has succeeded
+Notifies Sfn that the activity has succeeded
 Call this from your activity logic once the process is successful."><span class="description">Activity Success and completed
-Notifies Snf that the activity has succeeded
+Notifies Sfn that the activity has succeeded
 Call this from your activity logic once the process is successful.</span><pre>activitySuccess()</pre></a></li>
 <li class="method public "><a href="#method_doActivity" title="doActivity() :: This must be called fro your activity to start listening for task
-Perform Snf long polling and call user callback function when receiving new activity"><span class="description">This must be called fro your activity to start listening for task
-Perform Snf long polling and call user callback function when receiving new activity</span><pre>doActivity()</pre></a></li>
+Perform Sfn long polling and call user callback function when receiving new activity"><span class="description">This must be called fro your activity to start listening for task
+Perform Sfn long polling and call user callback function when receiving new activity</span><pre>doActivity()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
@@ -96,6 +96,7 @@ Decode JSON to Associative array</span><pre>doInputValidation()</pre></a></li></
 <li class="property public "><a href="#property_arn" title="$arn() :: "><span class="description"></span><pre>$arn</pre></a></li>
 <li class="property public "><a href="#property_client" title="$client() :: "><span class="description"></span><pre>$client</pre></a></li>
 <li class="property public "><a href="#property_cpeLogger" title="$cpeLogger() :: "><span class="description"></span><pre>$cpeLogger</pre></a></li>
+<li class="property public "><a href="#property_cpeSfnHandler" title="$cpeSfnHandler() :: "><span class="description"></span><pre>$cpeSfnHandler</pre></a></li>
 <li class="property public "><a href="#property_debug" title="$debug() :: "><span class="description"></span><pre>$debug</pre></a></li>
 <li class="property public "><a href="#property_input" title="$input() :: "><span class="description"></span><pre>$input</pre></a></li>
 <li class="property public "><a href="#property_logKey" title="$logKey() :: "><span class="description"></span><pre>$logKey</pre></a></li>
@@ -143,12 +144,12 @@ Decode JSON to Associative array</span><pre>doInputValidation()</pre></a></li></
 <a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
 <h2>__construct()
         </h2>
-<pre>__construct($client<code> = null</code>, $params, $debug, $cpeLogger) </pre>
+<pre>__construct($clientClassPath<code> = null</code>, $params, $debug, $cpeLogger) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$client</h4></div>
+<div class="subelement argument"><h4>$clientClassPath</h4></div>
 <div class="subelement argument"><h4>$params</h4></div>
 <div class="subelement argument"><h4>$debug</h4></div>
 <div class="subelement argument"><h4>$cpeLogger</h4></div>
@@ -157,19 +158,19 @@ Decode JSON to Associative array</span><pre>doInputValidation()</pre></a></li></
 <a id="method_activityFail"></a><div class="element clickable method public method_activityFail " data-toggle="collapse" data-target=".method_activityFail .collapse" title="public">
 <h2>Activity failed
 Called by parent Activity when something went wrong
-Notifies Snf that the activity has failed</h2>
+Notifies Sfn that the activity has failed</h2>
 <pre>activityFail($error<code> = ""</code>, $cause<code> = ""</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Return false ONLY if Snf call failed.
-True otherwise, even of your client interface failed as the Snf work is successful.</p></div>
+<div class="long_description"><p>Return false ONLY if Sfn call failed.
+True otherwise, even of your client interface failed as the Sfn work is successful.</p></div>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$error</h4></div>
 <div class="subelement argument"><h4>$cause</h4></div>
 </div></div>
 </div>
 <a id="method_activityHeartbeat"></a><div class="element clickable method public method_activityHeartbeat " data-toggle="collapse" data-target=".method_activityHeartbeat .collapse" title="public">
-<h2>Send heartbeat to Snf to keep the task alive.</h2>
+<h2>Send heartbeat to Sfn to keep the task alive.</h2>
 <pre>activityHeartbeat($data<code> = null</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -181,12 +182,12 @@ Try again or throw an exception to mark the Activity as failed</p></div>
 </div>
 <a id="method_activitySuccess"></a><div class="element clickable method public method_activitySuccess " data-toggle="collapse" data-target=".method_activitySuccess .collapse" title="public">
 <h2>Activity Success and completed
-Notifies Snf that the activity has succeeded
+Notifies Sfn that the activity has succeeded
 Call this from your activity logic once the process is successful.</h2>
-<pre>activitySuccess($output<code> = ''</code>) </pre>
+<pre>activitySuccess($output<code> = '{}'</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>If return false then the call to Snf sndTaskSuccess failed
+<div class="long_description"><p>If return false then the call to Sfn sndTaskSuccess failed
 Try again or throw an exception to mark the Activity as failed</p></div>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$output</h4></div>
@@ -194,7 +195,7 @@ Try again or throw an exception to mark the Activity as failed</p></div>
 </div>
 <a id="method_doActivity"></a><div class="element clickable method public method_doActivity " data-toggle="collapse" data-target=".method_doActivity .collapse" title="public">
 <h2>This must be called fro your activity to start listening for task
-Perform Snf long polling and call user callback function when receiving new activity</h2>
+Perform Sfn long polling and call user callback function when receiving new activity</h2>
 <pre>doActivity() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
@@ -246,6 +247,16 @@ Decode JSON to Associative array</h2>
 <a id="property_cpeLogger"> </a><div class="element clickable property public property_cpeLogger" data-toggle="collapse" data-target=".property_cpeLogger .collapse" title="public">
 <h2>$cpeLogger</h2>
 <pre>$cpeLogger </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cpeSfnHandler"> </a><div class="element clickable property public property_cpeSfnHandler" data-toggle="collapse" data-target=".property_cpeSfnHandler .collapse" title="public">
+<h2>$cpeSfnHandler</h2>
+<pre>$cpeSfnHandler </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -362,7 +373,7 @@ Decode JSON to Associative array</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2016-12-11T03:52:12Z.<br></footer></div>
+            generated on 2016-12-14T09:20:51Z.<br></footer></div>
 </div>
 </body>
 </html>
