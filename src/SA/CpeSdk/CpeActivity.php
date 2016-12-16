@@ -66,6 +66,10 @@ abstract class CpeActivity
         // Register the client application interface
         if (file_exists($clientClassPath) && is_readable($clientClassPath)) {
             $className = pathinfo($clientClassPath)['filename'];
+            $this->cpeLogger->logOut("INFO",
+                                     basename(__FILE__),
+                                     "Instantiate Client Interface '$className' from '$clientClassPath'");
+            
             require_once($clientClassPath);
             // Instanciate Client class, which should have the same name than the filename
             $this->client = new $className($this->cpeLogger);
@@ -112,13 +116,13 @@ abstract class CpeActivity
                 if ($this->client)
                     $this->client->onException($context, $e);
             }
-
+            
             try {
                 // Do we have a new activity?
                 if (isset($task['taskToken']) && $task['taskToken'] != '') {
 
                     $this->cpeLogger->logOut("INFO", basename(__FILE__),
-                                             "New activity '$this->name' triggered! Token: ".$task['taskToken'].".\nSee the Log file for this token: ".$this->cpeLogger->logPath);
+                                             "\033[1mNew activity '$this->name' triggered!\033[0m Token: ".$task['taskToken'].".\nSee the Log file for this token: ".$this->cpeLogger->logPath);
 
                     // Set the logKey so a new log file will be created just for this Execution
                     $this->logKey = substr($task['taskToken'],
@@ -126,7 +130,9 @@ abstract class CpeActivity
                                            strlen($task['taskToken']) - (strlen($task['taskToken']) - 16));
                     $this->logKey = preg_replace('/[\\\\\/\%\[\]\.\(\)-\/]/s', "_", $this->logKey);
                     $this->token  = $task['taskToken'];
-
+                    if ($this->client)
+                        $this->client->logKey = $this->logKey;
+                    
                     // Validate the JSON input and set `$this->input`
                     $this->doInputValidation($task['input']);
 
@@ -147,7 +153,7 @@ abstract class CpeActivity
 
         } while (42);
     }
-
+    
     /**
      * Perform JSON input validation
      * Decode JSON to Associative array
@@ -175,10 +181,10 @@ abstract class CpeActivity
             'cause' => $cause,
             'taskToken' => $this->token
         ];
-
+                                                 
         try {
             $this->cpeLogger->logOut("ERROR", basename(__FILE__),
-                                     "[$error] $cause",
+                                     "\033[1m[$error]\033[0m $cause",
                                      $this->logKey);
 
             $this->cpeSfnHandler->sfn->sendTaskFailure($context);
@@ -218,7 +224,7 @@ abstract class CpeActivity
 
         try {
             $this->cpeLogger->logOut("INFO", basename(__FILE__),
-                                     "Notify Sfn that activity has completed !",
+                                     "\033[1mNotify Sfn that activity has completed!\033[0m",
                                      $this->logKey);
 
             $this->cpeSfnHandler->sfn->sendTaskSuccess($context);
@@ -255,7 +261,7 @@ abstract class CpeActivity
 
         try {
             $this->cpeLogger->logOut("INFO", basename(__FILE__),
-                                     "Sending heartbeat to Sfn ...",
+                                     "\033[1mSending heartbeat to Sfn ...\033[0m",
                                      $this->logKey);
 
             $this->cpeSfnHandler->sfn->sendTaskHeartbeat($context);
