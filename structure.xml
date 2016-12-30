@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="Cloud Processing Engine SDK" version="2.8.5">
   <partials/>
-  <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="d98b405486785be00bfcb877fa652136" package="Default">
+  <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="c1124eeff9dd995f427841c6a7446142" package="Default">
     <docblock line="0">
       <description>This Class must be used to create your own activities.</description>
       <long-description>Extend it, and call `do_activity` with your callback as parameter to process incoming activities
@@ -197,10 +197,10 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="true" static="false" visibility="protected" namespace="SA\CpeSdk" line="79" package="Default">
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="SA\CpeSdk" line="83" package="Default">
         <name>process</name>
         <full_name>\SA\CpeSdk\CpeActivity::process()</full_name>
-        <docblock line="79">
+        <docblock line="83">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -210,19 +210,19 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="86" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="90" package="Default">
         <name>doActivity</name>
         <full_name>\SA\CpeSdk\CpeActivity::doActivity()</full_name>
-        <docblock line="86">
+        <docblock line="90">
           <description>This must be called fro your activity to start listening for task
 Perform Sfn long polling and call user callback function when receiving new activity</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="155" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="161" package="Default">
         <name>doInputValidation</name>
         <full_name>\SA\CpeSdk\CpeActivity::doInputValidation()</full_name>
-        <docblock line="155">
+        <docblock line="161">
           <description>Perform JSON input validation
 Decode JSON to Associative array</description>
           <long-description></long-description>
@@ -233,10 +233,10 @@ Decode JSON to Associative array</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="171" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="177" package="Default">
         <name>activityFail</name>
         <full_name>\SA\CpeSdk\CpeActivity::activityFail()</full_name>
-        <docblock line="171">
+        <docblock line="177">
           <description>Activity failed
 Called by parent Activity when something went wrong
 Notifies Sfn that the activity has failed</description>
@@ -254,10 +254,10 @@ True otherwise, even of your client interface failed as the Sfn work is successf
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="212" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="218" package="Default">
         <name>activitySuccess</name>
         <full_name>\SA\CpeSdk\CpeActivity::activitySuccess()</full_name>
-        <docblock line="212">
+        <docblock line="218">
           <description>Activity Success and completed
 Notifies Sfn that the activity has succeeded
 Call this from your activity logic once the process is successful.</description>
@@ -270,10 +270,10 @@ Try again or throw an exception to mark the Activity as failed</long-description
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="250" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="256" package="Default">
         <name>activityHeartbeat</name>
         <full_name>\SA\CpeSdk\CpeActivity::activityHeartbeat()</full_name>
-        <docblock line="250">
+        <docblock line="256">
           <description>Send heartbeat to Sfn to keep the task alive.</description>
           <long-description>Call this from your activity logic. If return false then the heartbeat was not sent
 Try again or throw an exception to mark the Activity as failed</long-description>
@@ -292,13 +292,13 @@ Try again or throw an exception to mark the Activity as failed</long-description
       <error line="41" code="PPC:ERR-50015">Argument $debug is missing from the Docblock of __construct</error>
       <error line="41" code="PPC:ERR-50015">Argument $cpeLogger is missing from the Docblock of __construct</error>
       <error line="41" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="79" code="PPC:ERR-50015">Argument $task is missing from the Docblock of process</error>
-      <error line="79" code="PPC:ERR-50008">No summary for method process()</error>
-      <error line="155" code="PPC:ERR-50015">Argument $input is missing from the Docblock of doInputValidation</error>
-      <error line="171" code="PPC:ERR-50015">Argument $error is missing from the Docblock of activityFail</error>
-      <error line="171" code="PPC:ERR-50015">Argument $cause is missing from the Docblock of activityFail</error>
-      <error line="212" code="PPC:ERR-50015">Argument $output is missing from the Docblock of activitySuccess</error>
-      <error line="250" code="PPC:ERR-50015">Argument $data is missing from the Docblock of activityHeartbeat</error>
+      <error line="83" code="PPC:ERR-50015">Argument $task is missing from the Docblock of process</error>
+      <error line="83" code="PPC:ERR-50008">No summary for method process()</error>
+      <error line="161" code="PPC:ERR-50015">Argument $input is missing from the Docblock of doInputValidation</error>
+      <error line="177" code="PPC:ERR-50015">Argument $error is missing from the Docblock of activityFail</error>
+      <error line="177" code="PPC:ERR-50015">Argument $cause is missing from the Docblock of activityFail</error>
+      <error line="218" code="PPC:ERR-50015">Argument $output is missing from the Docblock of activitySuccess</error>
+      <error line="256" code="PPC:ERR-50015">Argument $data is missing from the Docblock of activityHeartbeat</error>
       <error line="21" code="PPC:ERR-50007">No summary for property $params</error>
       <error line="22" code="PPC:ERR-50007">No summary for property $debug</error>
       <error line="23" code="PPC:ERR-50007">No summary for property $logPath</error>
@@ -311,7 +311,7 @@ Try again or throw an exception to mark the Activity as failed</long-description
       <error line="32" code="PPC:ERR-50007">No summary for property $name</error>
       <error line="33" code="PPC:ERR-50007">No summary for property $logKey</error>
     </parse_markers>
-    <source>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</source>
+    <source>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</source>
   </file>
   <file path="Sfn/CpeSfnHandler.php" generated-path="Sfn.CpeSfnHandler.html" hash="e42207646bb83baef4b5f72390c0c826" package="Default">
     <docblock line="0">
