@@ -2,13 +2,12 @@
 
 ## What for?
 
-Use this SDK if you want to develop custom Activities for the Cloud Processing Engine (CPE) project.
+Use this SDK if you want to develop custom Activities for the Cloud Transcode or your own project.
 
-**This SDK offers many classes for your custom activities:**
-   - SQS Handler (send updates, progress, etc).
-   - SWF Handler
+**This SDK offers classes for your custom activities:**
+   - Base Activity class to extend for your own activities
+   - Client Interface to extends to create your own interface between your Activity and client application
    - Logger
-   - Activity boilerplate that you can `extends` to build your own
    - Custom exception class
 
 ## Usage Example: Cloud Transcode
