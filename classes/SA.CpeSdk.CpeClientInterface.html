@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Cloud Processing Engine SDK » \SA\CpeSdk\Sqs\CpeSqsListener</title>
+<title>Cloud Processing Engine SDK » \SA\CpeSdk\CpeClientInterface</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">108</span></a></li>
+                <span class="label label-info">68</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -59,33 +59,24 @@
 <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
 </div>
 </div>
-<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
-<li class="nav-header">
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list"><li class="nav-header">
 <i title="Methods" class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_delete_message" title="delete_message() :: "><span class="description">delete_message()
-        </span><pre>delete_message()</pre></a></li>
-<li class="method public "><a href="#method_receive_message" title="receive_message() :: "><span class="description">receive_message()
-        </span><pre>receive_message()</pre></a></li>
+<li class="method public "><a href="#method_onException" title="onException() :: "><span class="description">onException()
+        </span><pre>onException()</pre></a></li>
+<li class="method public "><a href="#method_onFail" title="onFail() :: "><span class="description">onFail()
+        </span><pre>onFail()</pre></a></li>
+<li class="method public "><a href="#method_onHeartbeat" title="onHeartbeat() :: "><span class="description">onHeartbeat()
+        </span><pre>onHeartbeat()</pre></a></li>
+<li class="method public "><a href="#method_onStart" title="onStart() :: "><span class="description">onStart()
+        </span><pre>onStart()</pre></a></li>
+<li class="method public "><a href="#method_onSuccess" title="onSuccess() :: "><span class="description">onSuccess()
+        </span><pre>onSuccess()</pre></a></li>
 </ul>
-</li>
-<li class="nav-header">
-<i title="Properties" class="icon-custom icon-property"></i> Properties
-                    <ul></ul>
-</li>
-<li class="nav-header private">» Private
-                    <ul>
-<li class="property private "><a href="#property_cpeLogger" title="$cpeLogger() :: "><span class="description"></span><pre>$cpeLogger</pre></a></li>
-<li class="property private "><a href="#property_debug" title="$debug() :: "><span class="description"></span><pre>$debug</pre></a></li>
-<li class="property private "><a href="#property_sqs" title="$sqs() :: "><span class="description"></span><pre>$sqs</pre></a></li>
-</ul>
-</li>
-</ul>
+</li></ul>
 </div>
 <div class="span8">
-<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\Sqs\CpeSqsListener"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\CpeClientInterface"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
 <li>
 <a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -93,14 +84,11 @@
 <li>
 <span class="divider">\</span><a href="../namespaces/SA.CpeSdk.html">CpeSdk</a>
 </li>
-<li>
-<span class="divider">\</span><a href="../namespaces/SA.CpeSdk.Sqs.html">Sqs</a>
-</li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/SA.CpeSdk.Sqs.CpeSqsListener.html">CpeSqsListener</a>
+<span class="divider">\</span><a href="../classes/SA.CpeSdk.CpeClientInterface.html">CpeClientInterface</a>
 </li>
 </ul>
-<div xmlns:php="http://php.net/xsl" class="element class">
+<div xmlns:php="http://php.net/xsl" class="element interface">
 <p class="short_description"></p>
 <div class="details">
 <div class="long_description"></div>
@@ -110,73 +98,65 @@
 </tr></table>
 <h3>
 <i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
-<h2>__construct()
+<a id="method_onException"></a><div class="element clickable method public method_onException " data-toggle="collapse" data-target=".method_onException .collapse" title="public">
+<h2>onException()
         </h2>
-<pre>__construct($debug, $cpeLogger<code> = null</code>) </pre>
+<pre>onException($context, \Exception $exception) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$debug</h4></div>
-<div class="subelement argument"><h4>$cpeLogger</h4></div>
+<div class="subelement argument"><h4>$context</h4></div>
+<div class="subelement argument"><h4>$exception</h4></div>
 </div></div>
 </div>
-<a id="method_delete_message"></a><div class="element clickable method public method_delete_message " data-toggle="collapse" data-target=".method_delete_message .collapse" title="public">
-<h2>delete_message()
+<a id="method_onFail"></a><div class="element clickable method public method_onFail " data-toggle="collapse" data-target=".method_onFail .collapse" title="public">
+<h2>onFail()
         </h2>
-<pre>delete_message($queue, $msg) </pre>
+<pre>onFail($taskToken, $error<code> = ""</code>, $cause<code> = ""</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$queue</h4></div>
-<div class="subelement argument"><h4>$msg</h4></div>
+<div class="subelement argument"><h4>$taskToken</h4></div>
+<div class="subelement argument"><h4>$error</h4></div>
+<div class="subelement argument"><h4>$cause</h4></div>
 </div></div>
 </div>
-<a id="method_receive_message"></a><div class="element clickable method public method_receive_message " data-toggle="collapse" data-target=".method_receive_message .collapse" title="public">
-<h2>receive_message()
+<a id="method_onHeartbeat"></a><div class="element clickable method public method_onHeartbeat " data-toggle="collapse" data-target=".method_onHeartbeat .collapse" title="public">
+<h2>onHeartbeat()
         </h2>
-<pre>receive_message($queue, $timeout) </pre>
+<pre>onHeartbeat($taskToken, $data<code> = null</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$queue</h4></div>
-<div class="subelement argument"><h4>$timeout</h4></div>
+<div class="subelement argument"><h4>$taskToken</h4></div>
+<div class="subelement argument"><h4>$data</h4></div>
 </div></div>
 </div>
-<h3>
-<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_cpeLogger"> </a><div class="element clickable property private property_cpeLogger" data-toggle="collapse" data-target=".property_cpeLogger .collapse" title="private">
-<h2>$cpeLogger</h2>
-<pre>$cpeLogger </pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
+<a id="method_onStart"></a><div class="element clickable method public method_onStart " data-toggle="collapse" data-target=".method_onStart .collapse" title="public">
+<h2>onStart()
+        </h2>
+<pre>onStart($task) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$task</h4></div>
+</div></div>
 </div>
-<a id="property_debug"> </a><div class="element clickable property private property_debug" data-toggle="collapse" data-target=".property_debug .collapse" title="private">
-<h2>$debug</h2>
-<pre>$debug </pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
+<a id="method_onSuccess"></a><div class="element clickable method public method_onSuccess " data-toggle="collapse" data-target=".method_onSuccess .collapse" title="public">
+<h2>onSuccess()
+        </h2>
+<pre>onSuccess($taskToken, $output<code> = ''</code>) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_sqs"> </a><div class="element clickable property private property_sqs" data-toggle="collapse" data-target=".property_sqs .collapse" title="private">
-<h2>$sqs</h2>
-<pre>$sqs </pre>
 <div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$taskToken</h4></div>
+<div class="subelement argument"><h4>$output</h4></div>
 </div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 </div>
 </div>
@@ -185,7 +165,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2017-01-28T16:50:07Z.<br></footer></div>
+            generated on 2017-01-28T16:52:06Z.<br></footer></div>
 </div>
 </body>
 </html>

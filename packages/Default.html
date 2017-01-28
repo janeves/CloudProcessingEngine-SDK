@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">108</span></a></li>
+                <span class="label label-info">68</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -61,16 +61,16 @@
 <a href="../packages/Default.html" title="Default"><i class="icon-folder-open"></i>Default</a><ul class="nav nav-list nav-packages"></ul>
 </li>
 <li class="nav-header">
+<i title="Interfaces" class="icon-custom icon-interface"></i> Interfaces</li>
+<li><a href="#CpeClientInterface" title="">CpeClientInterface</a></li>
+<li class="nav-header">
 <i title="Classes" class="icon-custom icon-class"></i> Classes</li>
 <li><a href="#CpeActivity" title="">CpeActivity</a></li>
-<li><a href="#CpeSqsListener" title="">CpeSqsListener</a></li>
-<li><a href="#CpeSqsWriter" title="">CpeSqsWriter</a></li>
-<li><a href="#CpeSwfHandler" title="Create the AWS SWF connection
-Check for AWS environment variables">CpeSwfHandler</a></li>
+<li><a href="#CpeSfnHandler" title="Create the AWS Sfn Client
+Check for AWS environment variables">CpeSfnHandler</a></li>
 <li><a href="#CpeException" title="">CpeException</a></li>
 <li><a href="#CpeLogger" title="Allow formatted logging on STDOUT
 Send logs to Syslog for log offloading">CpeLogger</a></li>
-<li><a href="#CpeJsonValidator" title="">CpeJsonValidator</a></li>
 </ul>
 </div>
 <div class="span8 package-contents">
@@ -80,6 +80,13 @@ Send logs to Syslog for log offloading">CpeLogger</a></li>
 <div class="package-indent">
 <h3>
 <i title="Classes" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="CpeClientInterface" class="element ajax clickable interface">
+<h1>CpeClientInterface<a href="../classes/SA.CpeSdk.CpeClientInterface.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/SA.CpeSdk.CpeClientInterface.html" class="more">« More »</a>
+</div>
 <div xmlns:php="http://php.net/xsl" id="CpeActivity" class="element ajax clickable class">
 <h1>CpeActivity<a href="../classes/SA.CpeSdk.CpeActivity.html">¶</a>
 </h1>
@@ -94,13 +101,6 @@ Send logs to Syslog for log offloading">CpeLogger</a></li>
 <div class="details collapse"></div>
 <a href="../classes/SA.CpeSdk.CpeException.html" class="more">« More »</a>
 </div>
-<div xmlns:php="http://php.net/xsl" id="CpeJsonValidator" class="element ajax clickable class">
-<h1>CpeJsonValidator<a href="../classes/SA.CpeSdk.CpeJsonValidator.html">¶</a>
-</h1>
-<p class="short_description"></p>
-<div class="details collapse"></div>
-<a href="../classes/SA.CpeSdk.CpeJsonValidator.html" class="more">« More »</a>
-</div>
 <div xmlns:php="http://php.net/xsl" id="CpeLogger" class="element ajax clickable class">
 <h1>CpeLogger<a href="../classes/SA.CpeSdk.CpeLogger.html">¶</a>
 </h1>
@@ -109,27 +109,13 @@ Send logs to Syslog for log offloading</p>
 <div class="details collapse"></div>
 <a href="../classes/SA.CpeSdk.CpeLogger.html" class="more">« More »</a>
 </div>
-<div xmlns:php="http://php.net/xsl" id="CpeSqsListener" class="element ajax clickable class">
-<h1>CpeSqsListener<a href="../classes/SA.CpeSdk.Sqs.CpeSqsListener.html">¶</a>
+<div xmlns:php="http://php.net/xsl" id="CpeSfnHandler" class="element ajax clickable class">
+<h1>CpeSfnHandler<a href="../classes/SA.CpeSdk.Sfn.CpeSfnHandler.html">¶</a>
 </h1>
-<p class="short_description"></p>
-<div class="details collapse"></div>
-<a href="../classes/SA.CpeSdk.Sqs.CpeSqsListener.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="CpeSqsWriter" class="element ajax clickable class">
-<h1>CpeSqsWriter<a href="../classes/SA.CpeSdk.Sqs.CpeSqsWriter.html">¶</a>
-</h1>
-<p class="short_description"></p>
-<div class="details collapse"></div>
-<a href="../classes/SA.CpeSdk.Sqs.CpeSqsWriter.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="CpeSwfHandler" class="element ajax clickable class">
-<h1>CpeSwfHandler<a href="../classes/SA.CpeSdk.Swf.CpeSwfHandler.html">¶</a>
-</h1>
-<p class="short_description">Create the AWS SWF connection
+<p class="short_description">Create the AWS Sfn Client
 Check for AWS environment variables</p>
 <div class="details collapse"></div>
-<a href="../classes/SA.CpeSdk.Swf.CpeSwfHandler.html" class="more">« More »</a>
+<a href="../classes/SA.CpeSdk.Sfn.CpeSfnHandler.html" class="more">« More »</a>
 </div>
 </div>
 </div>
@@ -137,7 +123,7 @@ Check for AWS environment variables</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2017-01-28T16:50:07Z.<br></footer></div>
+            generated on 2017-01-28T16:52:06Z.<br></footer></div>
 </div>
 </body>
 </html>

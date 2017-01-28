@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">108</span></a></li>
+                <span class="label label-info">68</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -65,17 +65,19 @@
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
         </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_log_out" title="log_out() :: "><span class="description">log_out()
-        </span><pre>log_out()</pre></a></li>
+<li class="method public "><a href="#method_logOut" title="logOut() :: "><span class="description">logOut()
+        </span><pre>logOut()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
-                    <ul><li class="method private "><a href="#method_print_to_file" title="print_to_file() :: "><span class="description">print_to_file()
-        </span><pre>print_to_file()</pre></a></li></ul>
+                    <ul><li class="method private "><a href="#method_printToFile" title="printToFile() :: "><span class="description">printToFile()
+        </span><pre>printToFile()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
                     <ul>
+<li class="property public "><a href="#property_activityName" title="$activityName() :: "><span class="description"></span><pre>$activityName</pre></a></li>
+<li class="property public "><a href="#property_filePath" title="$filePath() :: "><span class="description"></span><pre>$filePath</pre></a></li>
 <li class="property public "><a href="#property_logPath" title="$logPath() :: "><span class="description"></span><pre>$logPath</pre></a></li>
 <li class="property public "><a href="#property_printout" title="$printout() :: "><span class="description"></span><pre>$printout</pre></a></li>
 </ul>
@@ -83,6 +85,7 @@
 <li class="nav-header">
 <i title="Constants" class="icon-custom icon-constant"></i> Constants
                     <ul>
+<li class="constant  "><a href="#constant_LOGFILE_ERROR" title="LOGFILE_ERROR() :: "><span class="description">LOGFILE_ERROR</span><pre>LOGFILE_ERROR</pre></a></li>
 <li class="constant  "><a href="#constant_LOG_TYPE_ERROR" title="LOG_TYPE_ERROR() :: "><span class="description">LOG_TYPE_ERROR</span><pre>LOG_TYPE_ERROR</pre></a></li>
 <li class="constant  "><a href="#constant_OPENLOG_ERROR" title="OPENLOG_ERROR() :: "><span class="description">OPENLOG_ERROR</span><pre>OPENLOG_ERROR</pre></a></li>
 </ul>
@@ -116,20 +119,19 @@ Send logs to Syslog for log offloading</p>
 <a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
 <h2>__construct()
         </h2>
-<pre>__construct($logPath<code> = null</code>, $suffix<code> = null</code>, $printout<code> = false</code>) </pre>
+<pre>__construct($activityName, $logPath<code> = null</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
+<div class="subelement argument"><h4>$activityName</h4></div>
 <div class="subelement argument"><h4>$logPath</h4></div>
-<div class="subelement argument"><h4>$suffix</h4></div>
-<div class="subelement argument"><h4>$printout</h4></div>
 </div></div>
 </div>
-<a id="method_log_out"></a><div class="element clickable method public method_log_out " data-toggle="collapse" data-target=".method_log_out .collapse" title="public">
-<h2>log_out()
+<a id="method_logOut"></a><div class="element clickable method public method_logOut " data-toggle="collapse" data-target=".method_logOut .collapse" title="public">
+<h2>logOut()
         </h2>
-<pre>log_out($type, $source, $message, $workflowId<code> = null</code>) </pre>
+<pre>logOut($type, $source, $message, $logKey<code> = null</code>, $printOut<code> = true</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -137,23 +139,43 @@ Send logs to Syslog for log offloading</p>
 <div class="subelement argument"><h4>$type</h4></div>
 <div class="subelement argument"><h4>$source</h4></div>
 <div class="subelement argument"><h4>$message</h4></div>
-<div class="subelement argument"><h4>$workflowId</h4></div>
+<div class="subelement argument"><h4>$logKey</h4></div>
+<div class="subelement argument"><h4>$printOut</h4></div>
 </div></div>
 </div>
-<a id="method_print_to_file"></a><div class="element clickable method private method_print_to_file " data-toggle="collapse" data-target=".method_print_to_file .collapse" title="private">
-<h2>print_to_file()
+<a id="method_printToFile"></a><div class="element clickable method private method_printToFile " data-toggle="collapse" data-target=".method_printToFile .collapse" title="private">
+<h2>printToFile()
         </h2>
-<pre>print_to_file($log, $workflowId) </pre>
+<pre>printToFile($log) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument"><h4>$log</h4></div>
-<div class="subelement argument"><h4>$workflowId</h4></div>
 </div></div>
 </div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_activityName"> </a><div class="element clickable property public property_activityName" data-toggle="collapse" data-target=".property_activityName .collapse" title="public">
+<h2>$activityName</h2>
+<pre>$activityName </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_filePath"> </a><div class="element clickable property public property_filePath" data-toggle="collapse" data-target=".property_filePath .collapse" title="public">
+<h2>$filePath</h2>
+<pre>$filePath </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_logPath"> </a><div class="element clickable property public property_logPath" data-toggle="collapse" data-target=".property_logPath .collapse" title="public">
 <h2>$logPath</h2>
 <pre>$logPath </pre>
@@ -169,13 +191,19 @@ Send logs to Syslog for log offloading</p>
 <pre>$printout </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
-<div class="subelement argument"></div>
+<div class="subelement argument"><code>true</code></div>
 </div></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_LOGFILE_ERROR"> </a><div class="element clickable constant  constant_LOGFILE_ERROR" data-toggle="collapse" data-target=".constant_LOGFILE_ERROR .collapse" title="">
+<h2>LOGFILE_ERROR</h2>
+<pre>LOGFILE_ERROR = "LOGFILE_ERROR" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_LOG_TYPE_ERROR"> </a><div class="element clickable constant  constant_LOG_TYPE_ERROR" data-toggle="collapse" data-target=".constant_LOG_TYPE_ERROR .collapse" title="">
 <h2>LOG_TYPE_ERROR</h2>
 <pre>LOG_TYPE_ERROR = "LOG_TYPE_ERROR" </pre>
@@ -195,7 +223,7 @@ Send logs to Syslog for log offloading</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2017-01-28T16:50:07Z.<br></footer></div>
+            generated on 2017-01-28T16:52:06Z.<br></footer></div>
 </div>
 </body>
 </html>
