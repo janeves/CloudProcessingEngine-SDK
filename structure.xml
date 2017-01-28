@@ -428,7 +428,7 @@ Check for AWS environment variables</description>
     </parse_markers>
     <source>eJx1UEtrwzAMvvtXiFBoC9u6c7oHJfS2w1iO6wiuo7TeUttY9iiU/PcpTl87VAcjyfoe0tOr2zohjNwhOakQysWqcFjWP3MhZjMoIgW7A9wrdEFbA6qVRNBYD2GLULQ21vDurUIibTawNBttUAxTTLQ8A3Ef0NQEq3NLHARwuLhutYKRx2aeGulh7Q+ssWE2UNZQ8FEFViULY/ZKcoNj0GTGAWxik+01WxONSrJVdUZPRkfgXRKDZ8gyTpWtkfNHTp3HX20jcWli204T4+Cyj1HYarp/GbAXv0lWejQhz2/I9RpX/NMB2P1bVw2nZnB/SI88TMwp0xq2Abv+RhVuLBlsmXCT6ZVfjyH6/rd4W5RlVcEDZDl8Hi57dF85nMqj225lspO9TvwBUjysDg==</source>
   </file>
-  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="3d18799d99141860111cb0b772d0ed8c" package="Default">
+  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="358b5d4eeee6c600b45cb9d6b414c986" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -559,10 +559,10 @@ Send logs to Syslog for log offloading</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="110" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="108" package="Default">
         <name>printToFile</name>
         <full_name>\SA\CpeSdk\CpeLogger::printToFile()</full_name>
-        <docblock line="110">
+        <docblock line="108">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -584,14 +584,14 @@ Send logs to Syslog for log offloading</description>
       <error line="44" code="PPC:ERR-50015">Argument $logKey is missing from the Docblock of logOut</error>
       <error line="44" code="PPC:ERR-50015">Argument $printOut is missing from the Docblock of logOut</error>
       <error line="44" code="PPC:ERR-50008">No summary for method logOut()</error>
-      <error line="110" code="PPC:ERR-50015">Argument $log is missing from the Docblock of printToFile</error>
-      <error line="110" code="PPC:ERR-50008">No summary for method printToFile()</error>
+      <error line="108" code="PPC:ERR-50015">Argument $log is missing from the Docblock of printToFile</error>
+      <error line="108" code="PPC:ERR-50008">No summary for method printToFile()</error>
       <error line="13" code="PPC:ERR-50007">No summary for property $activityName</error>
       <error line="14" code="PPC:ERR-50007">No summary for property $logPath</error>
       <error line="15" code="PPC:ERR-50007">No summary for property $filePath</error>
       <error line="16" code="PPC:ERR-50007">No summary for property $printout</error>
     </parse_markers>
-    <source>eJyNV21v2kgQ/s6vmFpRAxGBuw/VSXD0RAlpuUOAAlFUpZFl7CXs4exa3nUod5f/frPj1zWkjT8gMzM7Lzszz4x//yPaRo2G8J6YijyfwXL4bRSxZbDrNxqJsv93Ly4acAHDMJR72Mj4ydOaBRDKx0cuHkEKWK6u5rcrI7RkgjgKtITlQeGrOWJIIDebUHoBnkHJbsMPPaUArUxREYsb/zYAnyhZh9yHM8/X/Jnrwwxd7FscVLXw9NYmbnjIjqlRzIWWiYYB6Dhhfeh24dMBArbxklDDHQ9DIBkYTqfA80DACyUGtud6C/uYaxMlMj0wVjow8gSsGQRceesQL2K/ZQISZaTQt3mim60GuYHWxt99FmkuBRF8KZSG6fyzu/q6GLvjm5v5Dfrm2BSnXxGeL8Yzw05ljbBFsWSRej2ZjiuyFgVlc7eWEfP55gB6yyDyTJhbFjOTMz9mnmbEoNxhxKp6p5tE+CYecF0yGie+blrZahcpQg9EEoYtOp+m1zwBGnCzHLiaP7F/pGCuYrp5frsanbf6hWTxcqa3XF1+rJpB5SeKpCJcOuF0n724q5+irqnMrh+xrnPCCN9AM3e9VVBPaiyL0Dr9zlyXy75zpVXTPtSyNT7tAh7XRNrwy28fPrSpVFsVzaWUqS1LjTOZXc+dtkVbe4qZxm66LuXebdl8Z5o1rpY9cDo1N9N7eSkqBYUBQUJ5j1QeKm1pL+3yrCHKPjpZKXXHz/QhYqVPZ0omsV8lZPYqFFTxFztk9VShk9F50eD1SjPnkHVvx29KzjFvg49Ui03n6+XTZQBferynHLx/5Ddb9VtLvXTo1JHLqV4MK9dbi5H4WVgO8bM/hcRDrZSK0E5WYiXuQjDN3FE1473VVCDx3kk5zkNWzPheccAgBNNVEPBMRVFpBQbwM84OczLZYOrlMw9Y0KkqQLqQpEMA1wimWCNGWQGkyPI0bD1F2ki/3ND74ssC8tYm0TKhdHBwCg/6b4icTncQEC4zfgUG0OVhFJnxheE8kjtY7zlA1psxnzelLzk4dBBuHPwlYx2ng3THvto5WslmYwducdgag7ExSFbxQvBebVyReMRcXtHTbZoio/ls+Z95WUyuUsp0PhpOf62Bjd7GOLkF25tpW0ykpnMrzAAj1JdCMF+XQ/tdDVTMYw2eUyiNsY22nkCkyCY/lqaMTRJD9szCQk7hZPW3mCTTJKWrZd/6WGcZtvXsDBYaBxSuEelbEmucX7t+TVM6/n6sCmXeoOl6uBpOf6JpOB3frN6g6254M5vMPv9EWyb1Bn1X40+3P9NGMj/UlQ3m3hsraCfkniAeVphMLBs4qht7u6kUzsvJElrQQpZBhd39FfBbyWtkUZ+/Uopj4csgBbB8gKHCP5fzGW2ka4ZbbIzNHSvaSHMb6br4t5LCZaShboPAEWGimIZlXdPfZnHnbdJ2NFLvkMeOAsRDz2bzKsbmUZi14UbAwJWLOxgGQCL351mk5w+tE6Bfck9EWD17cgOTaWIGmS4zJVERwh3cE96lVCyClPpQJafzMmfYqDsh0MftkyucDHsZ7zbmQ2NyhYsFomGKyVx3rMC5MvtiqjyFcnQb3r+HGqk2PLMYzAi4x9XHku3YnlWF67eHUXwTTn1iV6pT1ud2+pWR63xl+aTtMUq02aw1E7hDHvVSbfwcg3Ru4phDg2O4QBC/asFgMICNFyrWqlSUeV7rdPzoOdf0NWTaCGs/X/96tQH4CgKUnyFHAPDSePkf+CLtUg==</source>
+    <source>eJyNV21v4jgQ/s6vmI2qLVQU7j6sVoJjTyylu9whQIWqWnWryCRO8RHsKHbKcnv97zd2Xh3otvmAwnj8zIz9zEv++DPaRI0GJzsqI+JRWA6/jyK69Lf9RiOR9v/uxUUDLmAYhmIPgYh3RCnqQygeHxl/BMFhubqa36600pJysyJBCVgeJL7qLVoEIghCQXzcg5rdhhcSKQGtTBGIxo2fDcAnStYh8+CMeIo9MXWYoYt9awWhFkRtbGHAQnosjWLGlUgUDEDFCe1DtwufD+DTgCShgjsWhmB0YDidAssDARIKDGzP1Ab2MVM6SlwkoK10YEQ4rCn4TJJ1iAex31AOidRa6Ns8Uc1Ww7iB1sY/PBopJrgReIJLBdP5F3f1bTF2xzc38xv0zbElTr+iPF+MZ3o51dXKlsTSRen1ZDqu6FoS1M3dWkbUY8EB1IZCRHSYGxpTfWdeTImiZsHcHUYsq2caJNzT8YDrGqNx4qmmdVvt4orQA56EYcvsT69XPz4acLM7cBXb0X8Fp66kqnl+uxqdt/qFZvFypjZMXn6qmkHwEySpKJdOON0nEnfVLupqZna9iHadE0ZYAM3c9VYhPYlYktDa/U4fl0t/MKlk097UshF3W5/FNZU2/Pbxw4e2oWqrglxqaW5ZMM5kdj132pZsTSTVid10XXP3bsted6ZZ4irRA6dTczM9l+eCKagMWCQkeTT0kGlKkzTLs4Qo8+gkU+qOn6lDREufzqRIYq8qyOxVJAjxNz1kfKrIjdF5keB1pul9uHRvx68p5+i3wSfDxabz7XJ36cPXHutJB88f15ut+qmlXjpm15HLKS6GlePWYjTrWViOWc/+FBoPNSoVoZ1kYiXuQjG9uSM247nVIFB476QrzkNGZnyvOKArBFXVIkA0owy1fF3ws5Ut3skkwKsXT8ynfqcKgHIuDAYHprCYIkc0WFFIcYko2BBp0Ay+CMz74usC8tQ2quWFmo2DU/WgXzU+jCLdiNCxRwOMzM1LXT2t8s5RouZp3sHC4eCvMdpxOih37EOao5Wsy3XgFtumNhhrg8YqhoYnZFcIgVv0MRTZ2Tb9YDSfLf/TL4vJVSqZzkfD6e+1sqE2MfZgTve6bxa9pencct2KTP0WnFNPle33Xa086MdqIafqLcY22hCOOZ/1cCSZiPV1hPSJhoWexB7pbZBomu6lq2UGesiYrEr1bBYWiAMTrlbpWxpr7ETbfg0pbWS/hkKdNyBdD1fD6StIw+n4ZvUGrLvhzWwy+/IKWqb1Bryr8efb19CMzi+xshbbeyODtlzsTbGGFV4m0gaOeGPPKRXiPJ+k0MKMVlnS23lcKWMrcY1Lpla9QMUx94SflqK8FSHgX8v5zMyWa4rzaIzJHUszW+Y20sHvHym4Sw1C3YYpc1gmir5W8tr8bRZn3jZoR83xDtfoUYC46UnPUEUDPAqz1qZMYWDSxWkKAzAq9+dZpOcPrRPlu1w9EWF178lZSqQXM8iwdL9DICx3cG/qXSpFEqTSh6o47Xz5gmMd5sSUb5wjmcQavxfxNtCfDJMrHBGwGqY1mamOFTiTevJLwdNGhG7D+/dQE9XaYBZDB6e7exxiLN2O7VlVuX56GMV37tR7b4Wdot6B0++FHPOFMdLMgVGi9IysKMdp8CiXau3nuEjnJo5XTOMYLrCIX7VgMBhAQEJJWxVG6eelTMfPl3Nlvmt0GiH380GuV2uAL1SA8oPiqAA8N57/B/Od4UU=</source>
   </file>
   <file path="CpeClientInterface.php" generated-path="CpeClientInterface.html" hash="fbbef406f9dc4da36f75e5634ef79f0e" package="Default">
     <docblock line="0">
