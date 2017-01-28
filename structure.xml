@@ -1,78 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="Cloud Processing Engine SDK" version="2.8.5">
   <partials/>
-  <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="c1124eeff9dd995f427841c6a7446142" package="Default">
+  <file path="CpeActivity.php" generated-path="CpeActivity.html" hash="f57cf186f970d143359849451e65e377" package="Default">
     <docblock line="0">
       <description>This Class must be used to create your own activities.</description>
-      <long-description>Extend it, and call `do_activity` with your callback as parameter to process incoming activities
-Call activity_failed, activity_completed, activity_heartbeat
-to notify Sfn of the status of your activity
-
-Implement the \CpeSdk\CpeClientInterface and pass it to the constructor
-This allows you to interact with your application: Store data in your DB, or anything else
-that you see fit to send to your app when something happens: start, fail, success, heartbeat
-
-LOGS: By default logs go to /var/tmp/logs/cpe/. Each file will have the name of your activity name.
-The `process` logs are in seperate files under `${activity_name}-${taskToken}.log`</long-description>
+      <long-description>Extend it in your own activities and implement the do_activity method</long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <class final="false" abstract="true" namespace="SA\CpeSdk" line="19" package="Default">
+    <namespace-alias name="CpeSdk">\SA\CpeSdk</namespace-alias>
+    <class final="false" abstract="false" namespace="SA\CpeSdk" line="12" package="Default">
       <extends/>
       <name>CpeActivity</name>
       <full_name>\SA\CpeSdk\CpeActivity</full_name>
-      <docblock line="19">
+      <docblock line="12">
         <description></description>
         <long-description></long-description>
-        <tag name="package" line="19" description="Default"/>
+        <tag name="package" line="12" description="Default"/>
       </docblock>
-      <constant namespace="SA\CpeSdk" line="35" package="Default">
+      <constant namespace="SA\CpeSdk" line="29" package="Default">
         <name>HEARTBEAT_FAILED</name>
         <full_name>\SA\CpeSdk\CpeActivity::HEARTBEAT_FAILED</full_name>
         <value>"HEARTBEAT_FAILED"</value>
-        <docblock line="35">
+        <docblock line="29">
           <description></description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="SA\CpeSdk" line="36" package="Default">
+      <constant namespace="SA\CpeSdk" line="30" package="Default">
         <name>NO_ACTIVITY_NAME</name>
         <full_name>\SA\CpeSdk\CpeActivity::NO_ACTIVITY_NAME</full_name>
         <value>"NO_ACTIVITY_NAME"</value>
-        <docblock line="36">
+        <docblock line="30">
           <description></description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="SA\CpeSdk" line="37" package="Default">
-        <name>NO_ACTIVITY_ARN</name>
-        <full_name>\SA\CpeSdk\CpeActivity::NO_ACTIVITY_ARN</full_name>
-        <value>"NO_ACTIVITY_ARN"</value>
-        <docblock line="37">
+      <constant namespace="SA\CpeSdk" line="31" package="Default">
+        <name>NO_ACTIVITY_VERSION</name>
+        <full_name>\SA\CpeSdk\CpeActivity::NO_ACTIVITY_VERSION</full_name>
+        <value>"NO_ACTIVITY_VERSION"</value>
+        <docblock line="31">
           <description></description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="SA\CpeSdk" line="38" package="Default">
+      <constant namespace="SA\CpeSdk" line="32" package="Default">
+        <name>ACTIVITY_TASK_EMPTY</name>
+        <full_name>\SA\CpeSdk\CpeActivity::ACTIVITY_TASK_EMPTY</full_name>
+        <value>"ACTIVITY_TASK_EMPTY"</value>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk" line="33" package="Default">
         <name>NO_INPUT</name>
         <full_name>\SA\CpeSdk\CpeActivity::NO_INPUT</full_name>
         <value>"NO_INPUT"</value>
-        <docblock line="38">
+        <docblock line="33">
           <description></description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="SA\CpeSdk" line="39" package="Default">
+      <constant namespace="SA\CpeSdk" line="34" package="Default">
         <name>INPUT_INVALID</name>
         <full_name>\SA\CpeSdk\CpeActivity::INPUT_INVALID</full_name>
         <value>"INPUT_INVALID"</value>
-        <docblock line="39">
+        <docblock line="34">
           <description></description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="21" package="Default">
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="14" package="Default">
         <name>$params</name>
         <full_name>\SA\CpeSdk\CpeActivity::params</full_name>
+        <default></default>
+        <docblock line="14">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="15" package="Default">
+        <name>$debug</name>
+        <full_name>\SA\CpeSdk\CpeActivity::debug</full_name>
+        <default></default>
+        <docblock line="15">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="17" package="Default">
+        <name>$activityId</name>
+        <full_name>\SA\CpeSdk\CpeActivity::activityId</full_name>
+        <default></default>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="18" package="Default">
+        <name>$activityType</name>
+        <full_name>\SA\CpeSdk\CpeActivity::activityType</full_name>
+        <default></default>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="20" package="Default">
+        <name>$cpeLogger</name>
+        <full_name>\SA\CpeSdk\CpeActivity::cpeLogger</full_name>
+        <default></default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="SA\CpeSdk" line="21" package="Default">
+        <name>$cpeSqsWriter</name>
+        <full_name>\SA\CpeSdk\CpeActivity::cpeSqsWriter</full_name>
         <default></default>
         <docblock line="21">
           <description></description>
@@ -80,8 +126,8 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
         </docblock>
       </property>
       <property static="false" visibility="public" namespace="SA\CpeSdk" line="22" package="Default">
-        <name>$debug</name>
-        <full_name>\SA\CpeSdk\CpeActivity::debug</full_name>
+        <name>$cpeSwfHandler</name>
+        <full_name>\SA\CpeSdk\CpeActivity::cpeSwfHandler</full_name>
         <default></default>
         <docblock line="22">
           <description></description>
@@ -89,8 +135,8 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
         </docblock>
       </property>
       <property static="false" visibility="public" namespace="SA\CpeSdk" line="23" package="Default">
-        <name>$logPath</name>
-        <full_name>\SA\CpeSdk\CpeActivity::logPath</full_name>
+        <name>$cpeJsonValidator</name>
+        <full_name>\SA\CpeSdk\CpeActivity::cpeJsonValidator</full_name>
         <default></default>
         <docblock line="23">
           <description></description>
@@ -98,8 +144,8 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
         </docblock>
       </property>
       <property static="false" visibility="public" namespace="SA\CpeSdk" line="25" package="Default">
-        <name>$cpeLogger</name>
-        <full_name>\SA\CpeSdk\CpeActivity::cpeLogger</full_name>
+        <name>$input_str</name>
+        <full_name>\SA\CpeSdk\CpeActivity::input_str</full_name>
         <default></default>
         <docblock line="25">
           <description></description>
@@ -107,8 +153,8 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
         </docblock>
       </property>
       <property static="false" visibility="public" namespace="SA\CpeSdk" line="26" package="Default">
-        <name>$cpeSfnHandler</name>
-        <full_name>\SA\CpeSdk\CpeActivity::cpeSfnHandler</full_name>
+        <name>$input</name>
+        <full_name>\SA\CpeSdk\CpeActivity::input</full_name>
         <default></default>
         <docblock line="26">
           <description></description>
@@ -116,71 +162,21 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
         </docblock>
       </property>
       <property static="false" visibility="public" namespace="SA\CpeSdk" line="27" package="Default">
-        <name>$client</name>
-        <full_name>\SA\CpeSdk\CpeActivity::client</full_name>
+        <name>$activityLogKey</name>
+        <full_name>\SA\CpeSdk\CpeActivity::activityLogKey</full_name>
         <default></default>
         <docblock line="27">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="29" package="Default">
-        <name>$input</name>
-        <full_name>\SA\CpeSdk\CpeActivity::input</full_name>
-        <default></default>
-        <docblock line="29">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="30" package="Default">
-        <name>$token</name>
-        <full_name>\SA\CpeSdk\CpeActivity::token</full_name>
-        <default></default>
-        <docblock line="30">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="31" package="Default">
-        <name>$arn</name>
-        <full_name>\SA\CpeSdk\CpeActivity::arn</full_name>
-        <default></default>
-        <docblock line="31">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="32" package="Default">
-        <name>$name</name>
-        <full_name>\SA\CpeSdk\CpeActivity::name</full_name>
-        <default></default>
-        <docblock line="32">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="33" package="Default">
-        <name>$logKey</name>
-        <full_name>\SA\CpeSdk\CpeActivity::logKey</full_name>
-        <default></default>
-        <docblock line="33">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="41" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="36" package="Default">
         <name>__construct</name>
         <full_name>\SA\CpeSdk\CpeActivity::__construct()</full_name>
-        <docblock line="41">
+        <docblock line="36">
           <description></description>
           <long-description></long-description>
         </docblock>
-        <argument line="0" by_reference="false">
-          <name>$clientClassPath</name>
-          <default>null</default>
-          <type/>
-        </argument>
         <argument line="0" by_reference="false">
           <name>$params</name>
           <default></default>
@@ -193,14 +189,463 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
         </argument>
         <argument line="0" by_reference="false">
           <name>$cpeLogger</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="75" package="Default">
+        <name>init_activity</name>
+        <full_name>\SA\CpeSdk\CpeActivity::init_activity()</full_name>
+        <docblock line="75">
+          <description>We initialise the Activity in SWF
+WE check if it is already registered or not
+If not we register it</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="105" package="Default">
+        <name>do_task_check</name>
+        <full_name>\SA\CpeSdk\CpeActivity::do_task_check()</full_name>
+        <docblock line="105">
+          <description>We perform basic high level task verifications
+WE make sure it contains an input and we save it
+This is the first method to be called when your activity starts</description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="true" static="false" visibility="protected" namespace="SA\CpeSdk" line="83" package="Default">
-        <name>process</name>
-        <full_name>\SA\CpeSdk\CpeActivity::process()</full_name>
-        <docblock line="83">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="133" package="Default">
+        <name>do_input_validation</name>
+        <full_name>\SA\CpeSdk\CpeActivity::do_input_validation()</full_name>
+        <docblock line="133">
+          <description>Perform JSON input validation
+We capture the four keys that compose a CPE Task input</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="146" package="Default">
+        <name>do_activity</name>
+        <full_name>\SA\CpeSdk\CpeActivity::do_activity()</full_name>
+        <docblock line="146">
+          <description>Send SQS notification saying your activity started
+Implement this method in your activity
+This is where your logic starts</description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="156" package="Default">
+        <name>activity_failed</name>
+        <full_name>\SA\CpeSdk\CpeActivity::activity_failed()</full_name>
+        <docblock line="156">
+          <description>Activity failed to SQS and SWF
+Called by ActivityPoller if your activity throws an exeception</description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$reason</name>
+          <default>""</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$details</name>
+          <default>""</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="183" package="Default">
+        <name>activity_completed</name>
+        <full_name>\SA\CpeSdk\CpeActivity::activity_completed()</full_name>
+        <docblock line="183">
+          <description>Send activity completed to SQS and SWF
+Called by ActivityPoller once your activity completed</description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$result</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="210" package="Default">
+        <name>send_heartbeat</name>
+        <full_name>\SA\CpeSdk\CpeActivity::send_heartbeat()</full_name>
+        <docblock line="210">
+          <description>Send heartbeat to SWF to keep the task alive.</description>
+          <long-description>Timeout is configurable at the Activity level in SWF
+You must call this regularly within your logic to make sure SWF doesn't
+consider your activity as 'timeed out'.</long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$details</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="12" code="PPC:ERR-50005">No summary for class \SA\CpeSdk\CpeActivity</error>
+      <error line="36" code="PPC:ERR-50015">Argument $params is missing from the Docblock of __construct</error>
+      <error line="36" code="PPC:ERR-50015">Argument $debug is missing from the Docblock of __construct</error>
+      <error line="36" code="PPC:ERR-50015">Argument $cpeLogger is missing from the Docblock of __construct</error>
+      <error line="36" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="105" code="PPC:ERR-50015">Argument $task is missing from the Docblock of do_task_check</error>
+      <error line="146" code="PPC:ERR-50015">Argument $task is missing from the Docblock of do_activity</error>
+      <error line="156" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_failed</error>
+      <error line="156" code="PPC:ERR-50015">Argument $reason is missing from the Docblock of activity_failed</error>
+      <error line="156" code="PPC:ERR-50015">Argument $details is missing from the Docblock of activity_failed</error>
+      <error line="183" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_completed</error>
+      <error line="183" code="PPC:ERR-50015">Argument $result is missing from the Docblock of activity_completed</error>
+      <error line="210" code="PPC:ERR-50015">Argument $task is missing from the Docblock of send_heartbeat</error>
+      <error line="210" code="PPC:ERR-50015">Argument $details is missing from the Docblock of send_heartbeat</error>
+      <error line="14" code="PPC:ERR-50007">No summary for property $params</error>
+      <error line="15" code="PPC:ERR-50007">No summary for property $debug</error>
+      <error line="17" code="PPC:ERR-50007">No summary for property $activityId</error>
+      <error line="18" code="PPC:ERR-50007">No summary for property $activityType</error>
+      <error line="20" code="PPC:ERR-50007">No summary for property $cpeLogger</error>
+      <error line="21" code="PPC:ERR-50007">No summary for property $cpeSqsWriter</error>
+      <error line="22" code="PPC:ERR-50007">No summary for property $cpeSwfHandler</error>
+      <error line="23" code="PPC:ERR-50007">No summary for property $cpeJsonValidator</error>
+      <error line="25" code="PPC:ERR-50007">No summary for property $input_str</error>
+      <error line="26" code="PPC:ERR-50007">No summary for property $input</error>
+      <error line="27" code="PPC:ERR-50007">No summary for property $activityLogKey</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="Sqs/CpeSqsListener.php" generated-path="Sqs.CpeSqsListener.html" hash="2fd2a39c371e7acd7d93265279df608e" package="Default">
+    <docblock line="0">
+      <description>This class is used by the CPE Core InputPoller
+We use it to listen to SQS input messages from clients</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Aws">\Aws\Common\Aws</namespace-alias>
+    <namespace-alias name="Sqs">\Aws\Sqs</namespace-alias>
+    <namespace-alias name="CpeSdk">\SA\CpeSdk</namespace-alias>
+    <class final="false" abstract="false" namespace="SA\CpeSdk\Sqs" line="17" package="Default">
+      <extends/>
+      <name>CpeSqsListener</name>
+      <full_name>\SA\CpeSdk\Sqs\CpeSqsListener</full_name>
+      <docblock line="17">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="17" description="Default"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="19" package="Default">
+        <name>$debug</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsListener::debug</full_name>
+        <default></default>
+        <docblock line="19">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="20" package="Default">
+        <name>$sqs</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsListener::sqs</full_name>
+        <default></default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="21" package="Default">
+        <name>$cpeLogger</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsListener::cpeLogger</full_name>
+        <default></default>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="23" package="Default">
+        <name>__construct</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsListener::__construct()</full_name>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$debug</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$cpeLogger</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="46" package="Default">
+        <name>receive_message</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsListener::receive_message()</full_name>
+        <docblock line="46">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$queue</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$timeout</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="80" package="Default">
+        <name>delete_message</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsListener::delete_message()</full_name>
+        <docblock line="80">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$queue</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$msg</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="17" code="PPC:ERR-50005">No summary for class \SA\CpeSdk\Sqs\CpeSqsListener</error>
+      <error line="23" code="PPC:ERR-50015">Argument $debug is missing from the Docblock of __construct</error>
+      <error line="23" code="PPC:ERR-50015">Argument $cpeLogger is missing from the Docblock of __construct</error>
+      <error line="23" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="46" code="PPC:ERR-50015">Argument $queue is missing from the Docblock of receive_message</error>
+      <error line="46" code="PPC:ERR-50015">Argument $timeout is missing from the Docblock of receive_message</error>
+      <error line="46" code="PPC:ERR-50008">No summary for method receive_message()</error>
+      <error line="80" code="PPC:ERR-50015">Argument $queue is missing from the Docblock of delete_message</error>
+      <error line="80" code="PPC:ERR-50015">Argument $msg is missing from the Docblock of delete_message</error>
+      <error line="80" code="PPC:ERR-50008">No summary for method delete_message()</error>
+      <error line="19" code="PPC:ERR-50007">No summary for property $debug</error>
+      <error line="20" code="PPC:ERR-50007">No summary for property $sqs</error>
+      <error line="21" code="PPC:ERR-50007">No summary for property $cpeLogger</error>
+    </parse_markers>
+    <source>eJytVdtO20AQffdXTCNEnAhIn0lJlYZAUVNuTsQDIGvjTMyqjm1210Ep4t8742ucNLSVuhKSs3PZmTPnDJ8+x0+xZXXabQvaMH6SGrxAaA30kWicwXQF5glhcD2EQaQQLsI4MddREKDiiDtkN5AGTASB1AZD/nJuHJDsCQvUWvioYa6iBeWWGBpNke2OZYWCrLHwEJz+wyBGZ/bjwXnWXaqnA/2F+BmFlHOqhJKoLX6n/6IfBtFiEYUP9Nkt78oopw+UCJzTb6mtzEvWrC/++axHaaXUwqsFdGIll8Ig7M1wmvjd+p3m3LUbL8ZR5PuosvvMmEwD6cE8CT0jqW7X9aJQG5V4xs7SHqwFwgmESRC00tCsBj57hgZw2EvdyaUop7RTgwOFXEP/zuEmCWRtROhhlUK8aAolUI6P58IzkVrZQimxskuX4jQV+lRqE0564CPhsbQblNc9HZ71J6Oxezs8v7i6bLRqga1Wd7NcAoiLpYcPe5THbhLAzVa97Kzt8kbOwf5QwVF/Ik9bAwtfICfIoLi21yrBQOOfcmyO7a0aXkp/Pm0YXTjj4SVz+Goyvp6MUyo/J5hg6VGyvBAGjcD7AfNIQZSYddLnIZ21lzrA4oEoxMILhAEBRi4w0whnjVW0lDOSX/31TZIp9FAu0c0z2XupKxGNs1Etm/xi2Nc59j7uh70g8l1Ks02dxunwy+S8cQDblntGhKj5CI2jqdDIIrdd9+xiNHTd1sF2AOMhQz9rvpm10ISjo6NGnXjd2s91cqWIpuEMFw3Ge8J8IEycAueKtwp1EhjmRMngw14O5vccy12iueH6JipoFjeknhz3bec7Ic2YZuEgbYOZTqVWDOdgp67WeztHkzKiaIJGKMIV/c1o+iZRYb572ccT2VrOD0/b3isX8EnRd67SvFGSagv292vFeFESmiq0VfHkteb3Pp9SqP+eU3x28yq1/iu30qDLigKaFSNxScKSYaar45Jyja3wXZTjk4NfYnT/8bHyfqt2X+43F7Shir1TbIJTDGjtkviL4ZYcriTPK5/GylMWc0OLjPb/jOVSRv12M8zS1NuLYaH9Hf90Ug1kYf9VArcsq9h8JcYG2MydqYz7DctjoYA36836BRgQUM0=</source>
+  </file>
+  <file path="Sqs/CpeSqsWriter.php" generated-path="Sqs.CpeSqsWriter.html" hash="0762cb7753b51df60c614bd3d528d77d" package="Default">
+    <docblock line="0">
+      <description>This class is used by the CPE Core ActivityPoller
+AND can be also used by the Custom Activities</description>
+      <long-description>Use it to send updates to the Clients.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Aws">\Aws\Common\Aws</namespace-alias>
+    <namespace-alias name="Sqs">\Aws\Sqs</namespace-alias>
+    <namespace-alias name="CpeSdk">\SA\CpeSdk</namespace-alias>
+    <class final="false" abstract="false" namespace="SA\CpeSdk\Sqs" line="19" package="Default">
+      <extends/>
+      <name>CpeSqsWriter</name>
+      <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter</full_name>
+      <docblock line="19">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="19" description="Default"/>
+      </docblock>
+      <constant namespace="SA\CpeSdk\Sqs" line="25" package="Default">
+        <name>INVALID_JSON</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::INVALID_JSON</full_name>
+        <value>"INVALID_JSON"</value>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="28" package="Default">
+        <name>WORKFLOW_SCHEDULED</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::WORKFLOW_SCHEDULED</full_name>
+        <value>"WORKFLOW_SCHEDULED"</value>
+        <docblock line="28">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="29" package="Default">
+        <name>JOB_STARTED</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::JOB_STARTED</full_name>
+        <value>"JOB_STARTED"</value>
+        <docblock line="29">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="30" package="Default">
+        <name>JOB_COMPLETED</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::JOB_COMPLETED</full_name>
+        <value>"JOB_COMPLETED"</value>
+        <docblock line="30">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="31" package="Default">
+        <name>JOB_FAILED</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::JOB_FAILED</full_name>
+        <value>"JOB_FAILED"</value>
+        <docblock line="31">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="32" package="Default">
+        <name>ACTIVITY_STARTED</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::ACTIVITY_STARTED</full_name>
+        <value>"ACTIVITY_STARTED"</value>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="33" package="Default">
+        <name>ACTIVITY_FAILED</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::ACTIVITY_FAILED</full_name>
+        <value>"ACTIVITY_FAILED"</value>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="34" package="Default">
+        <name>ACTIVITY_TIMEOUT</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::ACTIVITY_TIMEOUT</full_name>
+        <value>"ACTIVITY_TIMEOUT"</value>
+        <docblock line="34">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="35" package="Default">
+        <name>ACTIVITY_COMPLETED</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::ACTIVITY_COMPLETED</full_name>
+        <value>"ACTIVITY_COMPLETED"</value>
+        <docblock line="35">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="36" package="Default">
+        <name>ACTIVITY_PROGRESS</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::ACTIVITY_PROGRESS</full_name>
+        <value>"ACTIVITY_PROGRESS"</value>
+        <docblock line="36">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="37" package="Default">
+        <name>ACTIVITY_PREPARING</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::ACTIVITY_PREPARING</full_name>
+        <value>"ACTIVITY_PREPARING"</value>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="SA\CpeSdk\Sqs" line="38" package="Default">
+        <name>ACTIVITY_FINISHING</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::ACTIVITY_FINISHING</full_name>
+        <value>"ACTIVITY_FINISHING"</value>
+        <docblock line="38">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <property static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="21" package="Default">
+        <name>$debug</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::debug</full_name>
+        <default></default>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="22" package="Default">
+        <name>$sqs</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::sqs</full_name>
+        <default></default>
+        <docblock line="22">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="40" package="Default">
+        <name>__construct</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::__construct()</full_name>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$debug</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="62" package="Default">
+        <name>workflow_scheduled</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::workflow_scheduled()</full_name>
+        <docblock line="62">
+          <description>SEND messages to OUTPUT SQS queue</description>
+          <long-description>Send messages to back to the clients.
+Clients listening to the SQS queue will receive them
+Send updates and notifications:
+Activity Started, Failed, Succeeded, etc</long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$workflowType</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$runId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$workflowId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$message</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="81" package="Default">
+        <name>activity_started</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_started()</full_name>
+        <docblock line="81">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -210,138 +655,239 @@ The `process` logs are in seperate files under `${activity_name}-${taskToken}.lo
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="90" package="Default">
-        <name>doActivity</name>
-        <full_name>\SA\CpeSdk\CpeActivity::doActivity()</full_name>
-        <docblock line="90">
-          <description>This must be called fro your activity to start listening for task
-Perform Sfn long polling and call user callback function when receiving new activity</description>
-          <long-description></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="161" package="Default">
-        <name>doInputValidation</name>
-        <full_name>\SA\CpeSdk\CpeActivity::doInputValidation()</full_name>
-        <docblock line="161">
-          <description>Perform JSON input validation
-Decode JSON to Associative array</description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="91" package="Default">
+        <name>activity_completed</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_completed()</full_name>
+        <docblock line="91">
+          <description></description>
           <long-description></long-description>
         </docblock>
         <argument line="0" by_reference="false">
-          <name>$input</name>
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$result</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="102" package="Default">
+        <name>activity_failed</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_failed()</full_name>
+        <docblock line="102">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$reason</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$details</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="177" package="Default">
-        <name>activityFail</name>
-        <full_name>\SA\CpeSdk\CpeActivity::activityFail()</full_name>
-        <docblock line="177">
-          <description>Activity failed
-Called by parent Activity when something went wrong
-Notifies Sfn that the activity has failed</description>
-          <long-description>Return false ONLY if Sfn call failed.
-True otherwise, even of your client interface failed as the Sfn work is successful.</long-description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="115" package="Default">
+        <name>activity_timeout</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_timeout()</full_name>
+        <docblock line="115">
+          <description></description>
+          <long-description></long-description>
         </docblock>
         <argument line="0" by_reference="false">
-          <name>$error</name>
-          <default>""</default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$cause</name>
-          <default>""</default>
+          <name>$task</name>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="218" package="Default">
-        <name>activitySuccess</name>
-        <full_name>\SA\CpeSdk\CpeActivity::activitySuccess()</full_name>
-        <docblock line="218">
-          <description>Activity Success and completed
-Notifies Sfn that the activity has succeeded
-Call this from your activity logic once the process is successful.</description>
-          <long-description>If return false then the call to Sfn sndTaskSuccess failed
-Try again or throw an exception to mark the Activity as failed</long-description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="124" package="Default">
+        <name>activity_canceled</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_canceled()</full_name>
+        <docblock line="124">
+          <description></description>
+          <long-description></long-description>
         </docblock>
         <argument line="0" by_reference="false">
-          <name>$output</name>
-          <default>'{}'</default>
+          <name>$task</name>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="256" package="Default">
-        <name>activityHeartbeat</name>
-        <full_name>\SA\CpeSdk\CpeActivity::activityHeartbeat()</full_name>
-        <docblock line="256">
-          <description>Send heartbeat to Sfn to keep the task alive.</description>
-          <long-description>Call this from your activity logic. If return false then the heartbeat was not sent
-Try again or throw an exception to mark the Activity as failed</long-description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="129" package="Default">
+        <name>activity_progress</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_progress()</full_name>
+        <docblock line="129">
+          <description></description>
+          <long-description></long-description>
         </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$progress</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="139" package="Default">
+        <name>activity_preparing</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_preparing()</full_name>
+        <docblock line="139">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sqs" line="147" package="Default">
+        <name>activity_finishing</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::activity_finishing()</full_name>
+        <docblock line="147">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="161" package="Default">
+        <name>craft_new_msg</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::craft_new_msg()</full_name>
+        <docblock line="161">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$type</name>
+          <default></default>
+          <type/>
+        </argument>
         <argument line="0" by_reference="false">
           <name>$data</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk\Sqs" line="173" package="Default">
+        <name>send_activity_msg</name>
+        <full_name>\SA\CpeSdk\Sqs\CpeSqsWriter::send_activity_msg()</full_name>
+        <docblock line="173">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$activityTask</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$eventType</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$sendInput</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$result</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
     </class>
+    <markers>
+      <fixme line="126">To implement</fixme>
+    </markers>
     <parse_markers>
-      <error line="19" code="PPC:ERR-50005">No summary for class \SA\CpeSdk\CpeActivity</error>
-      <error line="41" code="PPC:ERR-50015">Argument $clientClassPath is missing from the Docblock of __construct</error>
-      <error line="41" code="PPC:ERR-50015">Argument $params is missing from the Docblock of __construct</error>
-      <error line="41" code="PPC:ERR-50015">Argument $debug is missing from the Docblock of __construct</error>
-      <error line="41" code="PPC:ERR-50015">Argument $cpeLogger is missing from the Docblock of __construct</error>
-      <error line="41" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="83" code="PPC:ERR-50015">Argument $task is missing from the Docblock of process</error>
-      <error line="83" code="PPC:ERR-50008">No summary for method process()</error>
-      <error line="161" code="PPC:ERR-50015">Argument $input is missing from the Docblock of doInputValidation</error>
-      <error line="177" code="PPC:ERR-50015">Argument $error is missing from the Docblock of activityFail</error>
-      <error line="177" code="PPC:ERR-50015">Argument $cause is missing from the Docblock of activityFail</error>
-      <error line="218" code="PPC:ERR-50015">Argument $output is missing from the Docblock of activitySuccess</error>
-      <error line="256" code="PPC:ERR-50015">Argument $data is missing from the Docblock of activityHeartbeat</error>
-      <error line="21" code="PPC:ERR-50007">No summary for property $params</error>
-      <error line="22" code="PPC:ERR-50007">No summary for property $debug</error>
-      <error line="23" code="PPC:ERR-50007">No summary for property $logPath</error>
-      <error line="25" code="PPC:ERR-50007">No summary for property $cpeLogger</error>
-      <error line="26" code="PPC:ERR-50007">No summary for property $cpeSfnHandler</error>
-      <error line="27" code="PPC:ERR-50007">No summary for property $client</error>
-      <error line="29" code="PPC:ERR-50007">No summary for property $input</error>
-      <error line="30" code="PPC:ERR-50007">No summary for property $token</error>
-      <error line="31" code="PPC:ERR-50007">No summary for property $arn</error>
-      <error line="32" code="PPC:ERR-50007">No summary for property $name</error>
-      <error line="33" code="PPC:ERR-50007">No summary for property $logKey</error>
+      <error line="19" code="PPC:ERR-50005">No summary for class \SA\CpeSdk\Sqs\CpeSqsWriter</error>
+      <error line="40" code="PPC:ERR-50015">Argument $debug is missing from the Docblock of __construct</error>
+      <error line="40" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="62" code="PPC:ERR-50015">Argument $workflowType is missing from the Docblock of workflow_scheduled</error>
+      <error line="62" code="PPC:ERR-50015">Argument $runId is missing from the Docblock of workflow_scheduled</error>
+      <error line="62" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of workflow_scheduled</error>
+      <error line="62" code="PPC:ERR-50015">Argument $message is missing from the Docblock of workflow_scheduled</error>
+      <error line="81" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_started</error>
+      <error line="81" code="PPC:ERR-50008">No summary for method activity_started()</error>
+      <error line="91" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_completed</error>
+      <error line="91" code="PPC:ERR-50015">Argument $result is missing from the Docblock of activity_completed</error>
+      <error line="91" code="PPC:ERR-50008">No summary for method activity_completed()</error>
+      <error line="102" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_failed</error>
+      <error line="102" code="PPC:ERR-50015">Argument $reason is missing from the Docblock of activity_failed</error>
+      <error line="102" code="PPC:ERR-50015">Argument $details is missing from the Docblock of activity_failed</error>
+      <error line="102" code="PPC:ERR-50008">No summary for method activity_failed()</error>
+      <error line="115" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_timeout</error>
+      <error line="115" code="PPC:ERR-50008">No summary for method activity_timeout()</error>
+      <error line="124" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_canceled</error>
+      <error line="124" code="PPC:ERR-50008">No summary for method activity_canceled()</error>
+      <error line="129" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_progress</error>
+      <error line="129" code="PPC:ERR-50015">Argument $progress is missing from the Docblock of activity_progress</error>
+      <error line="129" code="PPC:ERR-50008">No summary for method activity_progress()</error>
+      <error line="139" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_preparing</error>
+      <error line="139" code="PPC:ERR-50008">No summary for method activity_preparing()</error>
+      <error line="147" code="PPC:ERR-50015">Argument $task is missing from the Docblock of activity_finishing</error>
+      <error line="147" code="PPC:ERR-50008">No summary for method activity_finishing()</error>
+      <error line="161" code="PPC:ERR-50015">Argument $type is missing from the Docblock of craft_new_msg</error>
+      <error line="161" code="PPC:ERR-50015">Argument $data is missing from the Docblock of craft_new_msg</error>
+      <error line="161" code="PPC:ERR-50008">No summary for method craft_new_msg()</error>
+      <error line="173" code="PPC:ERR-50015">Argument $activityTask is missing from the Docblock of send_activity_msg</error>
+      <error line="173" code="PPC:ERR-50015">Argument $eventType is missing from the Docblock of send_activity_msg</error>
+      <error line="173" code="PPC:ERR-50015">Argument $sendInput is missing from the Docblock of send_activity_msg</error>
+      <error line="173" code="PPC:ERR-50015">Argument $result is missing from the Docblock of send_activity_msg</error>
+      <error line="173" code="PPC:ERR-50008">No summary for method send_activity_msg()</error>
+      <error line="21" code="PPC:ERR-50007">No summary for property $debug</error>
+      <error line="22" code="PPC:ERR-50007">No summary for property $sqs</error>
     </parse_markers>
-    <source>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</source>
+    <source>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</source>
   </file>
-  <file path="Sfn/CpeSfnHandler.php" generated-path="Sfn.CpeSfnHandler.html" hash="e42207646bb83baef4b5f72390c0c826" package="Default">
+  <file path="Swf/CpeSwfHandler.php" generated-path="Swf.CpeSwfHandler.html" hash="dde408306be89d80228f7e7322d6d5bd" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <class final="false" abstract="false" namespace="SA\CpeSdk\Sfn" line="9" package="Default">
+    <namespace-alias name="SwfClient">\Aws\Swf\SwfClient</namespace-alias>
+    <namespace-alias name="CpeSdk">\SA\CpeSdk</namespace-alias>
+    <class final="false" abstract="false" namespace="SA\CpeSdk\Swf" line="14" package="Default">
       <extends/>
-      <name>CpeSfnHandler</name>
-      <full_name>\SA\CpeSdk\Sfn\CpeSfnHandler</full_name>
-      <docblock line="9">
-        <description>Create the AWS Sfn Client
+      <name>CpeSwfHandler</name>
+      <full_name>\SA\CpeSdk\Swf\CpeSwfHandler</full_name>
+      <docblock line="14">
+        <description>Create the AWS SWF connection
 Check for AWS environment variables</description>
         <long-description></long-description>
-        <tag name="package" line="9" description="Default"/>
+        <tag name="package" line="14" description="Default"/>
       </docblock>
-      <property static="false" visibility="public" namespace="SA\CpeSdk\Sfn" line="11" package="Default">
-        <name>$sfn</name>
-        <full_name>\SA\CpeSdk\Sfn\CpeSfnHandler::sfn</full_name>
+      <property static="false" visibility="public" namespace="SA\CpeSdk\Swf" line="16" package="Default">
+        <name>$swf</name>
+        <full_name>\SA\CpeSdk\Swf\CpeSwfHandler::swf</full_name>
         <default></default>
-        <docblock line="11">
+        <docblock line="16">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Sfn" line="13" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk\Swf" line="18" package="Default">
         <name>__construct</name>
-        <full_name>\SA\CpeSdk\Sfn\CpeSfnHandler::__construct()</full_name>
-        <docblock line="13">
+        <full_name>\SA\CpeSdk\Swf\CpeSwfHandler::__construct()</full_name>
+        <docblock line="18">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -349,10 +895,10 @@ Check for AWS environment variables</description>
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="13" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="11" code="PPC:ERR-50007">No summary for property $sfn</error>
+      <error line="18" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="16" code="PPC:ERR-50007">No summary for property $swf</error>
     </parse_markers>
-    <source>eJxtkWFLwzAQhr/nV9zqoO1Q+gN0kzI3FUTBKvvgpGTZdQ3r0pCkmyD77166Mh3zhRDIPbl77+7mVpeaMcU3aDUXCFk6H2vMlut5VqhrxpLBgMEAxga5Q3AlQjrLgGIwriQq1wZLFGsoatPGUG2lqdWGgrDlRvJFhZawhImKWws+faEeuFpWaNg3A5JuFpUU0LdtzT8vRaOEk7WCPBe1ss40wkVxSxx+el10DmQB2qBG4z342ha4QbDoGn2ECYp6Ud/gyqcdwgod0VFA1vO7yTR9f3rLXyf3jy/PQRzHx29erjT1DhTuYP47JromXwK1dxkFGToIz1OF/06lF8Rdt15JAtlsCqIba6e+K6W9GtFgyGtbOt1Zvxt/DiuIPk5ceoWH9kKA4Qi6Xi/PqS0a22JEhRUt2LrwhPokg/7es/0Pcy2eDQ==</source>
+    <source>eJxtkW9LwzAQxt/nU9zqoO1A9n66ydgfFUXBKHszKFl2Xcu6NCTp6pB9dy9dKYoelNDL7+557nJ7pzPNmBIHtFpIBD5dzzTy7X7N6/SGscoiTGvr//w3K3JUjvLDIaFAKPD5U0N1lf52MGAwgJlB4RBcRj1WHPhqCbJUCqXLS9UAGco9pKVp7lEdc1OqAynAUZhcbAq0hA2ZLIS1Xo0sPAi1LdCwLwYUutoUuYS+bdz+yKSVamQgSUjTOlNJF8UNcan0cdU6yFPQBjUa78FrWxAGwaKrdAcTFPWivsGdbzuGHTqio4CsJ/PFcvrx/J68Le4fX1+COI67Mh8uM2UNCmtol0vH4lOi9g6jgKOD8G+b8N+N9IK4ndSHfwe/1uZdumzfZbm9ntBSyGf3bKNRKqQrzSkSxohT9MtieJkrBBhPoB2yA2KS9OeZnb8BzX2lVg==</source>
   </file>
   <file path="CpeException.php" generated-path="CpeException.html" hash="61e7d6faa5829e48988a3bec346c2c1a" package="Default">
     <docblock line="0">
@@ -428,7 +974,7 @@ Check for AWS environment variables</description>
     </parse_markers>
     <source>eJx1UEtrwzAMvvtXiFBoC9u6c7oHJfS2w1iO6wiuo7TeUttY9iiU/PcpTl87VAcjyfoe0tOr2zohjNwhOakQysWqcFjWP3MhZjMoIgW7A9wrdEFbA6qVRNBYD2GLULQ21vDurUIibTawNBttUAxTTLQ8A3Ef0NQEq3NLHARwuLhutYKRx2aeGulh7Q+ssWE2UNZQ8FEFViULY/ZKcoNj0GTGAWxik+01WxONSrJVdUZPRkfgXRKDZ8gyTpWtkfNHTp3HX20jcWli204T4+Cyj1HYarp/GbAXv0lWejQhz2/I9RpX/NMB2P1bVw2nZnB/SI88TMwp0xq2Abv+RhVuLBlsmXCT6ZVfjyH6/rd4W5RlVcEDZDl8Hi57dF85nMqj225lspO9TvwBUjysDg==</source>
   </file>
-  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="358b5d4eeee6c600b45cb9d6b414c986" package="Default">
+  <file path="CpeLogger.php" generated-path="CpeLogger.html" hash="bf44fa6838d8f28ec65d375a6e3bb2ba" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -445,36 +991,27 @@ Send logs to Syslog for log offloading</description>
         <long-description></long-description>
         <tag name="package" line="11" description="Default"/>
       </docblock>
-      <constant namespace="SA\CpeSdk" line="19" package="Default">
+      <constant namespace="SA\CpeSdk" line="17" package="Default">
         <name>LOG_TYPE_ERROR</name>
         <full_name>\SA\CpeSdk\CpeLogger::LOG_TYPE_ERROR</full_name>
         <value>"LOG_TYPE_ERROR"</value>
-        <docblock line="19">
+        <docblock line="17">
           <description></description>
           <long-description></long-description>
         </docblock>
       </constant>
-      <constant namespace="SA\CpeSdk" line="20" package="Default">
+      <constant namespace="SA\CpeSdk" line="18" package="Default">
         <name>OPENLOG_ERROR</name>
         <full_name>\SA\CpeSdk\CpeLogger::OPENLOG_ERROR</full_name>
         <value>"OPENLOG_ERROR"</value>
-        <docblock line="20">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </constant>
-      <constant namespace="SA\CpeSdk" line="21" package="Default">
-        <name>LOGFILE_ERROR</name>
-        <full_name>\SA\CpeSdk\CpeLogger::LOGFILE_ERROR</full_name>
-        <value>"LOGFILE_ERROR"</value>
-        <docblock line="21">
+        <docblock line="18">
           <description></description>
           <long-description></long-description>
         </docblock>
       </constant>
       <property static="false" visibility="public" namespace="SA\CpeSdk" line="13" package="Default">
-        <name>$activityName</name>
-        <full_name>\SA\CpeSdk\CpeLogger::activityName</full_name>
+        <name>$logPath</name>
+        <full_name>\SA\CpeSdk\CpeLogger::logPath</full_name>
         <default></default>
         <docblock line="13">
           <description></description>
@@ -482,54 +1019,41 @@ Send logs to Syslog for log offloading</description>
         </docblock>
       </property>
       <property static="false" visibility="public" namespace="SA\CpeSdk" line="14" package="Default">
-        <name>$logPath</name>
-        <full_name>\SA\CpeSdk\CpeLogger::logPath</full_name>
+        <name>$printout</name>
+        <full_name>\SA\CpeSdk\CpeLogger::printout</full_name>
         <default></default>
         <docblock line="14">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="15" package="Default">
-        <name>$filePath</name>
-        <full_name>\SA\CpeSdk\CpeLogger::filePath</full_name>
-        <default></default>
-        <docblock line="15">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <property static="false" visibility="public" namespace="SA\CpeSdk" line="16" package="Default">
-        <name>$printout</name>
-        <full_name>\SA\CpeSdk\CpeLogger::printout</full_name>
-        <default>true</default>
-        <docblock line="16">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="24" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="21" package="Default">
         <name>__construct</name>
         <full_name>\SA\CpeSdk\CpeLogger::__construct()</full_name>
-        <docblock line="24">
+        <docblock line="21">
           <description></description>
           <long-description></long-description>
         </docblock>
-        <argument line="0" by_reference="false">
-          <name>$activityName</name>
-          <default></default>
-          <type/>
-        </argument>
         <argument line="0" by_reference="false">
           <name>$logPath</name>
           <default>null</default>
           <type/>
         </argument>
+        <argument line="0" by_reference="false">
+          <name>$suffix</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$printout</name>
+          <default>false</default>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="44" package="Default">
-        <name>logOut</name>
-        <full_name>\SA\CpeSdk\CpeLogger::logOut()</full_name>
-        <docblock line="44">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="52" package="Default">
+        <name>log_out</name>
+        <full_name>\SA\CpeSdk\CpeLogger::log_out()</full_name>
+        <docblock line="52">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -549,20 +1073,15 @@ Send logs to Syslog for log offloading</description>
           <type/>
         </argument>
         <argument line="0" by_reference="false">
-          <name>$logKey</name>
+          <name>$workflowId</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="0" by_reference="false">
-          <name>$printOut</name>
-          <default>true</default>
-          <type/>
-        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="108" package="Default">
-        <name>printToFile</name>
-        <full_name>\SA\CpeSdk\CpeLogger::printToFile()</full_name>
-        <docblock line="108">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="SA\CpeSdk" line="106" package="Default">
+        <name>print_to_file</name>
+        <full_name>\SA\CpeSdk\CpeLogger::print_to_file()</full_name>
+        <docblock line="106">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -571,160 +1090,87 @@ Send logs to Syslog for log offloading</description>
           <default></default>
           <type/>
         </argument>
+        <argument line="0" by_reference="false">
+          <name>$workflowId</name>
+          <default></default>
+          <type/>
+        </argument>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="24" code="PPC:ERR-50015">Argument $activityName is missing from the Docblock of __construct</error>
-      <error line="24" code="PPC:ERR-50015">Argument $logPath is missing from the Docblock of __construct</error>
-      <error line="24" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="44" code="PPC:ERR-50015">Argument $type is missing from the Docblock of logOut</error>
-      <error line="44" code="PPC:ERR-50015">Argument $source is missing from the Docblock of logOut</error>
-      <error line="44" code="PPC:ERR-50015">Argument $message is missing from the Docblock of logOut</error>
-      <error line="44" code="PPC:ERR-50015">Argument $logKey is missing from the Docblock of logOut</error>
-      <error line="44" code="PPC:ERR-50015">Argument $printOut is missing from the Docblock of logOut</error>
-      <error line="44" code="PPC:ERR-50008">No summary for method logOut()</error>
-      <error line="108" code="PPC:ERR-50015">Argument $log is missing from the Docblock of printToFile</error>
-      <error line="108" code="PPC:ERR-50008">No summary for method printToFile()</error>
-      <error line="13" code="PPC:ERR-50007">No summary for property $activityName</error>
-      <error line="14" code="PPC:ERR-50007">No summary for property $logPath</error>
-      <error line="15" code="PPC:ERR-50007">No summary for property $filePath</error>
-      <error line="16" code="PPC:ERR-50007">No summary for property $printout</error>
+      <error line="21" code="PPC:ERR-50015">Argument $logPath is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50015">Argument $suffix is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50015">Argument $printout is missing from the Docblock of __construct</error>
+      <error line="21" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="52" code="PPC:ERR-50015">Argument $type is missing from the Docblock of log_out</error>
+      <error line="52" code="PPC:ERR-50015">Argument $source is missing from the Docblock of log_out</error>
+      <error line="52" code="PPC:ERR-50015">Argument $message is missing from the Docblock of log_out</error>
+      <error line="52" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of log_out</error>
+      <error line="52" code="PPC:ERR-50008">No summary for method log_out()</error>
+      <error line="106" code="PPC:ERR-50015">Argument $log is missing from the Docblock of print_to_file</error>
+      <error line="106" code="PPC:ERR-50015">Argument $workflowId is missing from the Docblock of print_to_file</error>
+      <error line="106" code="PPC:ERR-50008">No summary for method print_to_file()</error>
+      <error line="13" code="PPC:ERR-50007">No summary for property $logPath</error>
+      <error line="14" code="PPC:ERR-50007">No summary for property $printout</error>
     </parse_markers>
-    <source>eJyNV21v4jgQ/s6vmI2qLVQU7j6sVoJjTyylu9whQIWqWnWryCRO8RHsKHbKcnv97zd2Xh3otvmAwnj8zIz9zEv++DPaRI0GJzsqI+JRWA6/jyK69Lf9RiOR9v/uxUUDLmAYhmIPgYh3RCnqQygeHxl/BMFhubqa36600pJysyJBCVgeJL7qLVoEIghCQXzcg5rdhhcSKQGtTBGIxo2fDcAnStYh8+CMeIo9MXWYoYt9awWhFkRtbGHAQnosjWLGlUgUDEDFCe1DtwufD+DTgCShgjsWhmB0YDidAssDARIKDGzP1Ab2MVM6SlwkoK10YEQ4rCn4TJJ1iAex31AOidRa6Ns8Uc1Ww7iB1sY/PBopJrgReIJLBdP5F3f1bTF2xzc38xv0zbElTr+iPF+MZ3o51dXKlsTSRen1ZDqu6FoS1M3dWkbUY8EB1IZCRHSYGxpTfWdeTImiZsHcHUYsq2caJNzT8YDrGqNx4qmmdVvt4orQA56EYcvsT69XPz4acLM7cBXb0X8Fp66kqnl+uxqdt/qFZvFypjZMXn6qmkHwEySpKJdOON0nEnfVLupqZna9iHadE0ZYAM3c9VYhPYlYktDa/U4fl0t/MKlk097UshF3W5/FNZU2/Pbxw4e2oWqrglxqaW5ZMM5kdj132pZsTSTVid10XXP3bsted6ZZ4irRA6dTczM9l+eCKagMWCQkeTT0kGlKkzTLs4Qo8+gkU+qOn6lDREufzqRIYq8qyOxVJAjxNz1kfKrIjdF5keB1pul9uHRvx68p5+i3wSfDxabz7XJ36cPXHutJB88f15ut+qmlXjpm15HLKS6GlePWYjTrWViOWc/+FBoPNSoVoZ1kYiXuQjG9uSM247nVIFB476QrzkNGZnyvOKArBFXVIkA0owy1fF3ws5Ut3skkwKsXT8ynfqcKgHIuDAYHprCYIkc0WFFIcYko2BBp0Ay+CMz74usC8tQ2quWFmo2DU/WgXzU+jCLdiNCxRwOMzM1LXT2t8s5RouZp3sHC4eCvMdpxOih37EOao5Wsy3XgFtumNhhrg8YqhoYnZFcIgVv0MRTZ2Tb9YDSfLf/TL4vJVSqZzkfD6e+1sqE2MfZgTve6bxa9pencct2KTP0WnFNPle33Xa086MdqIafqLcY22hCOOZ/1cCSZiPV1hPSJhoWexB7pbZBomu6lq2UGesiYrEr1bBYWiAMTrlbpWxpr7ETbfg0pbWS/hkKdNyBdD1fD6StIw+n4ZvUGrLvhzWwy+/IKWqb1Bryr8efb19CMzi+xshbbeyODtlzsTbGGFV4m0gaOeGPPKRXiPJ+k0MKMVlnS23lcKWMrcY1Lpla9QMUx94SflqK8FSHgX8v5zMyWa4rzaIzJHUszW+Y20sHvHym4Sw1C3YYpc1gmir5W8tr8bRZn3jZoR83xDtfoUYC46UnPUEUDPAqz1qZMYWDSxWkKAzAq9+dZpOcPrRPlu1w9EWF178lZSqQXM8iwdL9DICx3cG/qXSpFEqTSh6o47Xz5gmMd5sSUb5wjmcQavxfxNtCfDJMrHBGwGqY1mamOFTiTevJLwdNGhG7D+/dQE9XaYBZDB6e7exxiLN2O7VlVuX56GMV37tR7b4Wdot6B0++FHPOFMdLMgVGi9IysKMdp8CiXau3nuEjnJo5XTOMYLrCIX7VgMBhAQEJJWxVG6eelTMfPl3Nlvmt0GiH380GuV2uAL1SA8oPiqAA8N57/B/Od4UU=</source>
+    <source>eJyNVm2PGjkM/s6v8EYrASsWeh+qk+DoiQO2xx0CxItWFUWjYcjAHEMymoRluXb/e53MawbahS+A7TyxHfux//gz2AWlErMPVAS2Q2HW+doN6Gyzb5VKR2H+bzw8lOABOr7PT+Dy8GBLSTfg8+3WY1vgDGbz3ngxV0YzyrRGgOQwOwv8qY4oEXDX9bm9wTNo2Sg5vi0E4C1DBKJh6VsJ8BMc177nwD0emNhy1zKEQegxyY8SnVLiRgP6rw4NpMeZFjicCQnD8Wdr/mXSt/rT6XgKbSCmhLRyxuNJf6TUka0yNiQku2oWUMdzzyB3FAJ0DU47GlIVpxNSW1Kt0PF6PhV5v90jc5SPYFn60vDoyIo2UJ8kVLybHX2/linE0XW910QOmSLJA6pc2xe0qlXfUoOtz9e2D/d2uH2JA1CfDXppbahrH31pSe9A/+eMWoLKSnkx75arrdQyu0ruPPH4KXdh7hEKRlkcpPFihw15CBqqFBpOQBskM7+4xHOhkmShaphdIGd1YZy+Uzm36KsnpKiYh6om4mG/8cKCSQ0+/P7xYw3wYWg1h3yvUPHStS2oapWKTujywyqXKe179FAF1/XhOibjkdRji+wY1lMnCFSzBCHfKnBVSElp/SyzCq2BaAq6TuooJnl3U2MLn6dieEMGo6cxqZmyZXfSh1nv3xWQehqjZT0Nhn3LqhaMh3G7S95E80KOo8De0l5BY0BqEfZWxyUiIrAjbtANcrU/Lly/l+eA5juCH0MnL4gvyUlOPNwjz5wGm7hxis2hSghVSzM81Q5E/Wp/0n1SIV8eD48b+LvpNQXB2kB9pVpMSuQP0acunItwMYAEtxCN1scBEK2P/6QWqyivZrFlARYKDuNakkxLVqpfsv+5SsEXGmPxxQRdhwUyvqrDUNWhLkZbwJ6ezR7jeETlLi2Rmqba7ng0+65+TAa9SDIcdzvD3wqNJ3chjg9GT4ryU9qukAWz135Eo5wx6shsctwVClZ9DHa+xlgYW3dnMyy8ePwgX/HQk2fw6Qv1Uztx8qSzw3yqR8lczerEwY6I+6ZpJjpFbOtwlYnJbmscCPtWASmaJ7+GQpsbkJ46887wHaTOsD+d34D13JmOBqPP76DFVjfg9fp/Ld5D0za/xIqHVPPGCtozftLsAXN8TCwbuKgbcwXIFc7b1RKaqCGnET2W8ZUOJjcRLcktpdTTq5Zvtp9UZp85fBNtCQk9Iv4/s/FIb0lriptViCMgFHpLSq6MJu9/gjOLagR9YdUYJ3rzSrk2K3P9t5I+QU2jXRD2M+roRbx46EVtNilBvxd1gWo1bXjCwpUH49H2y3IceHlVvcJfmfZKwPmzV3cVHj1bO8ZSnI1AdSCwJPgVS7FEIukqL47YO1EQI7cDV41mXPY8ATYk8cKgV4dn5MpokHuyfiNRJ36qcb7MmRnX5q2KqUEXvzJS2IEKq5p5p5ammFeSpxD0EhUcpdpSJWW4Sl20UWFxuqKPbrjU6JHRmSB996rQbhubq+llxJRN6NqsLOGkK1PFlO4Odzp4deCt9PYDYIhhkA==</source>
   </file>
-  <file path="CpeClientInterface.php" generated-path="CpeClientInterface.html" hash="fbbef406f9dc4da36f75e5634ef79f0e" package="Default">
+  <file path="CpeJsonValidator.php" generated-path="CpeJsonValidator.html" hash="1af88c9c842110d9c8a330479103c72f" package="Default">
     <docblock line="0">
-      <description>Implement this \CpeSdk\CpeClientInterface and pass it to the constructor of your activity
-This allows you to interact with your application: Store data in your DB, or anything else
-that you see fit to send to your app when something happens: start, fail, success, heartbeat</description>
+      <description></description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <interface namespace="SA\CpeSdk" line="11" package="Default">
-      <name>CpeClientInterface</name>
-      <full_name>\SA\CpeSdk\CpeClientInterface</full_name>
-      <docblock line="11">
+    <class final="false" abstract="false" namespace="SA\CpeSdk" line="5" package="Default">
+      <extends/>
+      <name>CpeJsonValidator</name>
+      <full_name>\SA\CpeSdk\CpeJsonValidator</full_name>
+      <docblock line="5">
         <description></description>
         <long-description></long-description>
-        <tag name="package" line="11" description="Default"/>
+        <tag name="package" line="5" description="Default"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="17" package="Default">
-        <name>onStart</name>
-        <full_name>\SA\CpeSdk\CpeClientInterface::onStart()</full_name>
-        <docblock line="17">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="7" package="Default">
+        <name>validate_json</name>
+        <full_name>\SA\CpeSdk\CpeJsonValidator::validate_json()</full_name>
+        <docblock line="7">
           <description></description>
           <long-description></long-description>
         </docblock>
         <argument line="0" by_reference="false">
-          <name>$task</name>
+          <name>$json</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$schemas_name</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$schemas_path</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="22" package="Default">
-        <name>onFail</name>
-        <full_name>\SA\CpeSdk\CpeClientInterface::onFail()</full_name>
-        <docblock line="22">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$taskToken</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$error</name>
-          <default>""</default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$cause</name>
-          <default>""</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="27" package="Default">
-        <name>onSuccess</name>
-        <full_name>\SA\CpeSdk\CpeClientInterface::onSuccess()</full_name>
-        <docblock line="27">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$taskToken</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$output</name>
-          <default>''</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="34" package="Default">
-        <name>onHeartbeat</name>
-        <full_name>\SA\CpeSdk\CpeClientInterface::onHeartbeat()</full_name>
-        <docblock line="34">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$taskToken</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$data</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="SA\CpeSdk" line="41" package="Default">
-        <name>onException</name>
-        <full_name>\SA\CpeSdk\CpeClientInterface::onException()</full_name>
-        <docblock line="41">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$context</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$exception</name>
-          <default></default>
-          <type>\Exception</type>
-        </argument>
-      </method>
-    </interface>
+    </class>
     <parse_markers>
-      <error line="11" code="PPC:ERR-50009">No summary for interface \SA\CpeSdk\CpeClientInterface</error>
-      <error line="17" code="PPC:ERR-50015">Argument $task is missing from the Docblock of onStart</error>
-      <error line="17" code="PPC:ERR-50008">No summary for method onStart()</error>
-      <error line="22" code="PPC:ERR-50015">Argument $taskToken is missing from the Docblock of onFail</error>
-      <error line="22" code="PPC:ERR-50015">Argument $error is missing from the Docblock of onFail</error>
-      <error line="22" code="PPC:ERR-50015">Argument $cause is missing from the Docblock of onFail</error>
-      <error line="22" code="PPC:ERR-50008">No summary for method onFail()</error>
-      <error line="27" code="PPC:ERR-50015">Argument $taskToken is missing from the Docblock of onSuccess</error>
-      <error line="27" code="PPC:ERR-50015">Argument $output is missing from the Docblock of onSuccess</error>
-      <error line="27" code="PPC:ERR-50008">No summary for method onSuccess()</error>
-      <error line="34" code="PPC:ERR-50015">Argument $taskToken is missing from the Docblock of onHeartbeat</error>
-      <error line="34" code="PPC:ERR-50015">Argument $data is missing from the Docblock of onHeartbeat</error>
-      <error line="34" code="PPC:ERR-50008">No summary for method onHeartbeat()</error>
-      <error line="41" code="PPC:ERR-50015">Argument $context is missing from the Docblock of onException</error>
-      <error line="41" code="PPC:ERR-50015">Argument $exception is missing from the Docblock of onException</error>
-      <error line="41" code="PPC:ERR-50008">No summary for method onException()</error>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="5" code="PPC:ERR-50005">No summary for class \SA\CpeSdk\CpeJsonValidator</error>
+      <error line="7" code="PPC:ERR-50015">Argument $json is missing from the Docblock of validate_json</error>
+      <error line="7" code="PPC:ERR-50015">Argument $schemas_name is missing from the Docblock of validate_json</error>
+      <error line="7" code="PPC:ERR-50015">Argument $schemas_path is missing from the Docblock of validate_json</error>
+      <error line="7" code="PPC:ERR-50008">No summary for method validate_json()</error>
     </parse_markers>
-    <source>eJytVE1v2zAMvftXEEWAtkHQ3NMVQ5dtWIFhFxfYpUDDyHSsxZEMic4Hhv33kbKdtFixXJqLYpt8enzk44ePTdVk2XQ8zmAMD5umpg05Bq5shKd5Q3mx1mNeW3n94JhCiYYAXQENxghWYr2EExjvIofWsA/gSzj4NgAatlvLBwV/VEisa7+L+lHTrOJJDOwsV31G09TWIFvvZpALFkGBjBLaff/8aQJyAbqDUHQroDqSonOFnGAjEZQdq0jCUs4BGHYVOYh+Q11uJe/IxRlExsATKNHWE4itMRTjBCqSt0tCFvxpljncUGy0+Py+V+Y2y+xRkn9Vyn5nIL/pOB1Cci7lUwHBriqGJZVanXWWrdQrfBLP+14yMBK8RLOGsnVG9VANCv980rQDHTHGtarPaF1MrQjEbXCwxbol7UXuSlisiAfsR8lYgMrgix5mms6mXYr6pxu9y1Waq3TH9W2K+V9NWErp4Dzb8qAV6cVDZ07TIMLHJDadu/2rBHWXP/o1uQmMKARp/x1cXMiDwTZSenhfbmkEqDhLL+9G5TVD33LTsrC6vHw/Vsk6dkudU/DlbHagP2XqfdhhKNIELEbqmkVyhPqUkhEWA97zMX8YA7FFCjboYMBUccVJg/VMmu6XDr2B73YtywCa4FdBlFAncRuVCtAedZ3A7PqMit8GLq91TLa/A9fWtej4toZWxSJ1kejj4MveUJNQk0yi5c2QkLbPDg/HIssae8f98ksR2vhQSAPqwxv1DiC69dJSQch/5F3Xeikm0h/SJUJsztR7ZHk1UtfSXrKeTtRHNPwdxudP9hdd5tgf</source>
+    <source>eJx9kl1rwjAUhu/zK0JRmkLV+zkdY+xml8p2M0WyeGIzaxqS6Bjif1/S2qbZZIFAzuf79JzeP6hCISTpAYyiDPDycfWkYLndTxFiJTUGO/PFVPKNlmJLbaXRGWF31PGjFAzzo2RWVBKfmjhsPl0yqVP8GXgzD6ZhBRyo2XjFG25FbZHV7nMIarBawAm0t2ZYwhf2RMu6ZvWqhb+LNmkaa2+urV1haDSat0+SclHC3WSS4nGM4exkEvEmmRtKj4ovwFRlzfWHahGiJOhm05v1Hqd+kQg5x//DxTyndkE3p9Stj/QZuprR3KWxfaOfx5PrqwiOSb9KmLoxybIuxR/3wUctMaelgUYuaG7BUlH6fSRJQOGVBsqKuPsO7LPWlTYkw26DA/BGrNS1G8+wUVpIy0nyPjRrPDQrmeTXovdU6UqBtt/pOvjcT2/oDtJ19gvyyt82b6IXdPkBoDTzBg==</source>
   </file>
   <package name="Default" full_name="Default"/>
   <package name="global" full_name="global"/>
   <namespace name="SA" full_name="SA">
     <namespace name="CpeSdk" full_name="SA\CpeSdk">
-      <namespace name="Sfn" full_name="SA\CpeSdk\Sfn"/>
+      <namespace name="Sqs" full_name="SA\CpeSdk\Sqs"/>
+      <namespace name="Swf" full_name="SA\CpeSdk\Swf"/>
     </namespace>
   </namespace>
   <deprecated count="0"/>

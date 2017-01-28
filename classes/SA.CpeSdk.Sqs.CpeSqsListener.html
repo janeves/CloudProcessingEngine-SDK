@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Cloud Processing Engine SDK » \SA\CpeSdk\Sfn\CpeSfnHandler</title>
+<title>Cloud Processing Engine SDK » \SA\CpeSdk\Sqs\CpeSqsListener</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">68</span></a></li>
+                <span class="label label-info">108</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -62,17 +62,30 @@
 <ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
 <li class="nav-header">
 <i title="Methods" class="icon-custom icon-method"></i> Methods
-                    <ul><li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li></ul>
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_delete_message" title="delete_message() :: "><span class="description">delete_message()
+        </span><pre>delete_message()</pre></a></li>
+<li class="method public "><a href="#method_receive_message" title="receive_message() :: "><span class="description">receive_message()
+        </span><pre>receive_message()</pre></a></li>
+</ul>
 </li>
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
-                    <ul><li class="property public "><a href="#property_sfn" title="$sfn() :: "><span class="description"></span><pre>$sfn</pre></a></li></ul>
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_cpeLogger" title="$cpeLogger() :: "><span class="description"></span><pre>$cpeLogger</pre></a></li>
+<li class="property private "><a href="#property_debug" title="$debug() :: "><span class="description"></span><pre>$debug</pre></a></li>
+<li class="property private "><a href="#property_sqs" title="$sqs() :: "><span class="description"></span><pre>$sqs</pre></a></li>
+</ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\Sfn\CpeSfnHandler"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\Sqs\CpeSqsListener"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
 <li>
 <a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -81,15 +94,14 @@
 <span class="divider">\</span><a href="../namespaces/SA.CpeSdk.html">CpeSdk</a>
 </li>
 <li>
-<span class="divider">\</span><a href="../namespaces/SA.CpeSdk.Sfn.html">Sfn</a>
+<span class="divider">\</span><a href="../namespaces/SA.CpeSdk.Sqs.html">Sqs</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/SA.CpeSdk.Sfn.CpeSfnHandler.html">CpeSfnHandler</a>
+<span class="divider">\</span><a href="../classes/SA.CpeSdk.Sqs.CpeSqsListener.html">CpeSqsListener</a>
 </li>
 </ul>
 <div xmlns:php="http://php.net/xsl" class="element class">
-<p class="short_description">Create the AWS Sfn Client
-Check for AWS environment variables</p>
+<p class="short_description"></p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
@@ -101,15 +113,64 @@ Check for AWS environment variables</p>
 <a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
 <h2>__construct()
         </h2>
-<pre>__construct() </pre>
+<pre>__construct($debug, $cpeLogger<code> = null</code>) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$debug</h4></div>
+<div class="subelement argument"><h4>$cpeLogger</h4></div>
+</div></div>
+</div>
+<a id="method_delete_message"></a><div class="element clickable method public method_delete_message " data-toggle="collapse" data-target=".method_delete_message .collapse" title="public">
+<h2>delete_message()
+        </h2>
+<pre>delete_message($queue, $msg) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$queue</h4></div>
+<div class="subelement argument"><h4>$msg</h4></div>
+</div></div>
+</div>
+<a id="method_receive_message"></a><div class="element clickable method public method_receive_message " data-toggle="collapse" data-target=".method_receive_message .collapse" title="public">
+<h2>receive_message()
+        </h2>
+<pre>receive_message($queue, $timeout) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$queue</h4></div>
+<div class="subelement argument"><h4>$timeout</h4></div>
+</div></div>
 </div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_sfn"> </a><div class="element clickable property public property_sfn" data-toggle="collapse" data-target=".property_sfn .collapse" title="public">
-<h2>$sfn</h2>
-<pre>$sfn </pre>
+<a id="property_cpeLogger"> </a><div class="element clickable property private property_cpeLogger" data-toggle="collapse" data-target=".property_cpeLogger .collapse" title="private">
+<h2>$cpeLogger</h2>
+<pre>$cpeLogger </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_debug"> </a><div class="element clickable property private property_debug" data-toggle="collapse" data-target=".property_debug .collapse" title="private">
+<h2>$debug</h2>
+<pre>$debug </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_sqs"> </a><div class="element clickable property private property_sqs" data-toggle="collapse" data-target=".property_sqs .collapse" title="private">
+<h2>$sqs</h2>
+<pre>$sqs </pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -124,7 +185,7 @@ Check for AWS environment variables</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2017-01-28T16:38:57Z.<br></footer></div>
+            generated on 2017-01-28T16:50:07Z.<br></footer></div>
 </div>
 </body>
 </html>

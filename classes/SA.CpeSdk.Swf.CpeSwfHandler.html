@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Cloud Processing Engine SDK » \SA\CpeSdk\CpeClientInterface</title>
+<title>Cloud Processing Engine SDK » \SA\CpeSdk\Swf\CpeSwfHandler</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -33,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">68</span></a></li>
+                <span class="label label-info">108</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -59,24 +59,20 @@
 <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
 </div>
 </div>
-<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list"><li class="nav-header">
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
 <i title="Methods" class="icon-custom icon-method"></i> Methods
-                    <ul>
-<li class="method public "><a href="#method_onException" title="onException() :: "><span class="description">onException()
-        </span><pre>onException()</pre></a></li>
-<li class="method public "><a href="#method_onFail" title="onFail() :: "><span class="description">onFail()
-        </span><pre>onFail()</pre></a></li>
-<li class="method public "><a href="#method_onHeartbeat" title="onHeartbeat() :: "><span class="description">onHeartbeat()
-        </span><pre>onHeartbeat()</pre></a></li>
-<li class="method public "><a href="#method_onStart" title="onStart() :: "><span class="description">onStart()
-        </span><pre>onStart()</pre></a></li>
-<li class="method public "><a href="#method_onSuccess" title="onSuccess() :: "><span class="description">onSuccess()
-        </span><pre>onSuccess()</pre></a></li>
+                    <ul><li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul><li class="property public "><a href="#property_swf" title="$swf() :: "><span class="description"></span><pre>$swf</pre></a></li></ul>
+</li>
 </ul>
-</li></ul>
 </div>
 <div class="span8">
-<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\CpeClientInterface"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<a xmlns:php="http://php.net/xsl" id="\SA\CpeSdk\Swf\CpeSwfHandler"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
 <li>
 <a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -84,12 +80,16 @@
 <li>
 <span class="divider">\</span><a href="../namespaces/SA.CpeSdk.html">CpeSdk</a>
 </li>
+<li>
+<span class="divider">\</span><a href="../namespaces/SA.CpeSdk.Swf.html">Swf</a>
+</li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/SA.CpeSdk.CpeClientInterface.html">CpeClientInterface</a>
+<span class="divider">\</span><a href="../classes/SA.CpeSdk.Swf.CpeSwfHandler.html">CpeSwfHandler</a>
 </li>
 </ul>
-<div xmlns:php="http://php.net/xsl" class="element interface">
-<p class="short_description"></p>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Create the AWS SWF connection
+Check for AWS environment variables</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
@@ -98,65 +98,24 @@
 </tr></table>
 <h3>
 <i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_onException"></a><div class="element clickable method public method_onException " data-toggle="collapse" data-target=".method_onException .collapse" title="public">
-<h2>onException()
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>__construct()
         </h2>
-<pre>onException($context, \Exception $exception) </pre>
+<pre>__construct() </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$context</h4></div>
-<div class="subelement argument"><h4>$exception</h4></div>
-</div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="method_onFail"></a><div class="element clickable method public method_onFail " data-toggle="collapse" data-target=".method_onFail .collapse" title="public">
-<h2>onFail()
-        </h2>
-<pre>onFail($taskToken, $error<code> = ""</code>, $cause<code> = ""</code>) </pre>
-<div class="labels"></div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_swf"> </a><div class="element clickable property public property_swf" data-toggle="collapse" data-target=".property_swf .collapse" title="public">
+<h2>$swf</h2>
+<pre>$swf </pre>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$taskToken</h4></div>
-<div class="subelement argument"><h4>$error</h4></div>
-<div class="subelement argument"><h4>$cause</h4></div>
+<h3>Default</h3>
+<div class="subelement argument"></div>
 </div></div>
-</div>
-<a id="method_onHeartbeat"></a><div class="element clickable method public method_onHeartbeat " data-toggle="collapse" data-target=".method_onHeartbeat .collapse" title="public">
-<h2>onHeartbeat()
-        </h2>
-<pre>onHeartbeat($taskToken, $data<code> = null</code>) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$taskToken</h4></div>
-<div class="subelement argument"><h4>$data</h4></div>
-</div></div>
-</div>
-<a id="method_onStart"></a><div class="element clickable method public method_onStart " data-toggle="collapse" data-target=".method_onStart .collapse" title="public">
-<h2>onStart()
-        </h2>
-<pre>onStart($task) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$task</h4></div>
-</div></div>
-</div>
-<a id="method_onSuccess"></a><div class="element clickable method public method_onSuccess " data-toggle="collapse" data-target=".method_onSuccess .collapse" title="public">
-<h2>onSuccess()
-        </h2>
-<pre>onSuccess($taskToken, $output<code> = ''</code>) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$taskToken</h4></div>
-<div class="subelement argument"><h4>$output</h4></div>
-</div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 </div>
 </div>
@@ -165,7 +124,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2017-01-28T16:38:57Z.<br></footer></div>
+            generated on 2017-01-28T16:50:07Z.<br></footer></div>
 </div>
 </body>
 </html>
