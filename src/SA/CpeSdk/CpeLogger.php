@@ -64,8 +64,6 @@ class CpeLogger
         // Set the log filaname based on the logkey If provided.
         // If not then it will log in a file that has the name of the PHP activity file
         $file = $this->activityName;
-        if ($logKey)
-            $file .= "-$logKey";
         // Append progname to the path
         $this->filePath = $this->logPath . "/" . $file.".log";
 
