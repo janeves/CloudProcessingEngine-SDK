@@ -1,5 +1,9 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sportarchive/CloudProcessingEngine-SDK/?branch=master) [![Build Status](https://travis-ci.org/sportarchive/CloudProcessingEngine-SDK.svg?branch=master)](https://travis-ci.org/sportarchive/CloudProcessingEngine-SDK)
 
+## Updates
+
+In order to use the latest version of CloudTranscode in the SFN-migration branch, you must use the 3.0 or SFN-migration branch of this project. Using Composer, just use the 3.0 tag.
+
 ## What for?
 
 Use this SDK if you want to develop custom Activities for the Cloud Processing Engine (CPE) project.
